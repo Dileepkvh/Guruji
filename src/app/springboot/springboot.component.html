@@ -1,0 +1,183 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a (click)="sbOverview()" class="list-group-item list-group-item-action bg-light">Spring Boot Overview</a>
+            <a (click)="sbFeatures()" class="list-group-item list-group-item-action bg-light">Features Of Spring
+                Boot</a>
+            <a (click)="sbCli()" class="list-group-item list-group-item-action bg-light">Creating a new Spring Boot
+                Project using the
+                CLI</a>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#springbootprojsts"
+                        class="list-group-item list-group-item-action bg-light">Creating a new Spring Boot Project using
+                        the STS<span class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="springbootprojsts">
+                        <li><a (click)="pomFile()" class="list-group-item list-group-item-action bg-light">Understanding
+                                the POM file
+                            </a></li>
+                        <li><a (click)="sbStarters()"
+                                class="list-group-item list-group-item-action bg-light">Understanding the Spring Boot
+                                Starters</a></li>
+                        <li><a (click)="sbApplicationJava()"
+                                class="list-group-item list-group-item-action bg-light">Understanding
+                                Application.java</a>
+                        </li>
+                        <li><a (click)="sbAppProperties()"
+                                class="list-group-item list-group-item-action bg-light">Understanding
+                                application.properties</a></li>
+                        <li><a (click)="sbAppTest()"
+                                class="list-group-item list-group-item-action bg-light">Understanding
+                                ApplicationTests.java</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="sbSpringInitializer()" class="list-group-item list-group-item-action bg-light">Creating a new
+                Spring Boot Project using the
+                Spring Initializer</a>
+        </div>
+        <div class="list-group list-group-flush">
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#springbootconfig"
+                        class="list-group-item list-group-item-action bg-light">Spring Boot Configuration<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <ul class="sub-menu collapse list-group" id="springbootconfig">
+                        <li><a (click)="sbAutoConfig()"
+                                class="list-group-item list-group-item-action bg-light">Understanding the Spring Boot
+                                autoconfiguration
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="overridingConfigValue()" class="list-group-item list-group-item-action bg-light">Overriding the
+                default configuration values</a>
+            <a (click)="changingConfigFile()" class="list-group-item list-group-item-action bg-light">Changing the
+                location of the configuration
+                file</a>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#customproperties"
+                        class="list-group-item list-group-item-action bg-light">Reading the Custom Properties<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="customproperties">
+                        <li><a (click)="ymlFileConfig()" class="list-group-item list-group-item-action bg-light">Using a
+                                .yml file for
+                                configuration
+                            </a></li>
+                        <li><a (click)="multipleConfigFile()"
+                                class="list-group-item list-group-item-action bg-light">Using multiple Configuration
+                                files</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="embededWebService()" class="list-group-item list-group-item-action bg-light">Changing the
+                Default Embedded Web Server</a>
+            <a (click)="springDataJPAHibernate()" class="list-group-item list-group-item-action bg-light">Implementing
+                the Data Access Layer With Spring
+                Data JPA and Hibernate</a>
+            <a (click)="serviceLayer()" class="list-group-item list-group-item-action bg-light">Implementing the Service
+                Layer</a>
+            <a (click)="springRestApi()" class="list-group-item list-group-item-action bg-light">Implementing the
+                Controller Layer-Spring Rest
+                API</a>
+            <a (click)="springSecurity()" class="list-group-item list-group-item-action bg-light">Spring Security
+                Integration with Spring Boot</a>
+            <a (click)="sbLogging()" class="list-group-item list-group-item-action bg-light">Spring Boot Logging</a>
+            <a (click)="healthMetrics()" class="list-group-item list-group-item-action bg-light">HealthCheck and Metrics
+                Using Actuators</a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="springbootoverview" *ngIf="springbootoverview">
+            <h1 class="mt-4">Spring Boot Overview</h1>
+        </div>
+
+        <div class="featuresofspringboot" *ngIf="featuresofspringboot">
+            <h1 class="mt-4">Features Of Spring Boot</h1>
+        </div>
+
+        <div class="springbootcli" *ngIf="springbootcli">
+            <h1 class="mt-4">Creating a new Spring Boot Project using the CLI</h1>
+        </div>
+
+        <div class="understandingpomfile" *ngIf="understandingpomfile">
+            <h1 class="mt-4">Understanding the POM file</h1>
+        </div>
+
+        <div class="understandingsbstarters" *ngIf="understandingsbstarters">
+            <h1 class="mt-4">Understanding the Spring Boot Starters</h1>
+        </div>
+
+        <div class="understandingapplicationjava" *ngIf="understandingapplicationjava">
+            <h1 class="mt-4">Understanding Application.java</h1>
+        </div>
+
+        <div class="understandingproperties" *ngIf="understandingproperties">
+            <h1 class="mt-4">Understanding application.properties</h1>
+        </div>
+
+        <div class="understandingapplicationtest" *ngIf="understandingapplicationtest">
+            <h1 class="mt-4">Understanding ApplicationTests.java</h1>
+        </div>
+
+        <div class="sbprojectspringinitializer" *ngIf="sbprojectspringinitializer">
+            <h1 class="mt-4">Creating a new Spring Boot Project using the Spring Initializer</h1>
+        </div>
+
+        <div class="sbautoconfiguration" *ngIf="sbautoconfiguration">
+            <h1 class="mt-4">Understanding the Spring Boot autoconfiguration</h1>
+        </div>
+
+        <div class="configurationvalues" *ngIf="configurationvalues">
+            <h1 class="mt-4">Overriding the default configuration values</h1>
+        </div>
+
+        <div class="locationofconfigurationfile" *ngIf="locationofconfigurationfile">
+            <h1 class="mt-4">Changing the location of the configuration file</h1>
+        </div>
+
+        <div class="ymlfileconfiguration" *ngIf="ymlfileconfiguration">
+            <h1 class="mt-4">Using a .yml file for configuration</h1>
+        </div>
+
+        <div class="multipleconfigurationfile" *ngIf="multipleconfigurationfile">
+            <h1 class="mt-4">Using multiple Configuration files</h1>
+        </div>
+
+        <div class="defaultembeddedweb" *ngIf="defaultembeddedweb">
+            <h1 class="mt-4">Changing the Default Embedded Web Server</h1>
+        </div>
+
+        <div class="springdatajpaandhibernate" *ngIf="springdatajpaandhibernate">
+            <h1 class="mt-4">Implementing the Data Access Layer With Spring Data JPA and Hibernate</h1>
+        </div>
+
+        <div class="Implementingservicelayer" *ngIf="Implementingservicelayer">
+            <h1 class="mt-4">Implementing the Service Layer</h1>
+        </div>
+
+        <div class="Controllerspringrestapi" *ngIf="Controllerspringrestapi">
+            <h1 class="mt-4">Implementing the Controller Layer-Spring Rest API</h1>
+        </div>
+
+        <div class="springsecurityintegration" *ngIf="springsecurityintegration">
+            <h1 class="mt-4">Spring Security Integration with Spring Boot</h1>
+        </div>
+
+        <div class="springbootlogging" *ngIf="springbootlogging">
+            <h1 class="mt-4">Spring Boot Logging</h1>
+        </div>
+
+        <div class="healthcheckmetrics" *ngIf="healthcheckmetrics">
+            <h1 class="mt-4">HealthCheck and Metrics Using Actuators</h1>
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>

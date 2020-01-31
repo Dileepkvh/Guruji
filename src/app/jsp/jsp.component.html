@@ -1,0 +1,2546 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a (click)="jspIntro()" class="list-group-item list-group-item-action bg-light">Introduction to JSP</a>
+            <a (click)="jspLife()" class="list-group-item list-group-item-action bg-light">JSP Life Cycle</a>
+            <a (click)="webContent()" class="list-group-item list-group-item-action bg-light">First JSP Example</a>
+            <a (click)="scriptingEle()" class="list-group-item list-group-item-action bg-light">Scripting elements</a>
+            <a (click)="scriptlet()" class="list-group-item list-group-item-action bg-light">Scriptlet</a>
+            <a (click)="declaration()" class="list-group-item list-group-item-action bg-light">Declaration</a>
+            <a (click)="expression()" class="list-group-item list-group-item-action bg-light">Expression</a>
+            <a (click)="directivesInclude()" class="list-group-item list-group-item-action bg-light">Directives
+                page,include and taglib</a>
+            <a (click)="implicitObj()" class="list-group-item list-group-item-action bg-light">JSP implicit objects</a>
+            <a (click)="jspScopes()" class="list-group-item list-group-item-action bg-light">JSP scopes</a>
+            <a (click)="jspJavaBean()" class="list-group-item list-group-item-action bg-light">Action Elements</a>
+            <a (click)="customTag()" class="list-group-item list-group-item-action bg-light">Custom Tag Development</a>
+            <a (click)="errorHandling()" class="list-group-item list-group-item-action bg-light">Error Handling in a
+                JSP</a>
+            <a (click)="jstl()" class="list-group-item list-group-item-action bg-light">JSTL</a>
+            <a (click)="expressionLang()" class="list-group-item list-group-item-action bg-light">Expression
+                Language</a>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="introductiontojsp" *ngIf="introductiontojsp">
+            <h1 class="mt-4">Introduction to JSP</h1>
+            <p><b> &#8680;
+                </b> Web application is collection of web resource program generating web page.<br>
+                <b>&#8680;
+                </b> Based on content that is generated there are two types of web resourceprog.
+            </p>
+            <ol type="a">
+                <li>Static web resourceprog.</li>
+                <ul>
+                    <li>Generates the static webpages.</li>
+                </ul>
+                <li>Dynamic web resourceprog.</li>
+                <ul>
+                    <li>Generate the dynamic webpages.</li>
+                </ul>
+            </ol>
+            <p>&#8680;
+                Based on the place of execution there are two types of web resource prog.</p>
+            <p>a) Client side web resource prog (eg:- html, javascript).<br>
+                &nbsp; • These programs go to browser window forexecution.<br>
+                b) Server side web resource prog (eg: servlet ,jspprog).<br>
+                &nbsp;• These program execute by residing in theserver
+            </p>
+            <p><b> Note</b>: - Decide whether web resource program is client side or server side based on the place
+                where it executes, not based on the place where it resides.</p>
+            <img src="assets\images\jsp\webapplication.png">
+            <h5>Client side web Technology :-</h5>
+            (useful to develop client side web resourceprogram/components)
+            <ul>
+
+                <li>Html</li>
+                <li>Javascript</li>
+                <li>Ajex</li>
+                <li>JQuery</li>
+                <li>Angularjs</li>
+                <li>etc...</li>
+            </ul>
+            <h5>Server side web Technologies:-</h5>
+            (Useful to develop server side web resource prog/components)
+            <ul>
+                <li>Servlet (SunMicrosystem)</li>
+                <li>Jsp (SunMicro system)</li>
+                <li>SSJS(Server side java script) (fromNetscape)</li>
+                <li>PHP(fromApache)</li>
+                <li>Asp</li>
+                <li>Asp.net</li>
+                <li>Asp.netmvc</li>
+            </ul>
+            <p>Q:-Why SunMicro system has given JSP even they already got a server side technology called servlet?</p>
+            <p><b>Ans:</b> In the initial day of servlet the Microsoft ASP programmer have not liked servlet even though
+                it is having more features than ASP, because ASP supports tags based programming whereas to work with
+                servlet strong java knowledge isrequired.</p>
+            <p>• To overcome above problem SunMicro system has givena tag based technology called JSP having all the
+                features of servlet to attract aspprogrammers.</p>
+            <h5>Limitations of servlet:-</h5>
+            <ul>
+                <li>Strong java knowledge is required not suitable for non-javaprogrammer placing html code in servlet
+                    is quiet complex and error prone process.</li>
+                <li>In servlet programming the java code business logic (htmlcode) and presentation logic will be
+                    mixedup.</li>
+                <li>Configuration of servlet prog in web.xml ismandatory.</li>
+                <li>Exception handling should be taken care byprogrammer.</li>
+                <li>The modification done in servlet program will be reflectedonly after recompilation of servlet
+                    program and reloading the web application.</li>
+                <li>No implicit objsupport.</li>
+                <li>Learning and applying the servlet is complex.</li>
+            </ul>
+            <p><b>Note</b>: - The object that is created by underlying environment…. And no code is required to access
+                the obj is called implicit obj…..</p>
+            <p><b>Note</b>: - In servlet programming request, response, servletConfigetc.. are container created
+                built-in objs but not the implicit obj because we need to write additional code to access those objs.
+            </p>
+            <p>&#8680;
+                <b>this, super</b> are the implicit objs/reference variables of java application.<br>
+                <p>&#8680;
+                    <b> length, class</b> are the implicit obj properties/member variables of java application.
+                </p>
+                <textarea class="textArea" rows="4" cols="120" readonly>
+                Class c=Test.class;
+                        Here “class” (the implicit member variable) creates and returns object of java.lang.Class holding “Test” class data of the object.
+                  </textarea>
+                <h5>In java :-</h5>
+                <textarea class="textArea" rows="4" cols="120" readonly>
+                    “class” is a oops terminology. “class” is a keyword.
+                    “java.lang.Class” is a pre-defined class. “class” is a built in property.
+                    
+                  </textarea>
+                <h5>Feature of jsp:-</h5>
+                <ul>
+                    <li>Allows <b> tags based</b> rogramming.</li>
+                    <li>Strong java knower is not required, so it is suitable for both java and non-java programmers.
+                    </li>
+                    <li>Gives <b>9 implicit</b> objects.</li>
+                    <li>Allows to <b>separatepresentation logic(html) </b>from business logic
+                        (java code).
+                    </li>
+                    <li>The modification done in jsp will be reflected withoutany
+                        <b>separatepresentation logic(html) </b>web application.
+                    </li>
+                    <li>Configuration of jsp in <b> web.xml</b> file is optional.</li>
+                    <li>Use built in tag and also allows working with third party tag or custom tag.</li>
+                    <li>Every <b>“.jsp”file</b> is called as <span> <b>jsp prog/jsp comp/jsp page/jspfile.</b></span>
+                    </li>
+                    <li>Jsp page runs based onpage <span><b>compilation principle</b></span>i.e. every jsppage will be
+                        converted into an <b>equivalent servletprog</b> .</li>
+                    <li>To execute jsp page <b> jsp container</b>is required. This Container supplies tojsp page
+                        compilerto translate jsp page into equivalent servlet prog and this servlet prog executes with
+                        the support of <span><b>" jsp container + servletcontainer"</b>
+                        </span>.</li>
+                    <li>Every server supplies 1 built-in jsp page compiler as part of its <b> jsp container.</b></li>
+                </ul><br>
+                <h5>What is difference between servlet and jsp ?</h5>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Servlrt</th>
+                            <th>Jsp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Strong java knowledge is required so suitable for java programmers</td>
+                            <td>Strong java knowledge is not required so
+                                suitable for both java and non-java programmers.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Does not supports tag based programming.</td>
+                            <td>Supports tag based programming.</td>
+                        </tr>
+                        <tr>
+                            <td>Modification will reflect only after
+                                recompletion and reloading.
+                            </td>
+                            <td>Will reflect without recompilation and
+                                reloading.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Does not give implicit objects.</td>
+                            <td>Gives implicit objects.(9)</td>
+                        </tr>
+                        <tr>
+                            <td> Exception handling is mandatory.</td>
+                            <td>Exception handling is optional.</td>
+                        </tr>
+                        <tr>
+                            <td>Makes programmer to mix-up java business logic java code and presentation logic(html
+                                code).
+                            </td>
+                            <td>Allows to separate the logic.</td>
+                        </tr>
+                        <tr>
+                            <td>Configuration of prog in web.xml is mandatory.</td>
+                            <td>It is optional.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><b>Note: - </b>in the initial days programmers have used jsp as complete alternateto servlet.
+                    Butaccording to <span><b>MVC architecture</b></span> it is recommended to use both servlets and jsp
+                    together in applicationdevelopment.</p>
+                <p>&#8680;Jsp page compiler internally uses <span><b>servlet API, jsp API</b></span> while generating
+                    jsp class.</p>
+                <p>&#8680;Jsp API is the extension of servlet API.</p>
+                <p>&#8680;Servlet API will be used in the development of servlet container.</p>
+                <p> &#8680;<b>Jsp container</b> internally uses<span><b> ServletContainer</b></span> so we can say jsp
+                    container is developed based on both jsp API <b>Jsp container</b> and<span><b> servlet
+                            API.</b></span></p>
+                <ul>
+                    <li><b>Servlet api</b>:-javax.servlet, javax.servlet.http,javax.servlet.annotation,
+                        javax.servlet.descriptor.</li>
+                    <li> <b>Jspapi</b>: - javax.servlet.jsp, javax.servlet.jsp.el,javax.servlet.jsp.tagext</li>
+                </ul><br>
+                <h5>In Tomcatsever:-</h5>
+                <p>&#8680;Servlet container name: catalina jarfile : <b>catalina.jar</b><br>
+                    &#8680; Jsp container name: jaspser jar file:<b>jasper.jar</b><br>
+                    &#8680; Servlet api jar file:<b> servlet-api.jar</b><br>
+                    &#8680; Jspapi jar file :<b>jsp-api.jar</b>
+                </p>
+                <p><b>Note: </b>All these entire jar files are available in <span><b>"tomcat_home\lib" </b>
+                    </span>folder.</p>
+                <img src="assets\images\jsp\scriptlet.png"><br><br>
+                <h5>Template text = ordinary text + html</h5>
+                <p>&#8680;Jsp page generate dynamic web page the fixed content of dynamic web page will be generated
+                    through <b>template text</b> and the <span><b> dynamic values</b>
+                    </span> will be generated through java code of scriptlet.</p>
+                <img src="assets\images\jsp\jsp.png"><br><br>
+                <textarea class="textArea" rows="5" cols="120" readonly>
+                        jspApp web.xml l---->ABC.jsp I---->WEB-INF <web-app l---->web.xml Place jsgsp,a folder in    <Tomcat home>1web apps for deployment. 
+                            Request url: http://localhost:3030/ispApp/Abc.isp> 
+                    </textarea>
+        </div>
+        <div class="jsplifecycle" *ngIf="jsplifecycle">
+            <h1 class="mt-4">JSP Life Cycle</h1>
+            <hr>
+            <h4>Servlet prog/component life cycle methods are:</h4>
+            <ol>
+                <li> init(ServletConfig)</li>
+                <li> service(ServletRequest, ServletResponse)</li>
+                <li> destroy()</li>
+            </ol>
+            <img src="assets/images/jsp/lifecycle1.png">
+            <p>o init(), service(HttpServletRequest ,HttpServletResponse), doxxx(-) are not life cycle methods. They are
+                convenience methods given to programmer.<br>
+                o Every jsp prog/page internally gets an jsp equivalent servlet prog/component for execution , so there
+                will not be any separate life cycle methods for jsp so the servlet life cycle methods itself acts jsp
+                life cycle methods. But different convenience methods are given for jsp.
+            </p>
+            <dl>
+                <dt> They are:-</dt>
+                <dd>• jspinit()/_jspInit()<span class="glyphicon glyphicon-arrow-right"></span> will be called from
+                    init(-) life cycle method .</dd>
+                <dd>• _jspService(-,-) <span class="glyphicon glyphicon-arrow-right"></span> will be called from
+                    service(-,-) life cycle method.</dd>
+                <dd>• jspDestroy()/_jspDestroy()<span class="glyphicon glyphicon-arrow-right"></span> will be called
+                    from destroy life cycle method.</dd>
+            </dl>
+            <h2>JSP LIFE CYCLE</h2>
+            <img src="assets/images/jsp/jsplifecycle.png">
+            <h4>JSP Compilation:</h4>
+            <p> When a browser asks for a JSP, the JSP engine first checks to see whether it needs to compile the page.
+                If the page has never been compiled, or if the JSP has been modified since it was last compiled, the JSP
+                engine compiles the page. </p>
+            <p> The compilation process involves following steps: </p>
+            <ol>
+                <li>Parsing the JSP. </li>
+                <li>Turning the JSP into a servlet. </li>
+                <li>Compiling the servlet. </li>
+                <li> Load the class file </li>
+                <li>Create an instance </li>
+                <li> Call the jspInit method </li>
+                <li>Call _jspService method </li>
+                <li> Call jspDestroy method</li>
+            </ol>
+            <h4>Jsp LifeCycle(Class heirarchy) </h4>
+            <h5>The package containing required classes is <br>javax.servlet.jsp </h5>
+            <h5>Interfaces </h5>
+            <p>Servlet-> JspPage-> HttpJspPage</p>
+            <h5> JspPage declares </h5>
+            <p> JspInit() <br> JspDestroy() </p>
+            <h5> HttpJspPage declares <br> _JspService() </h5>
+
+            <p>The class file that is generated from the JSP page implements all the methods of HttpJspPage interface
+            </p>
+
+        </div>
+        <div class="webcontentwithjsp" *ngIf="webcontentwithjsp">
+            <h1 class="mt-4">First JSP Example</h1>
+            <p>In this chapter you will find out how to create a simple JSP application using JBoss Developer Studio.
+                The application will show a classic "Hello World!" on the page.<br>
+
+                It will be assumed that you have already launched JBoss Developer Studio and also that the Web
+                Development perspective is the current perspective. If not, make it active by selecting Window → Open
+                Perspective → Web Development from the menu bar or by selecting Window → Open Perspective → Other...
+                from the menu bar and then selecting Web Development from the Select Perspective dialog box.</p>
+            <h5>Setting Up the Project</h5>
+            <p>We are going to start by creating a Dynamic Web Project with a minimal structure, that is with just
+                required facets.</p>
+            <ul>
+                <li>Go to the menu bar and select File → New → Other...</li>
+                <li>Select Web → Dynamic Web Project in the New Project dialog box </li>
+                <li>Click the Next button</li>
+                <li>Enter "jspFirstExample" as a project name</li>
+                <li>Select Minimal Configuration from the list of possible configurations</li>
+                <li>Click the Next button twice to move through the Java window to the Web Module window</li>
+                <li>Select the Generate web.xml check box and click the Finish button.</li>
+            </ul>
+            <h5> Create New Web Project</h5><br>
+            <img src="assets/images/jsp/creationofjsp.png" /><br>
+            <p>The jspFirstExample node should be visible in the upper-left Package Explorer view.</p><br>
+            <img src="assets/images/jsp/newwebproject0.png" />
+
+            <h5>Creating A JSP Page</h5>
+            <p>This section outlines how to create, edit and then preview a JSP page.<br>
+
+                In our simple application we need to create only one JSP page which displays a "jspFirstExample"
+                message.</p>
+            <ol>
+                <li>Right-click the WebContent folder and select New → JSP.
+                <li>Type hello.jsp for a file name and click the Next button.</li>
+            </ol>
+            <p>In the next window you can choose a template for your JSP page and see its preview.</p>
+            <ol>
+                <li>Select New JSP File (html) template and click the Finish button.</li>
+            </ol>
+            <img src="assets/images/jsp/createjsppage.png" />
+            <p>Our First JSP Example.jsp page will now appear in the Project Explorer view.</p>
+            <h5><b> Editing a JSP Page</b></h5>
+            <p>To edit the JSP page so that it displays the “Hello World!” message, insert the following line inside the
+                &#8249;body&#8250; &#8249;/body&#8250; tags:</p>
+            <textarea class="jsp" rows="0" cols="140" readonly>
+            <% System.out.println("welcome to jsp"); %>
+           </textarea>
+            <p>Notice that content assist functionality is always available when you are typing:</p>
+            <img src="assets/images/jsp/contentasist.png" />
+            <p>After this line has been added, your hello.jsp page should look like this:</p>
+            <img src="assets/images/jsp/index.jsp.png" />
+            <p>This line will actually output "hello jsp" message in the Console. To make the message displayed in the
+                Browser, just replace this line with the simple hello jsp.</p>
+            <h5>web.xml file</h5>
+            <p>When you are creating web project the wizard creates the web.xml file for you automatically. The web.xml
+                file editor provided by JBoss Developer Studio is available in two modes: Tree and Source.</p>
+            <img src="assets/images/jsp/web.png" />
+            <p>Both modes are fully synchronized. To add a mapping to the First JSP Example.jsp page in the web.xml
+                file:
+            </p>
+            <ul>
+                <li>Switch to the Source tab.</li>
+                <li>Add the next code into &#10094;welcome-file-list&#10095; :</li>
+            </ul>
+            <textarea class="jsp" rows="0" cols="140" readonly>
+            <welcome-file>jspFirstExample.jsp</welcome-file>
+        </textarea>
+            <p>If you go back to Tree tab you will see that the changes made in the Source tab are automatically
+                reflected.
+
+                Actually you do not really need to do any configurations right now.</p>
+            <h5> Deploying the project</h5>
+            <p>Writing any scripts and managing the packaging process can be quite a complicated and time consuming task
+                for even the most trivial web applications. However, JBoss Developer Studio relieves you of this burden.
+                All you need is to start your JBoss Server and launch your application in your favorite browser.<br>
+
+                You can also create a JAR archive with JBoss Developer Studio's Archive Tools and export it to any web
+                server.</p>
+
+            <h5>Adding jars</h5>
+            <p>Right&#45;click on project &#26; select Build path &#26;configure build path &#26;goto library &#26;add
+                external jars.</p>
+            <img src="assets/images/jsp/jarsadding.png" />
+            <p>after adding the jars the screenshot is given bellow.</p>
+            <img src="assets/images/jsp/jarsadded1.png" />
+            <h5>Launch JSP Project</h5>
+            <p>Right&#45; click on project &#26; Run As &#26; Run on server .</p>
+            <img src="assets/images/jsp/output0.png" />
+        </div>
+        <div class="scriptingelements" *ngIf="scriptingelements">
+            <h1 class="mt-4">Scripting elements</h1>
+
+            <h4>1.Scripting Tags:-</h4>
+            <h5>(a) Scriptlet:-</h5>
+            <p><b>Standard syntax:-</b></p>
+            <textarea class="script" rows="4" cols="120">
+                <% .............(javacode) 
+                
+                %>
+            </textarea><br>
+            <P><b>xml syntax</b></P>
+            <textarea class="script" rows="5" cols="120">
+                    <jsp:scriptlet>
+                        ...................
+                        ...................(java code)
+                   </jsp:scriptlet>
+                </textarea><br>
+            <p> Code placed in scriptlet goes to _jspService () method of JES class.</p>
+            <p>Variables declared in scriptlet becomes local variables to _jspService (-,-) method of jsp.</p>
+            <table class="table table-bordered table-hover scriptingtable">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <b>In jsp</b><br>
+                            <% int a=20; %>
+                        </td>
+                        <td width="50%">
+                            <b>In JES class</b> <br>
+                            public class ABC_jsp extends …..
+                            &#123;
+                            public void _jspService(-,-)
+                            &#123;
+                            int a=20;
+                            &#125;
+                            &#125;
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>We can use <b>scriptlet for placing <i>request processing</i> logic</b>, because its code goes to
+                _jspService(-,-) method of JES class.</p>
+            <table class="table table-bordered table-hover scriptingtable">
+                <tbody>
+                    <tr>
+                        <td width="50%">
+                            <b>In jsp</b><br>
+                            <%
+                                int a=20; <br>
+                                int b=30;<br>
+                                int c=a+b;<br>
+                                out.println(“sum=”+c);
+                                %><br>
+                            out.println(“sum=”+c);
+                            %>
+                        </td>
+                        <td width="50%">
+                            <b>In JES class</b> <br>
+                            public class ABC_jsp extends ….
+                            &#123;
+                            public void _jspService(-,-)
+                            &#123;
+                            int a=20;<br>
+                            int b=30;<br>
+                            int c=a+b;<br>
+                            out.println(“sum=”+c);
+                            &#125;
+                            &#125;
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <p><b>Using xml syntax:-</b></p>
+            <textarea class="script" rows="5" cols="120">
+                    <jsp:scriptlet>
+                        <b><i> Welcome to jsp </i></b>
+                    </br> </br>
+                    </jsp:scriptlet>                    
+                </textarea><br>
+            <p>While working with <b>less than</b> symbol “<” in the xml syntax of scriptlet we need to be very careful
+                    because if we place less than symbol “<” as the body of the tag, it will be treated as xml meaning
+                    sub-tag, and it will not treated as java conditional operator. </p> <textarea class="script"
+                    rows="10" cols="120">
+                    <jsp:scriptlet>
+                        <![CDATA[
+                        int a=20; int b=30;
+                        if(a<b) // here “<” will not be treated as java conditional operator and will be treated as xml sub tag.
+                        out.println(a +” is greater than”+ b); else
+                        out.println(b +” is greater than”+ a);
+                        ]]>
+                    </jsp:scriptlet>
+            </textarea><br>
+            <h6>SOLUTION-1:</h6>
+            <p>Use standard syntax:</p>
+            <textarea class="script" rows="5" cols="120">
+                    <%                         
+                    ……..//same as above code
+                    %>                                                        
+                </textarea><br>
+            <h5> SOLUTION-2:</h5>
+            <p>Use
+                <![CDATA[….]]> support</p>
+            <textarea class="script" rows="9" cols="120">
+                    <jsp:scriptlet>
+                       <![CDATA[ //it will suppress the xml meaning on the body of the tag and takes
+                       the body as ordinary text (java code), so “<” will be treated as the conditional operator.
+                            ……….
+                             ……….
+                       ]]>
+                  </jsp:scriptlet>                                                  
+                </textarea><br>
+            <p>But greater than symbol does not have such problem:</p>
+            <textarea class="script" rows="7" cols="120">
+                    <jsp:scriptlet>
+                        int a=20; int b=30; if(a>b).
+                        out.println(a +” is less than”+ b); else
+                        out.println(b +” is less than”+ a);
+                     </jsp:scriptlet>                                                                              
+                </textarea><br>
+            <p><b>NOTE:</b> - less than symbol is not there with standard syntax and greater than symbol not goes this
+                problem in any syntax.</p>
+            <p>Implicit object are local variable to _jspService(-,-) method in JES class, and the code placed in
+                scriptlet also goes to _jspService(-,-) of JES class so we can use implicit objs in scriptlet.</p>
+            <textarea class="script" rows="5" cols="120">
+                    <%
+                      out.println(request.getHeader("user-agent");
+                    %>// here out and request is implicit object.                                                                             
+                </textarea><br>
+            <P>java does not support nested method support so we cannot place method definition in scriptlet, because it
+                becomes nested method definition of _jspService(-,-) method.</P>
+            <table class="table table-bordered table-hover scriptingtable" cols="120">
+                <tbody>
+                    <tr>
+                        <td width="50%">
+                            <b>In jsp</b><br>
+                            <%
+                                  public int sum(int x,int y)
+                                  &#123;<br>
+                                       return x+y;<br>
+                                       &#125;<br>
+                                  %>// it will gives error because it will become
+                            nested method in _jspService(-,-) method.
+
+                        </td>
+                        <td width="50%">
+                            <b>In JES class</b> <br>
+                            public void _jspService(-,-) throws ServletException,IOException
+                            &#123;<br>
+                            &nbsp;&nbsp; public int sum(int x,int y)&#123;<br>
+                            &nbsp;&nbsp;&nbsp; return x+y;<br>
+                            &nbsp;&nbsp;&#125;<br>
+                            &#125;
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <p> <b>Note:</b>we cannot place interface definition in a method definition that mean we cannot place
+                interface definition in scriptlet</p>
+            <ul>
+                <li>But we can place class definition in the above context.</li>
+                <li>Java support nested class definition, nested interface definition.</li>
+            </ul>
+            <p>We can place interface definition inside the class and class definition inside the interface.</p>
+        </div>
+        <div class="scriptlets" *ngIf="scriptlets">
+            <h1 class="mt-4">Scriptlet</h1>
+            <p>JSP Scripting element are written inside &#60;% %> tags. These code inside &#60;dgd% %> tags are
+                processed by the JSP engine during translation of the JSP page. Any other text in the JSP page is
+                considered as HTML code or plain text.</p>
+
+            <p><b>1.SCRIPTING TAGS:-</b> </p>
+            <ol type="a">
+                <li> Scriptlet &#40;&#60;%.....%>&#41;</li>
+                <li> Declaration &#40;&#60;%! %>&#41;</li>
+                <li> Expression &#40;&#60;%= …… %>&#41;</li>
+            </ol>
+            <p><b>Note:</b>These tags are given to place java, in jsp. The java code placed in jsp is called script
+                code.</p>
+            <p><b>2.JSP COMMENTS&#40;&#60;%-- ……….. --%>&#41;</b></p>
+            <p><b>3.DIRECTIVE TAGS/ELEMENTS:-</b></p>
+            <ol type="a">
+                <li>page directive &#40;&#60;%@ page attributes %>&#41;</li>
+                <li>include directive &#40;&#60;%@ include attributes %>&#41;</li>
+                <li>taglib directive &#40;&#60;%@taglib attributes %> &#41;</li>
+            </ol>
+            <p><b>4.STANDARD ACTION TAGS:-</b></p>
+            <ul style="list-style-type:square;">
+                <li>jsp:include</li>
+                <li>jsp:forward</li>
+                <li>jsp:useBean</li>
+                <li>jsp:setProperty</li>
+                <li>jsp:params</li>
+                <li>jsp:param</li>
+                <li>jsp:plugin</li>
+                <li>jsp:fallback</li>
+                <li>jsp:text</li>
+                <li>jsp:attributes</li>
+            </ul>
+
+        </div>
+        <div class="declarations" *ngIf="declarations">
+            <h1 class="mt-4">Declaration</h1>
+            <hr>
+            <p>The code placed in Declaration tag goes outside to _jspService method of JES class. So we can use this
+                tag for global variables declaration, method definition, class/interface definition (nested), jspInit(),
+                jspDestroy() method definitions </p>
+            <p>Standard syntax:- </p>
+            <textarea class="declaration-text" cols="140" rows="6">
+
+                    <%! 
+                      ……. 
+                      …….
+                    %> 
+                </textarea>
+            <p>Xml syntax:- </p>
+            <textarea class="declaration-text" cols="140" rows="6">
+                    <jsp:declaration>
+                           ……. 
+                           
+                           …….
+                     </jsp:declaration> 
+                </textarea>
+            <p>Variable declared in Declaration tag will come as global variable of JES class. </p>
+            <textarea class="declaration-text" cols="140" rows="6">
+                    In JES
+                    <%! int a=10;
+                    %>
+    
+                </textarea>
+            <textarea class="declaration-text" cols="140" rows="8">
+                    In JES class
+                    public class ABC_jsp extends ……
+                    {
+                    int a=10;
+                    }
+    
+                </textarea>
+            <p>Q..How can we differentiate declaration tag variable from scriptlet tag variable being from scriptlet
+                when both have got same name.</p>
+            <p>Ans:- Use either implicit object “page” or “this” as shown below:-</p>
+            <textarea class="declaration-text" cols="140" rows="6">
+                    <% int a=30; %>
+                    <%! int a=20;
+                    out.println(“<br> local a value “+this.a); ABC_jsp o1=(ABC_jsp)page;
+                    //out.println(“<br> Local a value “+this.a);
+    
+                </textarea>
+            <p>We can place user defined method in declaration tag.</p>
+            <textarea class="declaration-text" cols="140" rows="12">
+                    JSP program
+                    <%! public int findBig(int x,int y)
+                    {
+                    if (x<y) return y;
+                    else
+                    return x;
+                    }
+                    %>
+                    <% out.println(“Big value” + findBig(10,20));
+                    %>
+    
+                </textarea>
+            <p> While working with xml based declaration tag there is a possibility of getting problem with less than”<”
+                    symbol use <![CDATA[…….]]>
+            </p>
+            <textarea class="declaration-text" cols="140" rows="10">
+                    <jsp:declaration >
+                    <![CDATA[public int findBig(int x,int y)
+                    {
+                    if (x<y) return y;
+                    else
+                    return x;
+                    }]]>
+                    </jsp:declaration>
+                    <% out.println(“Big value” + findBig(10,20));%>
+                </textarea>
+            <p> Implicit object of jsp cannot be used in declaration tag because implicit object are the local variable
+                of _jspService(-,-) method and declaration tag code not goes to<br>
+                _jspService(-,-) in JES class.
+            </p>
+
+            <p> By default JES class gives _jspInit (), _jspDestroy () and _jspService () method, but we can use
+                declaration tag support to place jspInit() and jspDestroy() method as shown below.</p>
+
+            <textarea class="declaration-text" cols="140" rows="12">
+                        <%! public void jspInit()
+                        {
+                        System.out.println("jspInit()");
+                        }
+                        <%! public void jspDestroy()
+                        {
+                        System.out.println("jspDestroy()")
+                        }
+                        %>
+                        <% System.out.println("_jspDestroy(-,-)%>
+    
+                    </textarea>
+            <p>
+                 jspInit() useful to place the initialization logic of program like crating jdbcconnection.<br>
+                 jspDestroy() useful to place the un-initialization logic of programmer like closing jdbc
+                connection.<br>
+                 _jspServce(-,-) useful to place request processing logic.<br>
+                 _jspInit() contains JES class related predefined initialization logic.<br>
+                 _jspDestroy() contains JES class related predefined un-initialization.<br>
+
+            </p>
+            <p>Q: - can we place servlet life cycle methods directly in jsp program using declaration tags?</p>
+            <p>Ans) No, Not possible because all these methods are declared as final <br>
+                methods in the super class of JES class that is HttpjspBase class in Tomcat<br>
+                server and final methods of super class cannot be overridden in sub-class.</p>
+            <p>Q :- what is the advantage of enabling load-on-startup on jsp page?</p>
+            <p>Ans: - The container performs the following operations either during server startup or during deployment
+                of web application.
+
+            </p>
+            <ol>
+                <li>Complete translation phase on jsp program.</li>
+                <li> Create JES class objects using 0-params constructor.</li>
+                <li> jspInit() methods executes.</li>
+            </ol>
+            <p>So the first request given to jsp directly participates in request processing.</p>
+            <textarea class="declaration-text" cols="140" rows="13">
+                        <web-app>
+                            <servlet>
+                            <servlet-name>a</servlet-name>
+                            <jsp-file>/ABC.jsp</jsp-file>
+                            <load-on-startup>1</load-on-startup>
+                            </servlet>
+                            <servlet-mapping>
+                            <servlet-name>a</servlet-name>
+                            <url-pattern>/abc</url-pattern>
+                            </servlet-mapping>
+                            </web-app>
+                            
+                    </textarea>
+            <p>Note: - we need to request to jsp by using its url pattern.</p>
+            <p>Note: - jsp configuration in web.xml benefits will come only when jsp is requested through URL pattern.
+            </p>
+            <p>Q: - can we placed _jspInit (), _jspDestoy (), _jspService () method in declaration tags of jsp?</p>
+            <p>Ans:- not Possible, because they become duplicate method of JES class and java does not support
+                duplicates.</p>
+            <p> We can place class, method, and interface definition in declaration tag, they will become nested class
+                or nested interface of JES.</p>
+            <textarea class="declaration-text" cols="140" rows="10">
+                        Jsp:
+                        <%!class Test
+                        {
+                        }
+                        %>
+                        <%! interface xyz{
+                        }%>
+    
+                        
+                    </textarea>
+            <textarea class="declaration-text" cols="140" rows="7">
+                        JES class
+                        public class ABC_jsp extends HttpJspBase
+                            {
+                            class Test{} interface xyz{}
+                             }
+                    </textarea>
+            <textarea cols="140" rows="6">
+                        <%! int counter=0;%>
+                        <% counter++;
+                        out.println(“No of request:”+counter);
+                         %>
+                    </textarea>
+            <p> In one jsp program we can place multiple tags in any order having only xml syntax and
+                mix of both.<br>
+                 In one declaration tag we can declare multiple global variables and we can place multiple method
+                definitions.
+            </p>
+            <hr>
+        </div>
+        <div class="expressions" *ngIf="expressions">
+            <h1 class="mt-4">Expression</h1>
+            <p>
+                A JSP expression element contains a scripting language expression that is evaluated,
+                converted to a String, and inserted where the expression appears in the JSP file.
+            </p>
+            <p>
+                The expression element can contain any expression that is valid according to the Java
+                Language Specification but you cannot use a semicolon to end an expression.
+            </p>
+            <p>
+                Following is the syntax of JSP Expression:
+            </p>
+            <p><%= expression %> </p>
+            <h3>Expression Example</h3>
+            <h5>symbolic:</h5>
+            <textarea class="Symboli" rows="4" cols="140" readonly>
+                <%! int a=50;%>
+                (Declaration)
+                <%= a*a %> 
+            </textarea><br>
+            <h6>Or</h6>
+            <textarea class="Symboli" rows="2" cols="140" readonly>
+                <%= “value of a square is”+ a*a  %>
+            </textarea>
+            <h5>XML:</h5>
+            <textarea class="XML" rows="6" cols="140" readonly>
+                <jsp:declaration> int a=50; 
+                </jsp:declaration>  
+                <jsp:expression >a*a 
+                </jsp:expression>  
+            </textarea>
+            <h6>Or</h6>
+            <textarea class="XML" rows="4" cols="140" readonly>
+                < jsp:expression> 
+                “value of a square is”+ a*a  
+                </jsp:expression >
+            </textarea>
+        </div>
+        <div class="jspimplicitobjects" *ngIf="jspimplicitobjects">
+            <h1 class="mt-4">JSP implicit objects</h1>
+            <h4>Overview</h4>
+            <hr>
+            <p>JSP supports nine automatically defined variables, which are also called implicit objects. </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Object</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Request</td>
+                        <td>This is the HttpServletRequest object associated with the Request</td>
+                    </tr>
+                    <tr>
+                        <td>Response</td>
+                        <td>This is the HttpServletResponse object associated with the Response to the client</td>
+                    </tr>
+                    <tr>
+                        <td>Out</td>
+                        <td>This is the Printwriter object used to send output to the client</td>
+                    </tr>
+                    <tr>
+                        <td>session</td>
+                        <td>This is Httpsession object associated with the request</td>
+                    </tr>
+                    <tr>
+                        <td>application</td>
+                        <td>This is the servletcontext object associated with application context</td>
+                    </tr>
+                    <tr>
+                        <td>config</td>
+                        <td>This is the ServletConfig object associated with the page</td>
+                    </tr>
+                    <tr>
+                        <td>page Context</td>
+                        <td>This encapsulatex use of server-specific features like higher performance jspWriters</td>
+                    </tr>
+                    <tr>
+                        <td>page</td>
+                        <td>This is the simple a synonym for this and is used to call the method defined by the
+                            translated servlet class</td>
+                    </tr>
+                    <tr>
+                        <td>Exception</td>
+                        <td>The Exception object allows the exception datato be accesed by the designated jsp.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul>
+                <h5>request Object</h5>
+                <li> Has request scope </li>
+                <li> Is an instance of javax.servlet.ServletRequest class </li>
+                <li> Passed by Jsp to the web container as a parameter of _jspService method</li>
+            </ul>
+            <ul>
+                <h5>response object </h5>
+                <li>Has page scope </li>
+                <li> Is an instance of javax.servlet.ServletResponse </li>
+                <li>Encapsulates the response generated by the Jsp to be send back to the client in response to the
+                    request </li>
+                <li> Passed to the Jsp by the container as a parameter to the _jspService method</li>
+            </ul>
+            <ul>
+                <h5>pageContext objects </h5>
+                <li> pageContext provides a single point of access to many of the page attributes </li>
+                <li> It has page scope</li>
+                <li> Is of type javax.servlet.jsp.pageContext</li>
+                <li> Has methods like </li>
+                <li> getException(), getPage() getRequest(), getRes ponse(), getSession(),forward(),include() etc</li>
+            </ul>
+            <ul>
+                <h5>session object </h5>
+                <li>Represents the session created for the client </li>
+                <li> Is of type javax.servlet.http.HttpSession </li>
+                <li> Has session scope</li>
+            </ul>
+            <ul>
+                <h5>application object </h5>
+                <li> Is of type javax.servlet.ServletContext</li>
+                <li> It is basically used for getting initialization parameters and for sharing the attributes & their
+                    values across the entire JSP application, which means any attribute set by application implicit
+                    object would be available to all the JSP pages. </li>
+                <li>The instance of ServletContext is created only once by the web container when application or project
+                    is deployed on the server </li>
+                <li> Has application scope </li>
+                <li> Has methods like getAttribute(), setAttribute(),removeAttribute() etc</li>
+            </ul>
+            <ul>
+                <h5>out object</h5>
+                <li> Is the object that writes to the client using output stream </li>
+                <li>This is a buffered version of the javax.servlet.jsp.JspWriter </li>
+                <li>Buffer size can be adjusted by the buffer attribute of the page directive</li>
+            </ul>
+            <ul>
+                <h5>config object </h5>
+                <li> It is an instance of javax.servlet.ServletConfig. </li>
+                <li> Config Implicit object is used for getting configuration information for a particular JSP page.
+                </li>
+                <li> using Config we can get initialization parameters of an individual servlet mapping. </li>
+                <li> Is the ServletConfig for the Jsp page </li>
+                <li> Has page scope </li>
+                <li> Of type javax.servlet.ServletConfig</li>
+            </ul>
+            <ul>
+                <h5>page object</h5>
+                <li> Page implicit object is a reference to the current Servlet instance (Converted Servlet, generated
+                    during translation phase from a JSP page). </li>
+                <li> We can simply use this in place of it </li>
+                <li> Is an instance of Jsp page’s implementation servlet class that is processing the current request
+                </li>
+                <li> Is of type java.lang.Object</li>
+            </ul>
+            <ul>
+                <h5>exception object </h5>
+                <li> Is of type java.lang.Throwable </li>
+                <li> Not available to all Jsp’s </li>
+                <li> Available only to Jsp pages that are declared as error pages</li>
+            </ul>
+            <ul>
+                <h5>Implicit objects </h5>
+                <li> Implicit objects example: </li>
+                <li> In this example we will use request session and out implicit objects </li>
+                <li> We have a login.html page and it calls LoginJsp.jsp </li>
+                <li> In LoginJsp.jsp we will check password ..if it is admin we create a new session and set its name
+                    attribute to uid else redirect to the login page using @include directive </li>
+                <li> We will create one more jsp called SessionMethods in which we print the details of the session
+                    created earlier .</li>
+            </ul>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>JSP Implicit Object</th>
+                        <th> Super Class</th>
+
+                        <th>Annotation</th>
+                    </tr>
+                </thead>
+
+                <tr>
+                    <td>request</td>
+                    <td>HttpServletRequest</td>
+                    <td>Provides HTTP request information.</td>
+                </tr>
+                <tr>
+                    <td>response</td>
+                    <td>HttpServeletResponse</td>
+                    <td>Send data back to the client</td>
+                </tr>
+                <tr>
+                    <td>out</td>
+                    <td>JspWriter</td>
+                    <td>Write the data to the response stream</td>
+                </tr>
+                <tr>
+                    <td>session</td>
+                    <td>HttpSession</td>
+                    <td>Track information about a user from onerequest to another</td>
+                </tr>
+                <tr>
+                    <td>application</td>
+                    <td>ServletContext</td>
+                    <td>Data shared by all JSPs and servlet in the application</td>
+                </tr>
+                <tr>
+                    <td>Page Context</td>
+                    <td>Page Context</td>
+                    <td>Contains data assosiated with the whole Page</td>
+                <tr>
+                    <td>Config</td>
+                    <td>ServeletContext</td>
+                    <td>Provides servelet configuration data</td>
+                </tr>
+                <tr>
+                    <td>page</td>
+                    <td>Object</td>
+                    <td>Similar with "this" in jspJava</td>
+                </tr>
+                <tr>
+                    <td>exception</td>
+                    <td>throwable</td>
+                    <td>Exception not caught by application code.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="directivespageincludeandtaglib" *ngIf="directivespageincludeandtaglib">
+            <h1 class="mt-4">Directives page,include and taglib</h1>
+            <h5>Jsp Directives</h5>
+            <ul>
+                <li> <b>Scripting elements</b> in jsp are used to define the logic
+                    used at run time</li>
+                <li> <b>Directives </b>are used to provide Jsp pages with
+                    information that the container will use when Jsp page
+                    is converted into a servlet.</li>
+                <li> A directive gives more information to the
+                    container(server) which is used when a Jsp Page is
+                    compiled.</li>
+                <li>Jsp Directives are not part of the logic.</li>
+                <li>They are used to set global values like package imports,
+                    including other files,declaring error pages output
+                    content type etc.</li>
+                <li>Directives do not produce any output.</li>
+            </ul>
+            <p>It usually has the following form: </p>
+            <ul>
+                <li><%@ directive attribute="value" %> </li>
+            </ul>
+            <p>There are three types of directive tag: </p>
+            <ul>
+                <li>Page</li>
+                <li>include</li>
+                <li>taglib</li>
+            </ul>
+            <table class="table  table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Directive</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td> <b><%@ page %></b></td>
+                    <td>Difines page-dependent attributes,such as scripting language,error page and buffering
+                        requrirements.</td>
+                </tr>
+                <tr>
+                    <td> <b><%@ include %></b></td>
+                    <td>include a file during the translation phase.</td>
+                </tr>
+                <tr>
+                    <td><b><%@ taglib %></b></td>
+                    <td>Declare a taglib containg custom actions,used in the page.</td>
+                </tr>
+            </table>
+            <h5>Page Directive</h5>
+            <ul>
+                <li>Used to manipulate and define attributes that
+                    affect the whole page.
+                </li>
+                <li>A page can have any number of page directives
+                    anywhere in a Jsp page.</li>
+                <li>It has approx 11 attributes. </li>
+                <li>Each attribute can occur only once except import
+                    attribute.</li>
+                <li>EX</li>
+                <li><%@ page import=“java.util.*,java.net.*” %>.</li>
+            </ul>
+            <table class="table  table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Attribute </th>
+                        <th> Purpose</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <b>buffer </b></td>
+                        <td> Specifies a buffering model for the output stream.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <b>autoFlush</b></td>
+                        <td>Controls the behavior of the servlet output buffer.</td>
+                    </tr>
+                    <tr>
+                        <td> <b>contentTyppe</b></td>
+                        <td>Defines the character encoding scheme.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <b>errorPage </b></td>
+                        <td>Defines the URL of another JSP that reports on Java unchecked runtime exceptions.</td>
+                    </tr>
+                    <tr>
+                        <td> <b>isErrorPage </b>
+                        </td>
+                        <td> Indicates if this JSP page is a URL specified by another JSP pages errorPage attributes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <b>extends</b></td>
+                        <td> Specifies a superclass that the generated servlet must extend
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>import</b></td>
+                        <td>Specifies a list of packages or classes for use in the JSP as the Java import statement does
+                            for Java classes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <b>into</b></td>
+                        <td>Defines a string that can be accessed with the servlet's getServletInfou method.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <b>isThreadSafe</b></td>
+                        <td>Defines the threading model for the generated servlet.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>language </b></td>
+                        <td>Defines the programming language used in the JSP page.</td>
+                    </tr>
+                    <tr>
+                        <td><b>session </b></td>
+                        <td>Specifies whether or not the JSP page participates in HTTP sessions</td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <h6>Syntax</h6>
+            <textarea class="statement" rows="0" cols="140" readonly>
+      <%@ page attribute=“value" %>
+      </textarea><br>
+            <h6> Example:</h6>
+            <textarea class="statement" rows="0" cols="140" readonly>
+         <%@ page import=“java.util.*,java.net.*” %>
+      </textarea>
+            <h5>Include Directive
+            </h5>
+            <ul>
+                <li>This inserts a file with text or code in a Jsp file
+                    at translation time, when Jsp is compiled.</li>
+                <li>It is like a cut and paste of the file into JSP.</li>
+                <li>After insertion the Jsp is compiled.</li>
+            </ul><br>
+            <h6>Syntax</h6>
+            <textarea class="statement" rows="0" cols="140" readonly>
+        <% @ include file=“file-name" %>
+      </textarea><br>
+            <h6> Example:</h6>
+            <textarea class="statement" rows="0" cols="140" readonly>
+       <%@ include file=“input.html" %>
+      </textarea>
+            <h5>Taglib Directive</h5>
+            <ul>
+                <li>Allows pages to use custom tags.</li>
+                <li>First an XML document is defined with a set of
+                    custom tags.</li>
+                <li>Then a taglib directive is included in the .jsp
+                    page/file.</li>
+                <li>The location of the XML document is given in the
+                    taglib directive.</li>
+            </ul>
+
+            <h6> Example:</h6>
+            <textarea class="statement" rows="0" cols="140" readonly>
+       <%@ taglib uri=“tagliburi” prefix=“tagprefix” %>
+        </textarea>
+            <p><b>Note:</b>this <span><b> taglib</b></span> is used in JSTL(Jsp Standered Tag Library</p>
+        </div>
+        <div class="introductiontojsp" *ngIf="introductiontojsp">
+            <h1 class="mt-4">Introduction to JSP</h1>
+            <p><b> &#8680;
+                </b> Web application is collection of web resource program generating web page.<br>
+                <b>&#8680;
+                </b> Based on content that is generated there are two types of web resourceprog.
+            </p>
+
+            <ol type="a">
+                <li>Static web resourceprog.</li>
+                <ul>
+                    <li>Generates the static webpages.</li>
+                </ul>
+                <li>Dynamic web resourceprog.</li>
+                <ul>
+                    <li>Generate the dynamic webpages.</li>
+                </ul>
+            </ol>
+            <p>&#8680;
+                Based on the place of execution there are two types of web resource prog.</p>
+            <p>a) Client side web resource prog (eg:- html, javascript).<br>
+                &nbsp; • These programs go to browser window forexecution.<br>
+                b) Server side web resource prog (eg: servlet ,jspprog).<br>
+                &nbsp;• These program execute by residing in theserver
+            </p>
+            <p><b> Note</b>: - Decide whether web resource program is client side or server side based on the place
+                where it executes, not based on the place where it resides.</p>
+            <h5>Client side web Technology :-</h5>
+            (useful to develop client side web resourceprogram/components)
+            <ul>
+
+                <li>Html</li>
+                <li>Javascript</li>
+                <li>Ajex</li>
+                <li>JQuery</li>
+                <li>Angularjs</li>
+                <li>etc...</li>
+            </ul>
+            <h5>Server side web Technologies:-</h5>
+            (Useful to develop server side web resource prog/components)
+            <ul>
+                <li>Servlet (SunMicrosystem)</li>
+                <li>Jsp (SunMicro system)</li>
+                <li>SSJS(Server side java script) (fromNetscape)</li>
+                <li>PHP(fromApache)</li>
+                <li>Asp</li>
+                <li>Asp.net</li>
+                <li>Asp.netmvc</li>
+            </ul>
+            <p>Q:-Why SunMicro system has given JSP even they already got a server side technology called servlet?</p>
+            <p><b>Ans:</b> In the initial day of servlet the Microsoft ASP programmer have not liked servlet even though
+                it is having more features than ASP, because ASP supports tags based programming whereas to work with
+                servlet strong java knowledge isrequired.</p>
+            <p>• To overcome above problem SunMicro system has givena tag based technology called JSP having all the
+                features of servlet to attract aspprogrammers.</p>
+            <h5>Limitations of servlet:-</h5>
+            <ul>
+                <li>Strong java knowledge is required not suitable for non-javaprogrammer placing html code in servlet
+                    is quiet complex and error prone process.</li>
+                <li>In servlet programming the java code business logic (htmlcode) and presentation logic will be
+                    mixedup.</li>
+                <li>Configuration of servlet prog in web.xml ismandatory.</li>
+                <li>Exception handling should be taken care byprogrammer.</li>
+                <li>The modification done in servlet program will be reflectedonly after recompilation of servlet
+                    program and reloading the web application.</li>
+                <li>No implicit objsupport.</li>
+                <li>Learning and applying the servlet is complex.</li>
+            </ul>
+            <p><b>Note</b>: - The object that is created by underlying environment…. And no code is required to access
+                the obj is called implicit obj…..</p>
+            <p><b>Note</b>: - In servlet programming request, response, servletConfigetc.. are container created
+                built-in objs but not the implicit obj because we need to write additional code to access those objs.
+            </p>
+            <p>&#8680;
+                <b>this, super</b> are the implicit objs/reference variables of java application.<br>
+                <p>&#8680;
+                    <b> length, class</b> are the implicit obj properties/member variables of java application.
+                </p>
+                <textarea class="textArea" rows="4" cols="140" readonly>
+       Class c=Test.class;
+               Here “class” (the implicit member variable) creates and returns object of java.lang.Class holding “Test” class data of the object.
+         </textarea>
+                <h5>In java :-</h5>
+                <textarea class="textArea" rows="4" cols="140" readonly>
+           “class” is a oops terminology. “class” is a keyword.
+           “java.lang.Class” is a pre-defined class. “class” is a built in property.
+           
+         </textarea>
+                <h5>Feature of jsp:-</h5>
+                <ul>
+                    <li>Allows <b> tags based</b> rogramming.</li>
+                    <li>Strong java knower is not required, so it is suitable for both java and non-java programmers.
+                    </li>
+                    <li>Gives <b>9 implicit</b> objects.</li>
+                    <li>Allows to <b>separatepresentation logic(html) </b>from business logic
+                        (java code).
+                    </li>
+                    <li>The modification done in jsp will be reflected withoutany
+                        <b>separatepresentation logic(html) </b>web application.
+                    </li>
+                    <li>Configuration of jsp in <b> web.xml</b> file is optional.</li>
+                    <li>Use built in tag and also allows working with third party tag or custom tag.</li>
+                    <li>Every <b>“.jsp”file</b> is called as <span> <b>jsp prog/jsp comp/jsp page/jspfile.</b></span>
+                    </li>
+                    <li>Jsp page runs based onpage <span><b>compilation principle</b></span>i.e. every jsppage will be
+                        converted into an <b>equivalent servletprog</b> .</li>
+                    <li>To execute jsp page <b> jsp container</b>is required. This Container supplies tojsp page
+                        compilerto translate jsp page into equivalent servlet prog and this servlet prog executes with
+                        the support of <span><b>" jsp container + servletcontainer"</b>
+                        </span>.</li>
+                    <li>Every server supplies 1 built-in jsp page compiler as part of its <b> jsp container.</b></li>
+                </ul><br>
+                <h5>What is difference between servlet and jsp ?</h5>
+                <table class="table  table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Servlrt</th>
+                            <th>Jsp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Strong java knowledge is required so suitable for java programmers</td>
+                            <td>Strong java knowledge is not required so
+                                suitable for both java and non-java programmers.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Does not supports tag based programming.</td>
+                            <td>Supports tag based programming.</td>
+                        </tr>
+                        <tr>
+                            <td>Modification will reflect only after
+                                recompletion and reloading.
+                            </td>
+                            <td>Will reflect without recompilation and
+                                reloading.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Does not give implicit objects.</td>
+                            <td>Gives implicit objects.(9)</td>
+                        </tr>
+                        <tr>
+                            <td> Exception handling is mandatory.</td>
+                            <td>Exception handling is optional.</td>
+                        </tr>
+                        <tr>
+                            <td>Makes programmer to mix-up java business logic java code and presentation logic(html
+                                code).
+                            </td>
+                            <td>Allows to separate the logic.</td>
+                        </tr>
+                        <tr>
+                            <td>Configuration of prog in web.xml is mandatory.</td>
+                            <td>It is optional.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><b>Note: - </b>in the initial days programmers have used jsp as complete alternateto servlet.
+                    Butaccording to <span><b>MVC architecture</b></span> it is recommended to use both servlets and jsp
+                    together in applicationdevelopment.</p>
+                <p>&#8680;Jsp page compiler internally uses <span><b>servlet API, jsp API</b></span> while generating
+                    jsp class.</p>
+                <p>&#8680;Jsp API is the extension of servlet API.</p>
+                <p>&#8680;Servlet API will be used in the development of servlet container.</p>
+                <p> &#8680;<b>Jsp container</b> internally uses<span><b> ServletContainer</b></span> so we can say jsp
+                    container is developed based on both jsp API <b>Jsp container</b> and<span><b> servlet
+                            API.</b></span></p>
+                <ul>
+                    <li><b>Servlet api</b>:-javax.servlet, javax.servlet.http,javax.servlet.annotation,
+                        javax.servlet.descriptor.</li>
+                    <li> <b>Jspapi</b>: - javax.servlet.jsp, javax.servlet.jsp.el,javax.servlet.jsp.tagext</li>
+                </ul><br>
+                <h5>In Tomcatsever:-</h5>
+                <p>&#8680;Servlet container name: catalina jarfile : <b>catalina.jar</b><br>
+                    &#8680; Jsp container name: jaspser jar file:<b>jasper.jar</b><br>
+                    &#8680; Servlet api jar file:<b> servlet-api.jar</b><br>
+                    &#8680; Jspapi jar file :<b>jsp-api.jar</b>
+                </p>
+                <p><b>Note: </b>All these entire jar files are available in <span><b>"tomcat_home\lib" </b>
+                    </span>folder.</p>
+                <img src="abhi">
+                <h5>Template text = ordinary text + html</h5>
+                <p>&#8680;Jsp page generate dynamic web page the fixed content of dynamic web page will be generated
+                    through <b>template text</b> and the <span><b> dynamic values</b>
+                    </span> will be generated through java code of scriptlet.</p>
+                <img src="abhi">
+                <textarea class="textArea" rows="4" cols="140" readonly>
+               ===== 
+           </textarea>
+        </div>
+        <div class="jspscopes" *ngIf="jspscopes">
+            <h1 class="mt-4">JSP scopes</h1>
+            <h5> Definition on Scope of JSP Objects</h5>
+            <p>The availability of a JSP object for use from a particular place of the application is defined as the
+                scope of that JSP object.</p>
+            <h5> Kinds</h5>
+
+            <p> Object scope in JSP is segregated into four parts according to their available rang and life time.</p>
+            <ul>
+                <li> Page scope </li>
+                <li> Request scope </li>
+                <li> Session scope </li>
+                <li> Application scope</li>
+            </ul>
+            <h5> Page scope</h5>
+
+            <ul>
+                <li> The JSP object can be accessed only from within the same page where it was created.</li>
+                <li> The default scope for JSP objects created using &#60;jsp:useBean&#62; tag is page.</li>
+                <li>JSP implicit objects out, exception, response, config, pageContext, and page have ‘page’ scope.</li>
+            </ul>
+
+            <h5>Request scope</h5>
+            <ul>
+                <li> A JSP object created using the ‘request’ scope can be accessed from any pages that serves that
+                    request.</li>
+                <li> The JSP object will be bound to the request object.</li>
+                <li> Implicit object request has the ‘request’ scope.</li>
+            </ul>
+
+            <h5>Session scope</h5>
+            <ul>
+                <li>The JSP object is accessible from pages that belong to the same session from where it was created.
+                </li>
+                <li> The JSP object that is created using the session scope is bound to the session object.</li>
+                <li> Implicit object session has the ’session’ scope.</li>
+            </ul>
+
+            <h5>Application scope</h5>
+            <ul>
+                <li>A JSP object created using the ‘application’ scope can be accessed from any pages across the
+                    application.</li>
+                <li>The JSP object is bound to the application object.</li>
+                <li> Implicit object application has the ‘application’ scope.</li>
+            </ul>
+
+            <h5>Operation on Attributes</h5>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <th>Attribute operation method</th>
+                    <th>Annotation</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>public void setAttribute(String name, Object obj) </td>
+                        <td>Set the “name” as the reference of the object “obj”</td>
+                    </tr>
+                    <tr>
+                        <td>public Object getAttribute(String name)</td>
+                        <td>Get the value of attribute “name"</td>
+                    </tr>
+                    <tr>
+                        <td>public void removeAttribute(String name)</td>
+                        <td>Remove the attribute “name"</td>
+                    </tr>
+                    <tr>
+                        <td>public Enumeration getAttributeNames ()</td>
+                        <td>Get all the attributes within the available scope</td>
+                    </tr>
+                    <tr>
+                        <td>public Object getAttribute(String name, int scope) public void setAttribute<br>(String name,
+                            Object object, int scope) public void removeAttribute<br>(String name, int scope) public
+                            Enumeration getAttributeNamesInScope(int scope)</td>
+                        <td>Special method for PageContext.
+                            Used to access attribute ”name” within scope ” scope”.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="actionelement" *ngIf="actionelement">
+            <h1 class="mt-4">Action Elements</h1>
+            <h5>What is Action</h5>
+            <p>JSP actions use constructs in XML syntax to control the behavior of the servlet engine. You can
+                dynamically insert a file, reuse JavaBeans components, forward the user to another page, or
+                generate HTML for the Java plugin.</p>
+            <p>There is only one syntax for the Action element, as it conforms to the XML standard:</p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                <jsp:action_nam e attribute="value" />
+            </textarea><br>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td><b>Syntax</b></td>
+                        <td><b>Purpose</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>jsp:include</td>
+                        <td>Includes a file at the time the page is requested.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:useBean</td>
+                        <td>Finds or instantiates a JavaBean.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:setProperty</td>
+                        <td>Sets the property of a JavaBean.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:getProperty</td>
+                        <td>Inserts the property of a JavaBean into the output.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:forward</td>
+                        <td>Forwards the requester to a new page.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:plugin</td>
+                        <td>Generates browser-specific code that makes an OBJECT or EMBED
+                            tag for the Java plugin.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:element</td>
+                        <td>Defines XML elements dynamically.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:attribute</td>
+                        <td>Defines dynamically defined XML element's attribute.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:body</td>
+                        <td>Defines dynamically defined XML element's body.</td>
+                    </tr>
+                    <tr>
+                        <td>jsp:text</td>
+                        <td>Use to write template text in JSP pages and documents.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5><b>Common Attributes:</b></h5>
+            <p>There are two attributes that are common to all Action elements: the <b>id</b> attribute and the
+                <b>scope</b>
+                attribute.</p>
+            <ul>
+                <li><b>Id attribute:</b> The id attribute uniquely identifies the Action element, and allows the action
+                    to
+                    be referenced inside the JSP page. If the Action creates an instance of an object the id value
+                    can be used to reference it through the implicit object PageContext</li>
+                <li><b>Scope attribute:</b> This attribute identifies the lifecycle of the Action element. The id
+                    attribute
+                    and the scope attribute are directly related, as the scope attribute determines the lifespan of
+                    the object associated with the id. The scope attribute has four possible values: a page, b
+                    request, csession, and d application.</li>
+            </ul>
+            <h5><b>The &#60;jsp:include&#62; Action</b></h5>
+            <p>This action lets you insert files into the page being generated. The syntax looks like this:</p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                <jsp:include page="relative URL" flush="true" />
+            </textarea><br>
+            <p>Unlike the <b>include</b> directive, which inserts the file at the time the JSP page is translated into a
+                servlet, this action inserts the file at the time the page is requested.</p>
+            <p>Following is the list of attributes associated with include action:</p>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td><b>Attribute</b></td>
+                        <td><b>Description</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>page</td>
+                        <td>The relative URL of the page to be included.</td>
+                    </tr>
+                    <tr>
+                        <td>flush</td>
+                        <td>The boolean attribute determines whether the included resource
+                            has its buffer flushed before it is included.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><b>Example:</b></p>
+            <p>Let us define following two files adate.jps and b main.jsp as follows:</p>
+            <p>Following is the content of <b>date.jsp</b> file:</p>
+            <textarea class="actiontags" rows="4" cols="120" readonly>
+                   <p>
+                      Today's date: <%= (new java.util.Date()).toLocaleString()%>
+                   </p>
+            </textarea><br>
+            <p>Here is the content of <b>main.jsp</b> file:</p>
+            <textarea class="actiontags" rows="12" cols="120" readonly>
+                <html>
+                    <head>
+                    <title>The include Action Exam ple</title>
+                    </head>
+                    <body>
+                    <center>
+                    <h2>The include action Exam ple</h2>
+                    <jsp:include page="date.jsp" flush="true" />
+                    </center>
+                    </body>
+                    </html>
+            </textarea><br>
+            <p>Now let us keep all these files in root directory and try to access main.jsp. This would display result
+                something like this:</p>
+            <p><b>Output</b></p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                   Today's date: 12-Sep-2010 14:54:22
+            </textarea><br>
+            <h5><b>The &#60;jsp:useBean &#62; Action</b></h5>
+            <p>The <b>useBean</b> action is quite versatile. It first searches for an existing object utilizing the id
+                and
+                scope variables. If an object is not found, it then tries to create the specified object.</p>
+            <p>The simplest way to load a bean is as follows:</p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                 <jsp:useBean />
+             </textarea><br>
+            <p> Once a bean class is loaded, you can use <b>jsp:setProperty</b> and <b>jsp:getProperty</b> actions to
+                modify
+                and retrieve bean properties.</p>
+            <p>Following is the list of attributes associated with useBean action:</p>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td><b>Attribute</b></td>
+                        <td><b>Description</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>class</td>
+                        <td>Designates the full package name of the bean.</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>Specifies the type of the variable that will refer to the object.</td>
+                    </tr>
+                    <tr>
+                        <td>beanName</td>
+                        <td>Gives the name of the bean as specified by the instantiate method
+                            of the java.beans.Beans class.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Let us discuss about <b>jsp:setProperty</b> and <b>jsp:getProperty</b> actions before giving a valid
+                example
+                related to these actions.</p>
+            <h5><b>The &#60;jsp:setProperty&#62; Action</b></h5>
+            <p>The <b>setProperty</b> action sets the properties of a Bean. The Bean must have been previously
+                defined before this action. There are two basic ways to use the setProperty action:</p>
+            <p>You can use jsp:setProperty after, but outside of, a jsp:useBean element, as below:</p>
+            <textarea class="actiontags" rows="4" cols="120" readonly>
+                <jsp:useBean ... />
+                   ...
+                <jsp:setProperty name="myName" property="someProperty" .../>
+            </textarea><br>
+            <p>In this case, the jsp:setProperty is executed regardless of whether a new bean was instantiated or
+                an existing bean was found.</p>
+            <p>A second context in which jsp:setProperty can appear is inside the body of a jsp:useBean element,
+                as below:</p>
+            <textarea class="actiontags" rows="5" cols="120" readonly>
+                <jsp:useBean ... >
+                    ...
+                    <jsp:setProperty nam e="m yNam e" property="som eProperty" .../>
+                </jsp:useBean>
+            </textarea><br>
+            <p>Here, the jsp:setProperty is executed only if a new object was instantiated, not if an existing one
+                was found.</p>
+            <p>Following is the list of attributes associated with setProperty action:</p>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td><b>Attribute</b></td>
+                        <td><b>Description</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>Designates the bean whose property will be set. The Bean must
+                            have been previously defined.</td>
+                    </tr>
+                    <tr>
+                        <td>property</td>
+                        <td>Indicates the property you want to set. A value of "*" means that all
+                            request parameters whose names match bean property names
+                            will be passed to the appropriate setter methods.</td>
+                    </tr>
+                    <tr>
+                        <td>value</td>
+                        <td>The value that is to be assigned to the given property. The the
+                            parameter's value is null, or the parameter does not exist, the
+                            setProperty action is ignored.</td>
+                    </tr>
+                    <tr>
+                        <td>param</td>
+                        <td>The param attribute is the name of the request parameter whose
+                            value the property is to receive. You can't use both value and
+                            param, but it is permissible to use neither.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5><b>The &#60;jsp:getProperty&#62; Action</b></h5>
+            <p>The <b>getProperty</b> action is used to retrieve the value of a given property and converts it to a
+                string, and finally inserts it into the output.</p>
+            <p>The getProperty action has only two attributes, both of which are required ans simple syntax is as
+                follows:</p>
+            <textarea class="actiontags" rows="5" cols="120" readonly>
+                <jsp:useBean ... />
+                ...
+                <jsp:getProperty nam e="m yNam e" property="som eProperty" .../>
+                    </jsp:useBean>
+            </textarea><br>
+            <p>Following is the list of required attributes associated with setProperty action:</p>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td><b>Attribute</b></td>
+                        <td><b>Description</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>The name of the Bean that has a property to be retrieved. The
+                            Bean must have been previously defined.</td>
+                    </tr>
+                    <tr>
+                        <td>property</td>
+                        <td>The property attribute is the name of the Bean property to be
+                            retrieved.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><b>Example:</b></p>
+            <p>Let us define a test bean which we will use in our example:</p>
+            <textarea class="actiontags" rows="12" cols="120" readonly>
+                /* File: TestBean.java * /
+                package action;
+                public class TestBean {
+                     private String m essage = "No m essage specified";
+                     public String getMessage() {
+                          return(m essage);
+                     }
+                     public void setMessage(String m essage) {
+                         this.m essage = m essage;
+                     }
+                }
+            </textarea><br>
+            <p>Compile above code to generated TestBean.class file and make sure that you copied
+                TestBean.class in C:\apache-tomcat-7.0.2\webapps\WEB-INF\classes\action folder and CLASSPATH
+                variable should also be set to this folder:</p>
+            <p>Now use the following code in main.jsp file which loads the bean and sets/gets a simple String
+                parameter:</p>
+            <textarea class="actiontags" rows="17" cols="120" readonly>
+                    <html>
+                        <head>
+                        <title>Using JavaBeans in JSP</title>
+                        </head>
+                        <body>
+                        <center>
+                        <h2>Using JavaBeans in JSP</h2>
+                        <jsp:useBean />
+                        <jsp:setProperty nam e="test"
+                        property="m essage"
+                        value="Hello JSP..." />
+                        <p>Got m essage....</p>
+                        <jsp:getProperty nam e="test" property="m essage" />
+                        </center>
+                        </body>
+                        </html>
+                </textarea><br>
+            <p>Now try to access main.jsp, it would display following result:</p>
+            <p><b>output</b></p>
+            <textarea class="actiontags" rows="4" cols="120" readonly>
+                    Using JavaBeans in JSP
+                     Got m essage....
+                     Hello JSP...
+                </textarea><br>
+            <h5><b>The &#60;jsp:forward&#62; Action</b></h5>
+            <p>The <b>forward</b> action terminates the action of the current page and forwards the request to another
+                resource such as a static page, another JSP page, or a Java Servlet.</p>
+            <p>The simple syntax of this action is as follows:</p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                    <jsp:forward page="Relative URL" />
+                </textarea><br>
+            <p>Following is the list of required attributes associated with forward action:</p>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td><b>Attribute</b></td>
+                        <td><b>Description</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>page</td>
+                        <td>Should consist of a relative URL of another resource such as a
+                            static page, another JSP page, or a Java Servlet.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><b>Example:</b></p>
+            <p>Let us reuse following two files a date.jps and b main.jsp as follows:</p>
+            <p>Following is the content of date.jsp file:</p>
+            <textarea class="actiontags" rows="4" cols="120" readonly>
+                    <p>
+                        Today's date: <%= (new java.util.Date()).toLocaleString()%>
+                        </p>
+                </textarea><br>
+            <p>Here is the content of main.jsp file:</p>
+            <textarea class="actiontags" rows="12" cols="120" readonly>
+                    <html>
+                        <head>
+                        <title>The include Action Exam ple</title>
+                        </head>
+                        <body>
+                        <center>
+                        <h2>The include action Exam ple</h2>
+                        <jsp:forward page="date.jsp" />
+                        </center>
+                        </body>
+                        </html>
+                </textarea><br>
+            <p>Now let us keep all these files in root directory and try to access main.jsp. This would display result
+                something like as below. Here it discarded content from main page and displayed content from
+                forwarded page only.</p>
+            <p><b>Output</b></p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                    Today's date: 12-Sep-2010 14:54:22
+                </textarea><br>
+            <h5><b>The &#60;jsp:plugin&#62; Action</b></h5>
+            <p>The <b>plugin</b> action is used to insert Java components into a JSP page. It determines the type of
+                browser and inserts the &#60;object&#62; or &#60;embed&#62; tags as needed.</p>
+            <p>If the needed plugin is not present, it downloads the plugin and then executes the Java component.
+                The Java component can be either an Applet or a JavaBean.</p>
+            <p>The plugin action has several attributes that correspond to common HTML tags used to format
+                Java components. The &#60;param&#62; element can also be used to send parameters to the Applet or
+                Bean.</p>
+            <p>Following is the typical syntax of using plugin action:</p>
+            <textarea class="actiontags" rows="9" cols="120" readonly>
+                    <jsp:plugin type="applet" codebase="dirnam e" code="MyApplet.class"
+                    width="60" height="80">
+                    <jsp:param name="fontcolor" value="red" />
+                    <jsp:param name="background" value="black" />
+                    <jsp:fallback>
+                    Unable to initialize Java Plugin
+                    </jsp:fallback>
+                    </jsp:plugin>
+                </textarea><br>
+            <p>You can try this action using some applet if you are interested. A new element, the &#60;fallback&#62;
+                element, can be used to specify an error string to be sent to the user in case the component fails.</p>
+            <h5><b>
+                    The &#60;jsp:element&#62; Action<br>
+                    The &#60;jsp:attribute&#62; Action<br>
+                    The &#60;jsp:body&#62; Action
+                </b></h5>
+            <p>The <b>&#60;jsp:element&#62;</b>,<b>&#60;jsp:attribute&#62;</b> and <b>&#60;jsp:body&#62;</b> actions are
+                used to define XML elements
+                dynamically. The word dynamically is important, because it means that the XML elements can be
+                generated at request time rather than statically at compile time.</p>
+            <p>Following is a simple example to define XML elements dynamically:</p>
+            <textarea class="actiontags" rows="16" cols="120" readonly>
+                    <%@ page language="java" contentType="text/html"%>
+                    <html xmlns="http://www.w3c.org/1999/xhtm l"
+                    xmlns:jsp="http://java.sun.com /JSP/Page">
+                    <head><title>Generate XML Elem ent</title></head>
+                    <body>
+                    <jsp:elem entname="xm lElem ent">
+                    <jsp:attribute name="xm lElem entAttr">
+                    Value for the attribute
+                    </jsp:attribute>
+                    <jsp:body>
+                    Body for XML elem ent
+                    </jsp:body>
+                    </jsp:element>
+                    </body>
+                    </html>
+                </textarea><br>
+            <p>This would produce following HTML code at run time:</p>
+            <textarea class="actiontags" rows="10" cols="120" readonly>
+                    <html xmlns="http://www.w3c.org/1999/xhtm l"
+                    xmlns:jsp="http://java.sun.com /JSP/Page">
+                    <head><title>Generate XML Elem ent</title></head>
+                    <body>
+                    <xmlElem entxmlElem entAttr="Value for the attribute">
+                    Body for XML elem ent
+                    </xmlElement>
+                    </body>
+                    </html>
+                </textarea><br>
+            <h5><b>The &#60;jsp:text&#62; Action</b></h5>
+            <p>The <b>&#60;jsp:text&#62;</b> action can be used to write template text in JSP pages and documents.
+                Following is
+                the simple syntax for this action:</p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                        <jsp:text>Tem plate data</jsp:text>
+                    </textarea><br>
+            <p>The body fo the template cannot contain other elements; it can only contain text and EL
+                expressions Note: ELexpressionsareexplainedinsubsequentchapter. Note that in XML files, you cannot use
+                expressions such as whatever &#62; 0, becausethegreaterthansignsareillegal. Instead, usethegtform,
+                suchas&#123;whatever gt
+                0&#125; or an alternative is to embed the value in a CDATA section.</p>
+            <textarea class="actiontags" rows="2" cols="120" readonly>
+                            <jsp:text><![CDATA[<br>]]></jsp:text>
+                   </textarea><br>
+            <p>If you need to include a DOCTYPE declaration, for instance for XHTML, you must also use the
+                <b>&#60;jsp:text&#62;</b> element as follows:</p>
+            <textarea class="actiontags" rows="12" cols="120" readonly>
+                        <jsp:text><![CDATA[<!DOCTYPE htm l
+                        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                        "DTD/xhtm l1-strict.dtd">]]>
+                        </jsp:text>
+                        <head><title>jsp:text action</title></head>
+                        <body>
+                        <books><book><jsp:text>
+                        Welcom e to JSP Program m ing
+                        </jsp:text></book></books>
+                        </body>
+                        </html>
+                    </textarea><br>
+            <p>Try above example with and without <b>&#60;jsp:text&#62;</b> action.</p>
+
+        </div>
+        <div class="customtagdevelopment" *ngIf="customtagdevelopment">
+            <h1 class="mt-4">Custom Tag Development</h1>
+            <p>A custom tag is a user-defined JSP language element. When a JSP page containing a custom tag is
+                translated into a servlet, the tag is converted to operations on an object called a tag handler. The Web
+                container then invokes those operations when the JSP page's servlet is executed. </p>
+            <p>JSP tag extensions let you create new tags that you can insert directly into a JavaServer Page just as
+                you would the built-in tags you learned about in earlier chapter. The JSP 2.0 specification introduced
+                Simple Tag Handlers for writing these custom tags. </p>
+            <p>To write a customer tab you can simply extend SimpleTagSupport class and override the doTag method, where
+                you can place your code to generate content for the tag. </p>
+            <img src="assets/images/jsp/tag.png">
+            <h5>Create "Hello" Tag:</h5>
+            <p>Consider you want to define a custom tag named &#60;ex:Hello&#62; and you want to use it in the following
+                fashion without a body:
+            </p>
+            <textarea class="customtag" rows="0" cols="140" readonly>
+                &#60;ex:Hello &#47; &#62;
+            </textarea>
+            <p>To create a custom JSP tag, you must first create a Java class that acts as a tag handler. So let us
+                create HelloTag class as follows:
+            </p>
+            <textarea class="customtag" rows="13" cols="140" readonly>
+
+                package com.tutorialspoint;
+                import javax.servlet.jsp.tagext.*; 
+                import javax.servlet.jsp.*; 
+                import java.io.*;
+                public class HelloTag extends SimpleTagSupport {
+                  public void doTag() throws JspException, IOException {    
+                      JspWriter out = getJspContext().getOut();    
+                      out.println("Hello Custom Tag!");  
+                    } 
+                }
+
+            </textarea>
+            <p>Above code has simple coding where doTag method takes the current JspContext object using getJspContext
+                method and uses it to send </p>
+            <p> "Hello Custom Tag!" to the current JspWriter object.</p>
+            <p>Let us compile above class and copy it in a directory available in environment variable CLASSPATH.
+                Finally create following tag library file:
+                &#60;Tomcat-InstallationDirectory&#62;webapps&#92;ROOT&#92;WEB-INF&#92;custom.tld.</p>
+            <textarea class="customtag" rows="13" cols="140" readonly>
+                    <taglib> 
+                        <tlib-version>1.0</tlib-version>  
+                        <jsp-version>2.0</jsp-version>  
+                        <short-name>Example TLD</short-name> 
+                         <tag>   
+                              <name>Hello</name>  
+                              <tag-class>com.tutorialspoint.HelloTag</tag-class>   
+                               <body-content>empty</body-content> 
+                             </tag> 
+                            </taglib>
+                        </textarea>
+            <p>Now it's time to use above defined custom tag Hello in our JSP program as follows</p>
+            <textarea class="customtag" rows="10" cols="140" readonly>
+                            <html>  
+                          <%@ taglib prefix="ex" uri="WEB-INF/custom.tld"%> 
+                                   <head>   
+                                     <title>A sample custom tag</title>  
+                                    </head>
+                            <tbody>  
+                                  <ex:Hello/> 
+                            </tbody> 
+                                </html>
+                                </textarea>
+
+            <p>Try to call above JSP and this should produce following result:</p>
+            <textarea class="customtag" rows="0" cols="140">
+                                    Hello Custom Tag! 
+                                </textarea>
+            <h5>Accessing the Tag Body: </h5>
+            <p>You can include a message in the body of the tag as you have seen with standard tags.
+                Consider you want to define a custom tag named &#60;ex:Hello&#62; and you want to use it in the
+                following fashion with a body:
+            </p>
+            <textarea class="customtag" rows="6" cols="140">
+
+                                    <ex:Hello> 
+                                          This is message body
+                                         </ex:Hello>
+
+                                </textarea>
+            <p>Let us make following changes in above our tag code to process the body of the tag:</p>
+            <textarea class="customtag" rows="15" cols="140">
+
+                                    package com.tutorialspoint;
+                                    import javax.servlet.jsp.tagext.*; 
+                                    import javax.servlet.jsp.*;
+                                 import java.io.*;
+                                 public class HelloTag extends SimpleTagSupport {}
+                                 StringWriter sw = new StringWriter();   
+                                 public void doTag()     
+                                  throws JspException, IOException  
+                                    {      
+                                         getJspBody().invoke(sw);     
+                                          getJspContext().getOut().println(sw.toString());   
+                                         }
+}
+                                </textarea>
+            <p>In this case, the output resulting from the invocation is first captured into a StringWriter before being
+                written to the JspWriter associated with the tag. Now accordingly we need to change TLD file as follows
+            </p>
+            <textarea class="customtag" rows="15" cols="140">
+
+                                    <taglib>  
+                                        <tlib-version>1.0</tlib-version>  
+                                        <jsp-version>2.0</jsp-version> 
+                                         <short-name>Example TLD with Body</short-name> 
+                                          <tag>   
+                                               <name>Hello</name>   
+                                                <tag-class>com.tutorialspoint.HelloTag</tag-class>   
+                                                 <body-content>scriptless</body-content> 
+                                                 </tag>
+                                                 </taglib>
+
+                                </textarea>
+            <p>Now let us call above tag with proper body as follows:</p>
+            <textarea class="customtag" rows="15" cols="140">
+
+                                    <%@ taglib prefix="ex" uri="WEB-INF/custom.tld"%> 
+                                    <html> 
+                                         <head>   
+                                              <title>A sample custom tag</title> 
+                                             </head> 
+                                              <body>   
+                                                   <ex:Hello>       
+                                                        This is message body  
+                                                      </ex:Hello>
+                                                    </body>
+                                                     </html>
+
+                                </textarea>
+            <p>This will produce following result:
+            </p>
+            <textarea class="customtag" rows="1" cols="140">This is message body</textarea>
+            <h5>Custom Tag Attributes:</h5>
+            <p>You can use various attributes along with your custom tags. To accept an attribute value, a custom tag
+                class needs to implement setter methods, identical to JavaBean setter methods as shown below:
+            </p>
+            <textarea class="customtag" rows="20" cols="140">
+ package com
+import javax.servlet.jsp.tagext.*; 
+import javax.servlet.jsp.*; 
+import java.io.*;
+public class HelloTag extends SimpleTagSupport {
+   private String message;
+   public void setMessage(String msg) {      this.message = msg;   }
+   StringWriter sw = new StringWriter();
+   public void doTag()      throws JspException, IOException    {     
+         if (message != null) {         
+              /* Use message from attribute */    
+         JspWriter out = getJspContext().getOut();         
+          out.println( message );       }     
+            else {        
+              
+            /* use message from the body */    
+                  getJspBody().invoke(sw);         
+     getJspContext().getOut().println(sw.toString());       } 
+                                </textarea>
+            <p>The attribute's name is "message", so the setter method is setMessage. Now let us add this attribute in
+                TLD file using &#60;attribute&#62; element as follows:</p>
+            <textarea class="customtag" rows="15" cols="140">
+
+                                    <taglib> 
+                                         <tlib-version>1.0</tlib-version> 
+                                          <jsp-version>2.0</jsp-version> 
+                                           <short-name>Example TLD with Body</short-name>  
+                                           <tag>    <name>Hello</name>   
+                                             <tag-class>com.tutorialspoint.HelloTag</tag-class> 
+                                                <body-content>scriptless</body-content>   
+                                                 <attribute>      
+                                                      <name>message</name>   
+                                                     </attribute> 
+                                                     </tag>
+                                                     </taglib>
+                                </textarea>
+            <p>Now let us try following JSP with message attribute as follows:
+            </p>
+
+
+
+            <textarea class="customtag" rows="15" cols="140" readonly>
+
+                                    <html> 
+                                        <%@ taglib prefix="ex" uri="WEB-INF/custom.tld"%>
+                                         <head>  
+                                               <title>A sample custom tag</title> 
+                                             </head> 
+                                              <body>   
+                                                   <ex:Hello message="This is custom tag" />  
+                                                </body>
+                                                 </html>
+
+                                </textarea>
+            <p>This will produce following result:</p>
+            <textarea class="customtag" rows="1" cols="140" readonly>
+                                    This is custom tag
+                                </textarea>
+            <p>Hope above example makes sense for you. It would be worth to note that you can include following
+                properties for an attribute:</p>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <th>Property</th>
+                    <th>Purpose</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>The name element defines the name of an attribute. Each attribute name must be unique for a
+                            particular tag. </td>
+                    </tr>
+                    <tr>
+                        <td>required</td>
+                        <td>This specifies if this attribute is required or optional. It would be false for optional.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>rtexprvalue</td>
+                        <td>Declares if a runtime expression value for a tag attribute is valid.</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>Defines the Java class-type of this attribute. By default it is assumed as String</td>
+                    </tr>
+                    <tr>
+                        <td>description</td>
+                        <td>Informational description can be provided.</td>
+                    </tr>
+                    <tr>
+                        <td>fragment</td>
+                        <td>Declares if this attribute value should be treated as a JspFragment.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Following is the example to specify properties related to an attribute:</p>
+            <textarea class="customtag" rows="10" cols="140">
+
+                            .....    
+                            <attribute>    
+                                  <name>attribute_name</name> 
+                                       <required>false</required>   
+                                          <type>java.util.Date</type>   
+                                             <fragment>false</fragment>  
+                                              </attribute>
+                                               .....
+                           </textarea>
+            <p>If you are using two attributes then you can modify your TLD as follows:</p>
+            <textarea class="customtag" rows="15" cols="140">
+
+                            ..... 
+                               <attribute>  
+                                       <name>attribute_name1</name>  
+                                           <required>false</required>     
+                                            <type>java.util.Boolean</type>     
+                                             <fragment>false</fragment>  
+                                              </attribute>   
+                                               <attribute>   
+                                                      <name>attribute_name2</name>     
+                                                       <required>true</required>   
+                                                          <type>java.util.Date</type>   
+                                                         </attribute> 
+                           </textarea>
+        </div>
+        <div class="errorhandlinginajsp" *ngIf="errorhandlinginajsp">
+            <h1 class="mt-4">Error Handling in a JSP</h1>
+            <div>
+                <h5>errorPage:-</h5>
+                <p>The page that executes only when exception is raised in other jsp pages is called error page. This is
+                    useful to display non-technical guiding messages on the browser when exception is raised.</p>
+                <p>“errorpage” attribute can be used to specify that error page in any jsp page.</p>
+                <p><b>Example:</b></p>
+                <textarea class="errorpage" rows="5" cols="120">
+                    <%@page errorPage=”err.jsp” %>
+                       <%……….. 
+                       …………//code that may raise exception
+                    %> 
+                </textarea><br>
+                <h5>isErrorPage:-</h5>
+                <p>Makes page compiler, jsp container to take the current jsp page as error page. This page gets one
+                    extra implicit object called “exception” to display exception related details.</p>
+                <p><b>Example:</b></p>
+                <p><b>Err.jsp</b></p>
+                <textarea class="errorpage" rows="5" cols="120">
+                    <%@page isErrorPage=”true” %>
+                     <%=exception.getMessage();%>
+                </textarea><br>
+                <p><b>Note:-</b> This implicit object “exception “ is visible only in error page.</p>
+
+
+                <h4>Exception handling in jsp Or error page configuration in jsp:-</h4>
+                <p><b>Note:</b> Even though JES takes care of exception handling it display technical, ugly message on
+                    browser window when exception raised.</p>
+                <p>There are two ways to perform erropage configuration in jsp.</p>
+                <h5>Local Error page configuration:-</h5>
+                <ul>
+                    <li>It is specific to one jsp program/page. Use “erroPage,isErrorPage”
+                        attribute of &#60;&#37;@page &#37;&#62; for this.
+                    </li>
+                </ul>
+                <h5>Global error configuration:-</h5>
+                <ul>
+                    <li>Common for all jsp program/pages of web application use &#60;error- page&#62; tag of web.xml
+                        file.</li>
+                </ul>
+                <img src="assets/images/jsp/globleerror.png" alt="GlobleError" class="globleerror" /><br><br>
+                <p><b>Main.jsp</b></p>
+                <textarea class="errorpage" rows="5" cols="120">
+                    <%@page errorPage="err.jsp" %><br>
+                    <% int a=Integer.parseInt("a10"); %><br>
+                     Value :<%=a %>                           
+                </textarea><br>
+                <p><b>err.jsp</b></p>
+                <textarea class="errorpage" rows="5" cols="120">
+                    <%@page isErrorPage="true" %>
+                    <b> internal Problem . Try again !!!!</b> <br>
+                    Message : <%=exception.getMessage() %>                        
+                </textarea><br>
+                <p>request url: localhost:3030/JspApp3/Main.jsp</p>
+                <p>We can take html page as error page but it is not recommended to use because it does not allow using
+                    the implicit object “exception”.</p>
+                <P>The above errorPage configuration cannot be uses for servlet programming for that we need to go for
+                    rd.forward() based error servlet configuration.</P>
+                <p>Displaying non-technical guiding messages when IRCTC website gets technical problem in the middle of
+                    utilization. Like network failure and database crashed.</p>
+                <h5>Global Error Page Configuration:-</h5>
+                <p>This global error page will respond for all the exceptions that are raised in multiple jsp pages of a
+                    jsp page of a web application. Use &#60;error- page&#62; tag web.xml file.</p>
+                <textarea class="errorpage" rows="7" cols="120">
+                    JspApp4 
+                    |----------------------->WEB-INF
+                    |------->Main1.jsp         |------->web.xml
+                    |------->Main2.jsp 
+                    |------->error.jsp                       
+                </textarea><br>
+                <textarea class="errorpage" rows="7" cols="120">
+                    <web-inf>
+                       <error-page> 
+                          <exception-type>java.lang.Exception</exception-type> 
+                          <location>/err.jsp</location> 
+                      </error-page>//error page configuration for any exception raised in jsp 
+                   </web-inf>                      
+                </textarea><br>
+                <p><b>error.jsp</b></p>
+                <textarea class="errorpage" rows="5" cols="120">
+                    <%@page isErrorPage="true"%> 
+                    <font color='red'>Internal problem. Try again</font>
+                    <%=exception.getMessage()%>                      
+                </textarea><br>
+                <p><b>Main1.jsp</b></p>
+                <textarea class="errorpage" rows="5" cols="120">
+                    <b>from Main1</b> 
+                    <%int a=Integer.parseInt("a10")%> 
+                    Value=<%=a%>                     
+                </textarea><br>
+                <p><b>Main2.jsp</b></p>
+                <textarea class="errorpage" rows="5" cols="120">
+                    <b>From Main2</b>
+                     <%java.util.Date d=null;
+                      int month=d.getMonth();%>
+                      current month is: <%=month%>                    
+                </textarea><br><br>
+                <p>Resource url: http://localhost:3030/jspApp4/Main1.jsp</p>
+                <p><b>Note:</b> we can place multiple &#60;error- page&#62; tags in web.xml file to configure multiple
+                    error pages for multiple exception raised in the multiple jsp page of jsp application.</p>
+                <p>If we configure local and global error page for certain main jsp program then local error page will
+                    be executed when an exception is raised in jsp page.</p>
+            </div>
+        </div>
+        <div class="jstltag" *ngIf="jstltag">
+            <h1 class="mt-4">JSTL</h1>
+            <h1 class="mt-4">JSTL(jsp standard tag library)</h1>
+            <ul>
+                <li>
+                    Writing java code in jsp is not industry standard, but built in tags are not sufficient,
+                    custom tags development are very complex.
+                </li>
+                <li> El is having limited scope of utilization in order to all these problems we can use JSTL.
+                </li>
+                <li>
+                    JSTL tags are designed by SunMicro system as specification but all servers vendors are
+                    providing the implementation in their own ways, so we can use all JSTL tags in a
+                    common ways in our jsp pages……
+                </li>
+                <li>
+                    If you work with JSTL tag write from variable declaration to database connectivity and
+                    formatting of data can be done through tags.
+                </li>
+                <li>Jstl is providing 5 jsp tag libraries having set of tags in each tag libraries with tld files .
+                    They are...
+                </li>
+            </ul>
+            <ul style="list-style-type:square;">
+                <li>Core:- For Basic operations like variables decl, conditions,……</li>
+                <li>SQL ;- For DB interactions</li>
+                <li>  XML :- for xml processing</li>
+                <li>Formatting : to Enable I18n (data formatting, number formatting )</li>
+                <li>Functions: TO manipulate Strings.</li>
+                <li>Every jstl tag library is identified with its fixed Uri which can be collected
+                    from list</li>
+                <li>Core->c.tld->http://java.sun.com/jsp/jstl/core</li>
+                <li>SQL->sql.tld->/sql</li>
+                <li>Xml->x.tld->/xml</li>
+                <li>Formatting->fmt.tld->/fmt</li>
+                <li>Functions->fn.tld->/fn</li>
+                <li>All these tag liberties related tag handler classes, tld file and etc.</li>
+                <li>All these tag liberties related tag handler classes, tld file and etc.</li>
+                <li> Are available in every server in the form of jar file…</li>
+                <li> They jstl.jar, standard.jar (Get form Tomcat installation). </li>
+            </ul>
+            <h3 class="mt-4">JSTL core Tag Library:-</h3>
+            <ul>
+                <li>Given for basic operation to be done using tags like variable Declaration, conditions,
+                    iterations and etc……</li>
+                <li>c:out----……> like expression tag ( to display data).</li>
+                <li>c:set ----……> to declare variable with value in a scope.</li>
+                <li>c:remove----.> to remove variable from a scope…</li>
+            </ul>
+            <h5> JSTLAPP-1</h5>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;|---->webcontent</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->Test.jsp</p>
+            <p>Jars: jstl.jar, standard.jar….(deployment and assembly)</p>
+            <textarea class="Symboli" rows="8" cols="140" readonly>
+%@taglib uri="http://java.sun.com/jsp/jstl/core"
+prefix="c"%>
+<c:set var="msg" value="hello" scope="session"/> //”msg” is variable name “hello” is
+value and “session” is scope “el” representing variable name
+Message: <c:out value="${msg}"/>
+<c:remove var="msg" scope="session"/>
+Message:<c:out value="${msg}"/> 
+                </textarea>
+            <textarea class="Symboli" rows="8" cols="140" readonly>
+C:if--->for if condition
+C:forEach---> to iteration
+C:forTokens>--->for String tokenization
+<c:choose>, <c:when> ---> for switch case.
+<c:catch> --->for exception handling
+            </textarea>
+            <textarea class="Symboli" rows="8" cols="140" readonly>
+%@taglib uri="http://java.sun.com/jsp/jstl/core"
+prefix="c"%>
+<c:catch var="e" >// here raised exception is stored in “e”
+ <jsp:scriptlet>
+ int a=Integer.parseInt("10");
+ </jsp:scriptlet>                                      
+ </textarea>
+            <textarea class="Symboli" rows="4" cols="140" readonly>
+    </c:catch>
+    <c:out value="${e}"/>                
+    </textarea>
+            <p>c:import> ----- to import the content of destination resource to the source. (it is like </p>
+            <p> @include</p>
+            <p>c:url -----> to define url to use in url tag</p>
+            <textarea class="Symboli" rows="8" cols="140" readonly>
+    %@taglib uri="http://java.sun.com/jsp/jstl/core"
+    prefix="c"%>
+    From Main page:-
+    <c:import url="abc.html"/> <!-gets abc.html file's output ocntent->
+    href="<c:url value="http://localhost:3030/JSTLApp1/abc.html/>"> go                                     
+</textarea>
+            <p>c:redirect -> performs send redirection by using response.sendRedirect(-) method.
+            </p>
+            <textarea class="Symboli" rows="5" cols="140" readonly>
+%@taglib uri="http://java.sun.com/jsp/jstl/core"
+prefix="c"%>
+<c:redirect rul="https://www.google.com"/>
+</textarea>
+            <h6>SQL:-</h6>
+            <ul>
+                <li> Here the tags given for DB interaction , to interact with DB s/w and to amaniputlate DB data…</li>
+                <li>sql:setDataSource -> to establish the connection</li>
+                <li>sql:query to execute the select query.
+                <li>sql:update to execute the non-select query.
+                <li>sql:param to set param (?) value to Query.
+                <li>sql: transaction->sql:update tag should be uased under this tag.
+                <li>sql:dataParam->to date values to query params.
+            </ul>
+            <p>Jstl sql tag library is not really popular in real time because in real time jsp will be used
+                in the view layer(a/c to mvc2 architecture) and persistence logic is not required in the
+                view layer. </p>
+            <h5>Formatting tag library:- </h5>
+            <p>This tags are given to format data, number, label, according to local supporting according to
+                internalization (i18n). </p>
+            <p>Local means language +country</p>
+            <ul>
+                <li>Eg:- en-us</li>
+                <li>Fr-FR</li>
+                <li>De-DE</li>
+                <li>Hi-IN ( hindhin as it specaks in india)</li>
+            </ul>
+            <p>Making our application working for diff locals is called endabling I18n. Due to this our app
+                works for different customers of diff lcaes.</p>
+            <p>The formatting tags library tags are: </p>
+            <ul>
+                <li>
+                    fmt:setLocal ->poings to one local</li>
+                <li>fmt:setBundle -> points to properties file (bundle file)</li>
+                <li>fmt:message -> TO display message according to label</li>
+                <li>fmt:formatNumber To format number</li>
+                <li>fmt:formatData -> to format data End etc…..</li>
+            </ul>
+            <h5>jstlApp2</h5>
+            <p> |----->java resources</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|----->src</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----->myfile.properites(base file)
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----->myfile_de_DE.properties(for Germany)
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----->myfile_fr_FR.Properties (for French)
+            </p>
+            <p>|----->web content
+            </p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;|----->Test
+            </p>
+            <p>Note: - The base file name in all properties file must be same .
+                The keys in all properties file are must match and u can gather values by using </p>
+            <p>Example:-</p>
+            <textarea class="Symboli" rows="10" cols="140" readonly>
+        MyFile.properties:-
+        wismessage =”Good morning”.
+        Myfile_fr_Fr.proerties:-
+         Wishmessage=”some this called “
+        TestFormate.jsp
+        Uri= ………………………./core
+        -----------------------/fmt       
+    </textarea>
+        </div>
+        <div class="expressionlanguge" *ngIf="expressionlanguge">
+            <h1 class="mt-4">Expression Language</h1>
+            <hr>
+            <p>Expression Language &#40;EL&#41; is used to extend the “coding capability” of a JSP, thereby reducing the
+                requirement for Java-scriptlets.</p>
+            <p> You reach a higher level of abstraction</p>
+            <h5>Lane Syntax
+            </h5>
+            <textarea class=literals rows="1" cols="140" readonly>
+            ${expr}        
+          </textarea>
+
+            <p>expr stands for a valid expression
+            </p>
+            <h1>Valid Expression: </h1>
+            <ul>
+                <li> Literals</li>
+                <li> Operators</li>
+                <li> Variables &#40;object references&#41; </li>
+                <li> Function call</li>
+            </ul>
+            <h4>Literals</h4>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Literals</th>
+                        <th>Literal values </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Boolean</td>
+                        <td>true and false</td>
+                    </tr>
+                    <tr>
+                        <td>Integer</td>
+                        <td>Any positive or negative number e.g, 24, -45, 567
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Floating</td>
+                        <td>Any positive or negative floating point numbers e.g, -1.8E-45, 4.567 </td>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>Any string delimited by single or double quotes.</td>
+                    </tr>
+                    <tr>
+                        <td>Null</td>
+                        <td>null</td>
+                    </tr>
+                </tbody>
+            </table>
+            <textarea class=literals rows="1" cols="140" readonly>
+                ${false} <%-- evaluates to false --%> ${3*8)         
+          </textarea>
+            <p><b>
+                    <h5>Operator</h5>
+                </b></p>
+            <table class="table table-honer table-bordered">
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arithmetic</td>
+                        <td>+, - (binary), *, /, div, %, mod, - (unary).</td>
+                    </tr>
+                    <tr>
+                        <td>Logical</td>
+                        <td>and, &&, or, ||, !, not.</td>
+                    </tr>
+                    <tr>
+                        <td>Relational</td>
+                        <td>==, eq, !=, ne, <, lt,>, gt, <=, le,>=.</td>
+                    </tr>
+                    <tr>
+                        <td>Empty</td>
+                        <td>used to determine if a value is null or empty.</td>
+                    </tr>
+                    <tr>
+                        <td>Conditional</td>
+                        <td>A ? B : C. Evaluate B or C, depending on the result of the evaluation of A.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <textarea class=literals rows="1" cols="140" readonly>
+            ${ (6 * 5) + 5 } <%-- evaluates to 35 --%>      ${empty name} 
+        
+      </textarea>
+            <h5>Implicit Object </h5>
+            <table class="table table-hover table-bordered">
+
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>DefinitionTerm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>pageContext</td>
+                        <td>used to access the JSP implicit objects such as request, response, session, out,
+                            servletContext etc. &#36;&#123;pageContext.response&#125; evaluates to the response object
+                            for the page.</td>
+                    </tr>
+                    <tr>
+                        <td>param</td>
+                        <td>maps a request parameter name to a single String parameter value, &#36;&#40;param.name&#41;
+                            is equivalent to request.getParameter &#40;name&#41;.</td>
+                    </tr>
+
+                    <tr>
+                        <td>paramValues</td>
+                        <td>maps a request parameter name to an array of values, &#36;&#123;paramvalues.name&#41; is
+                            equivalent to request.getParamterValues&#40;name&#41;.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>header</td>
+                        <td>maps a request header name to a single String header value. &#36;&#123;header.name&#125; is
+                            equivalent to request.getHeader&#40;name&#41;.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>headerValues</td>
+                        <td>maps a request header name to an array of values . &#36;&#123;headerValues.name&#125; is
+                            equivalent to request.getHeaderValues&#40;name&#41;.</td>
+                    </tr>
+                    <tr>
+                        <td>cookie</td>
+                        <td>maps cookie names to a single cookie objectcookie. </td>
+                    </tr>
+                    <tr>
+                        <td>initParam</td>
+                        <td>maps a context initialization parameter name to a single value.
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>pageScope</td>
+                        <td>maps page-scoped variable names to their valuespageScope.
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>requestScope</td>
+                        <td>maps request-scoped variable names to their valuesrequestScope. </td>
+
+                    </tr>
+                    <tr>
+                        <td>sessionScope</td>
+                        <td>maps session-scoped variable names to their values.</td>
+
+                    </tr>
+                    <tr>
+                        <td>applicationScope</td>
+                        <td>maps application-scoped variable names to their values.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,171 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a (click)="CSSHome()" class="list-group-item list-group-item-action bg-light">CSS Home</a>
+            <a (click)="CSSIntroduction()" class="list-group-item list-group-item-action bg-light">CSS Introduction</a>
+            <a (click)="CSSSyntax()" class="list-group-item list-group-item-action bg-light">CSS Syntax</a>
+            <a (click)="CSSSelectors()" class="list-group-item list-group-item-action bg-light">CSS Selectors</a>
+            <a (click)="HowtoAddCSS()" class="list-group-item list-group-item-action bg-light"> How To Add CSS</a>
+            <a (click)="CSSColors()" class="list-group-item list-group-item-action bg-light">CSS Colors</a>
+            <a (click)="CSSBackgrounds()" class="list-group-item list-group-item-action bg-light">CSS Backgrounds</a>
+            <a (click)="CSSBorders()" class="list-group-item list-group-item-action bg-light">CSS Borders</a>
+            <a (click)="CSSMargins()" class="list-group-item list-group-item-action bg-light">CSS Margins</a>
+            <a (click)="CSSPadding()" class="list-group-item list-group-item-action bg-light">CSS Padding</a>
+            <a (click)="CSSHeightandWidth()" class="list-group-item list-group-item-action bg-light">CSS Height and Width</a>
+            <a (click)="CSSBoxModel()" class="list-group-item list-group-item-action bg-light">CSS Box Model</a>
+            <a (click)="CSSOutline()" class="list-group-item list-group-item-action bg-light">CSS Outline</a>
+            <a (click)="CSSText()" class="list-group-item list-group-item-action bg-light">CSS Text</a>
+            <a (click)="CSSFonts()" class="list-group-item list-group-item-action bg-light">CSS Fonts</a>
+            <a (click)="CSSIcons()" class="list-group-item list-group-item-action bg-light">CSS Icons</a>
+            <a (click)="CSSLinks()" class="list-group-item list-group-item-action bg-light">CSS Links</a>
+            <a (click)="CSSLists()" class="list-group-item list-group-item-action bg-light">CSS Lists</a>
+            <a (click)="CSSTables()" class="list-group-item list-group-item-action bg-light">CSS Tables</a>
+            <a (click)="CSSDisplay()" class="list-group-item list-group-item-action bg-light">CSS Display</a>
+            <a (click)="CSSMaxWidth()" class="list-group-item list-group-item-action bg-light">CSS Max-Width</a>
+            <a (click)="CSSPosition()" class="list-group-item list-group-item-action bg-light">CSS Position</a>
+            <a (click)="CSSOverflow()" class="list-group-item list-group-item-action bg-light">CSS Overflow</a>
+            <a (click)="CSSFloat()" class="list-group-item list-group-item-action bg-light">CSS Float</a>
+            <a (click)="CSSInlineBlocks()" class="list-group-item list-group-item-action bg-light">CSS Inline-Block</a>
+            <a (click)="CSSAlign()" class="list-group-item list-group-item-action bg-light">CSS Align</a>
+            <a (click)="CSSCombinators()" class="list-group-item list-group-item-action bg-light">CSS Combinators</a>
+            <a (click)="CSSPseudoclasses()" class="list-group-item list-group-item-action bg-light">CSS Pseudo-classes</a>
+            <a (click)="CSSPseudelements()"class="list-group-item list-group-item-action bg-light">CSS Pseudo-elements</a>
+            <a (click)="CSSOpacity()" class="list-group-item list-group-item-action bg-light">CSS Opacity</a>
+            <a (click)="CSSNavigationBar()" class="list-group-item list-group-item-action bg-light">CSS Navigation Bar</a>
+            <a (click)="CSSDropdowns()" class="list-group-item list-group-item-action bg-light">CSS Dropdowns</a>
+            <a (click)="CSSImageGallery()" class="list-group-item list-group-item-action bg-light">CSS Image Gallery</a>
+            <a (click)="CSSImageSprites()" class="list-group-item list-group-item-action bg-light">CSS Image Sprites</a>
+            <a (click)="CSSAttributeSelectors()" class="list-group-item list-group-item-action bg-light">CSS Attribute Selectors</a>
+            <a (click)="CSSForms()" class="list-group-item list-group-item-action bg-light">CSS Forms</a>
+            <a (click)="CSSCounters()" class="list-group-item list-group-item-action bg-light">CSS Counters</a>
+            <a (click)="CSSWebsiteLayout()" class="list-group-item list-group-item-action bg-light">CSS Website Layout</a>
+            <a (click)="CSSUnits()" class="list-group-item list-group-item-action bg-light">CSS Units</a>
+            <a (click)="CSSSpecificity()" class="list-group-item list-group-item-action bg-light">CSS Specificity</a>
+            
+        </div>
+    </div>
+    <div class="container-fluid">
+       <div class="CSSHomes" *ngIf="CSSHomes">
+            <h1 class="mt-4">CSS HOME</h1>
+        </div>
+        <div class="CSSIntroductions" *ngIf="CSSIntroductions">
+            <h1 class="mt-4">CSS INTRODUCTION</h1>
+        </div>
+        <div class="CSSSyntaxs" *ngIf="CSSSyntaxs">
+            <h1 class="mt-4">CSS SYNTAX</h1>
+        </div>
+        <div class="CSSSelector" *ngIf="CSSSelector">
+            <h1 class="mt-4">CSS SELECTORS</h1>
+        </div>
+        <div class=" HowToAddCSSs" *ngIf=" HowToAddCSSs">
+            <h1 class="mt-4"> How To Add CSS</h1>
+        </div>
+        <div class="CSSColor" *ngIf="CSSColor">
+            <h1 class="mt-4">CSS COLORS</h1>
+        </div>
+        <div class="CSSBackground" *ngIf="CSSBackground">
+            <h1 class="mt-4">CSS BACKGROUNDS</h1>
+        </div>
+        <div class="CSSBorder" *ngIf="CSSBorder">
+            <h1 class="mt-4">CSS BORDERS</h1>
+        </div>
+        <div class="CSSMargin" *ngIf="CSSMargin">
+            <h1 class="mt-4">CSS MARGINS</h1>
+        </div>
+        <div class="CSSPaddings" *ngIf="CSSPaddings">
+            <h1 class="mt-4">CSS PADDINGS</h1>
+        </div>
+        <div class="CSSHeights" *ngIf="CSSHeights">
+            <h1 class="mt-4">CSS HEIGHT/WIDTH</h1>
+        </div>
+        <div class="CSSBoxModels" *ngIf="CSSBoxModels">
+            <h1 class="mt-4">CSS BOX MODELS</h1>
+        </div>
+        <div class="CSSOutlines" *ngIf="CSSOutlines">
+            <h1 class="mt-4">CSS OUTLINE</h1>
+        </div>
+        <div class="CSSTexts" *ngIf="CSSTexts">
+            <h1 class="mt-4">CSS TEXT</h1>
+        </div>
+        <div class="CSSFont" *ngIf="CSSFont">
+            <h1 class="mt-4">CSS FONTS</h1>
+        </div>
+        <div class="CSSIcon" *ngIf="CSSIcon">
+            <h1 class="mt-4">CSS ICONS</h1>
+        </div>
+        <div class="CSSLink" *ngIf="CSSLink">
+            <h1 class="mt-4">CSS LINKS</h1>
+        </div>
+        <div class="CSSList" *ngIf="CSSList">
+            <h1 class="mt-4">CSS LISTS</h1>
+        </div>
+        <div class="CSSTable" *ngIf="CSSTable">
+            <h1 class="mt-4">CSS TABLES</h1>
+        </div>
+        <div class="CSSDisplays" *ngIf="CSSDisplays">
+            <h1 class="mt-4">CSS DISPLAY</h1>
+        </div>
+        <div class="CSSMaxWidths" *ngIf="CSSMaxWidths">
+            <h1 class="mt-4">CSS MAX-WIDTH</h1>
+        </div>
+        <div class="CSSPositions" *ngIf="CSSPositions">
+            <h1 class="mt-4">CSS POSITION</h1>
+        </div>
+        <div class="CSSOverflows" *ngIf="CSSOverflows">
+            <h1 class="mt-4">CSS OVERFLOW</h1>
+        </div>
+        <div class="CSSFloats" *ngIf="CSSFloats">
+            <h1 class="mt-4">CSS FLOAT</h1>
+        </div>
+        <div class="CSSInlineBlocks" *ngIf="CSSInlineBlock">
+            <h1 class="mt-4">CSS INLINE-BLOCKS</h1>
+        </div>
+        <div class="CSSAligns" *ngIf="CSSAligns">
+            <h1 class="mt-4">CSS ALIGN</h1>
+        </div>
+        <div class="CSSCombinator" *ngIf="CSSCombinator">
+            <h1 class="mt-4">CSS COMBINATORS</h1>
+        </div>
+        <div class="CSSPseudoclasse" *ngIf="CSSPseudoclasse">
+            <h1 class="mt-4">CSS PSEUDO-CLASSES</h1>
+        </div>
+        <div class="CSSPseudoelement" *ngIf="CSSPseudoelement">
+            <h1 class="mt-4">CSS PSEUDO-ELEMENT</h1>
+        </div>
+        <div class="CSSOpacitys" *ngIf="CSSOpacitys">
+            <h1 class="mt-4">CSS OPACITY</h1>
+        </div>
+        <div class="CSSNavigationBars" *ngIf="CSSNavigationBars">
+            <h1 class="mt-4">CSS NAVIGATION BAR</h1>
+        </div>
+        <div class="CSSDropdown" *ngIf="CSSDropdown">
+            <h1 class="mt-4">CSS DROUPDOWNS</h1>
+        </div>
+        <div class="CSSImageGallerys" *ngIf="CSSImageGallerys">
+            <h1 class="mt-4">CSS IMAGE GALLERY</h1>
+        </div>
+        <div class="CSSImageSprite" *ngIf="CSSImageSprite">
+            <h1 class="mt-4">CSS IMAGE SPRITES</h1>
+        </div>
+        <div class="CSSAttributeSelector" *ngIf="CSSAttributeSelector">
+            <h1 class="mt-4">CSS ATTRIBUTE SELECTORS</h1>
+        </div>
+        <div class="CSSForm" *ngIf="CSSForm">
+            <h1 class="mt-4">CSS FORMS</h1>
+        </div>
+        <div class="CSSCounter" *ngIf="CSSCounter">
+            <h1 class="mt-4">CSS COUNTERS</h1>
+        </div>
+        <div class="CSSWebsites" *ngIf="CSSWebsites">
+            <h1 class="mt-4">CSS WEBSITES LAYOUTS</h1>
+        </div>
+        <div class="CSSUnit" *ngIf="CSSUnit">
+            <h1 class="mt-4">CSS UNITS</h1>
+        </div>
+        <div class="CSSSpecificitys" *ngIf="CSSSpecificitys">
+            <h1 class="mt-4">CSS SPECIFICITY</h1>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

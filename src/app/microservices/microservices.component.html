@@ -1,0 +1,324 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+           <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#objectivescourse"
+                        class="list-group-item list-group-item-action bg-light">Objectives of the Course<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="objectivescourse">
+                        <li><a (click)="microservicesArchitecture()"
+                                class="list-group-item list-group-item-action bg-light">Complete Understanding of the
+                                Microservices  Architecture
+                            </a></li>
+                        <li><a (click)="microservicesModules()"
+                                class="list-group-item list-group-item-action bg-light">Able to understand the
+                                development of sample microservices modules
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#prerequisites"
+                        class="list-group-item list-group-item-action bg-light">Pre-Requisites of the Course<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span> &nbsp;&nbsp;&nbsp;</a>
+                    <ul class="sub-menu collapse list-group" id="prerequisites">
+                        <li><a (click)="javaProgramming()" class="list-group-item list-group-item-action bg-light">Java
+                                Programming
+                            </a>
+                        </li>
+                        <li><a (click)="knowledgeSpringFramework()"
+                                class="list-group-item list-group-item-action bg-light">Knowledge Spring Framework
+                            </a></li>
+                        <li><a (click)="basicKnowledgeonMaven()"
+                                class="list-group-item list-group-item-action bg-light">Basic Knowledge on Maven
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#microservicescourse"
+                        class="list-group-item list-group-item-action bg-light">MicroServices Course Content<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span> &nbsp;</a>
+
+                    <ul class="sub-menu collapse list-group" id="microservicescourse">
+                        <li><a (click)="evolutionOfMicroServices()"
+                                class="list-group-item list-group-item-action bg-light">Evolution Of MicroServices</a>
+                        </li>
+                        <li><a (click)="whatareMicroServices()"
+                                class="list-group-item list-group-item-action bg-light">What are MicroServices
+                            </a></li>
+                        <li><a (click)="ahoneyCombAnalogy()" class="list-group-item list-group-item-action bg-light">A
+                                honey Comb Analogy
+                            </a></li>
+                        <li><a (click)="principlesOfMicroServices()"
+                                class="list-group-item list-group-item-action bg-light">Principles Of MicroServices
+                            </a></li>
+                        <li><a (click)="characteristicsOfMicroServices()"
+                                class="list-group-item list-group-item-action bg-light">Characteristics Of Micro
+                                Services
+                            </a></li>
+                        <li><a (click)="monolithicarchitectureoverview()"
+                                class="list-group-item list-group-item-action bg-light">Monolithic architecture overview
+                            </a></li>
+                        <li><a (click)="limitationofMonolithicarchitecture()"
+                                class="list-group-item list-group-item-action bg-light">Limitation of Monolithic
+                                architecture
+                            </a></li>
+                        <li><a (click)="solutionwithMicroServices()"
+                                class="list-group-item list-group-item-action bg-light">Solution with MicroServices
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#prerequisitescourse"
+                        class="list-group-item list-group-item-action bg-light">Micro Services relationship
+                        <span class="fa fa-chevron-down pull-right left-chevron"></span> &nbsp;&nbsp;&nbsp;</a>
+                    <ul class="sub-menu collapse list-group" id="prerequisitescourse">
+                        <li><a (click)=" withSOA()" class="list-group-item list-group-item-action bg-light"> with SOA
+                            </a></li>
+                        <li><a (click)="withTwelveFactorapps()"
+                                class="list-group-item list-group-item-action bg-light">with Twelve-Factor apps
+                            </a></li>
+                        <li><a (click)="microServicesusecases()"
+                                class="list-group-item list-group-item-action bg-light">MicroServices use cases
+                            </a></li>
+                        <li><a (click)="microServicesBenefits()"
+                                class="list-group-item list-group-item-action bg-light">MicroServices Benefits
+                            </a></li>
+                        <li>
+                            <ul class="list-group">
+                                <li>
+                                    <a data-toggle="collapse" data-target="#servicecommunication"
+                                        class="list-group-item list-group-item-action bg-light">Designing Service to
+                                        service Communication<span
+                                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                                    <ul class="sub-menu collapse list-group" id="servicecommunication">
+                                        <li><a (click)="synchronousStyeCommunication()"
+                                                class="list-group-item list-group-item-action bg-light">Synchronous Stye
+                                                Communication
+                                            </a></li>
+                                        <li><a (click)="AsynchronousStyeCommunication()"
+                                                class="list-group-item list-group-item-action bg-light">asynchronous
+                                                Stye Communication
+                                            </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a (click)="microServicePerJVM()"
+                                class="list-group-item list-group-item-action bg-light">MicroService Per JVM
+                            </a></li>
+                        <li><a (click)="canmicroservicessHaredatastores()"
+                                class="list-group-item list-group-item-action bg-light">Can
+                                microservices share data stores?
+                            </a></li>
+                        <li><a (click)="userinterfacesinMicroservices()"
+                                class="list-group-item list-group-item-action bg-light">User interfaces in microservices
+                            </a></li>
+                        <li><a (click)="microservicesChallenges()"
+                                class="list-group-item list-group-item-action bg-light">Microservices challenges
+                            </a></li>
+                        <li><a (click)="themicroservicesapabilitymodel()"
+                                class="list-group-item list-group-item-action bg-light">The
+                                microservices capability model
+                            </a></li>
+                        <li>
+                            <ul class="list-group">
+                                <li>
+                                    <a data-toggle="collapse" data-target="#microservicesevolution"
+                                        class="list-group-item list-group-item-action bg-light">Microservices
+                                        Evolution<span class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                                    <ul class="sub-menu collapse list-group" id="microservicesevolution">
+                                        <li><a (click)="aCaseStudy()"
+                                                class="list-group-item list-group-item-action bg-light">A Case Study
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a (click)="microservicesTargetArchitecture()"
+                                class="list-group-item list-group-item-action bg-light">Microservices Target
+                                Architecture </a></li>
+                        <li><a (click)="internallayeringofmicroservicesOrchestrationofmicroservices()"
+                                class="list-group-item list-group-item-action bg-light">Internal layering of
+                                microservicesOrchestration of microservices </a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#Implementingmicroservices"
+                        class="list-group-item list-group-item-action bg-light">Implementing MicroServices With
+                        SpringBoot<span class="fa fa-chevron-down pull-right left-chevron"></span>
+                        &nbsp;&nbsp;&nbsp;</a>
+                    <ul class="sub-menu collapse list-group" id="Implementingmicroservices">
+                        <li><a (click)="settingupadevelopmentenvironment()"
+                                class="list-group-item list-group-item-action bg-light">Setting
+                                up a development environment
+                            </a></li>
+                        <li><a (click)="bestPracticesandCommonPrinciples()"
+                                class="list-group-item list-group-item-action bg-light">Best
+                                Practices and Common Principles
+                            </a></li>
+                        <li>
+                            <ul class="list-group">
+                                <li>
+                                    <a data-toggle="collapse" data-target="#implementingsuperadmin"
+                                        class="list-group-item list-group-item-action bg-light">Implementing super
+                                        admin, admin,
+                                        doctor and patient microservices
+                                        <span class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                                    <ul class="sub-menu collapse list-group" id="implementingsuperadmin">
+                                        <li><a (click)="controllerComponents()"
+                                                class="list-group-item list-group-item-action bg-light">Controller
+                                                Components
+                                            </a></li>
+                                        <li><a (click)="serviceComponents()"
+                                                class="list-group-item list-group-item-action bg-light">Service
+                                                Components
+
+                                            </a></li>
+                                        <li><a (click)="entityDomainComponents()"
+                                                class="list-group-item list-group-item-action bg-light">Entity/Domain
+                                                Components
+
+                                            </a></li>
+                                        <li><a (click)="repositoryComponents()"
+                                                class="list-group-item list-group-item-action bg-light">Repository
+                                                Components
+
+                                            </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="understandingofthemicroservicesarchitecture" *ngIf="understandingofthemicroservicesarchitecture">
+            <h1 class="mt-4">Complete Understanding of the Microservices  Architecture</h1>
+        </div>
+
+        <div class="abletounderstandthedevelopmentofsamplemicroservicesmodules"
+            *ngIf="abletounderstandthedevelopmentofsamplemicroservicesmodules">
+            <h1 class="mt-4">Able to understand the development of sample microservices modules</h1>
+        </div>
+
+        <div class="javaprogramming" *ngIf="javaprogramming">
+            <h1 class="mt-4">Java Programming</h1>
+        </div>
+
+        <div class="knowledgespringframework" *ngIf="knowledgespringframework ">
+            <h1 class="mt-4">Knowledge Spring Framework</h1>
+        </div>
+        <div class="basicknowledgeonmaven" *ngIf="basicknowledgeonmaven">
+            <h1 class="mt-4">Basic Knowledge on Maven</h1>
+        </div>
+        <div class="evolutionofmicroServices" *ngIf="evolutionofmicroServices">
+            <h1 class="mt-4">Evolution Of MicroServices</h1>
+        </div>
+
+        <div class="whataremicroservices" *ngIf="whataremicroservices">
+            <h1 class="mt-4">What are MicroServices</h1>
+        </div>
+        <div class="ahoneycombanalogy" *ngIf="ahoneycombanalogy">
+            <h1 class="mt-4">A honey Comb Analogy</h1>
+        </div>
+        <div class="principlesofmicroServices" *ngIf="principlesofmicroServices">
+            <h1 class="mt-4">Principles Of MicroServices</h1>
+        </div>
+        <div class="characteristicsofmicroServices" *ngIf="characteristicsofmicroServices">
+            <h1 class="mt-4">Characteristics Of Micro Services</h1>
+        </div>
+        <div class=">mmonolithicarchitectureoverview" *ngIf="mmonolithicarchitectureoverview">
+            <h1 class="mt-4">>Monolithic architecture overview</h1>
+        </div>
+        <div class="limitationofmonolithicarchitecture" *ngIf="limitationofmonolithicarchitecture">
+            <h1 class="mt-4">Limitation of Monolithic architecture</h1>
+        </div>
+        <div class="solutionwithmicroServices" *ngIf="solutionwithmicroServices">
+            <h1 class="mt-4">Solution with MicroServices</h1>
+        </div>
+        <div class="withsoa" *ngIf="withsoa">
+            <h1 class="mt-4"> with SOA</h1>
+        </div>
+        <div class="withtwelvefactorapps" *ngIf="withtwelvefactorapps">
+            <h1 class="mt-4">with Twelve-Factor apps</h1>
+        </div>
+        <div class="microServicesusecasess" *ngIf="microServicesusecasess">
+            <h1 class="mt-4">MicroServices use cases</h1>
+        </div>
+        <div class="microServicesbenefitss" *ngIf="microServicesbenefitss">
+            <h1 class="mt-4">MicroServices Benefits</h1>
+        </div>
+        <div class="synchronousstyecommunications" *ngIf="synchronousstyecommunications">
+            <h1 class="mt-4">Synchronous Stye Communication</h1>
+        </div>
+        <div class="asynchronousstyecommunications" *ngIf="asynchronousstyecommunications">
+            <h1 class="mt-4">asynchronous Stye Communication</h1>
+        </div>
+        <div class="microServiceperjvmm" *ngIf="microServiceperjvmm">
+            <h1 class="mt-4">MicroService Per JVM</h1>
+        </div>
+        <div class="canmicroservicessharedatastoress" *ngIf="canmicroservicessharedatastoress">
+            <h1 class="mt-4">Can microservices share data stores?</h1>
+        </div>
+        <div class="userinterfacesinmicroservicess" *ngIf="userinterfacesinmicroservicess">
+            <h1 class="mt-4">User interfaces in microservices</h1>
+        </div>
+        <div class="microserviceschallengess" *ngIf="microserviceschallengess">
+            <h1 class="mt-4">Microservices challenges</h1>
+        </div>
+        <div class="themicroservicescapabilitymodell" *ngIf="themicroservicescapabilitymodell">
+            <h1 class="mt-4">The microservices capability model</h1>
+        </div>
+        <div class="acasestudyy" *ngIf="acasestudyy">
+            <h1 class="mt-4">A Case Study</h1>
+        </div>
+        <div class="microservicestargetarchitecturee" *ngIf="microservicestargetarchitecturee">
+            <h1 class="mt-4">Microservices Target Architecture</h1>
+        </div>
+        <div class="internallayeringofmicroservicesorchestrationofmicroservicess"
+            *ngIf="internallayeringofmicroservicesorchestrationofmicroservicess">
+            <h1 class="mt-4">Internal layering of microservicesOrchestration of microservices</h1>
+        </div>
+        <div class="settingupadevelopmentenvironmentt" *ngIf="settingupadevelopmentenvironmentt">
+            <h1 class="mt-4">Setting
+                up a development environment</h1>
+        </div>
+        <div class="bestpcticesandcommonprincipless" *ngIf="bestpcticesandcommonprincipless">
+            <h1 class="mt-4">Best
+                Practices and Common Principles</h1>
+        </div>
+        <div class="controllercomponentss" *ngIf="controllercomponentss">
+            <h1 class="mt-4">Controller Components</h1>
+        </div>
+        <div class="servicecomponentss" *ngIf="servicecomponentss">
+            <h1 class="mt-4">Service Components</h1>
+        </div>
+        <div class="entitydomaincomponentss" *ngIf="entitydomaincomponentss">
+            <h1 class="mt-4">Entity/Domain Components</h1>
+        </div>
+        <div class="repositorycomponentss" *ngIf="repositorycomponentss">
+            <h1 class="mt-4">Repository Components</h1>
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,189 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#corejava"
+                        class="list-group-item list-group-item-action bg-light">CORE JAVA<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="corejava">
+                        <li><a (click)="laguagefundamental()"
+                                class="list-group-item list-group-item-action bg-light">LANGUAGE FUNDAMENTAL
+                            </a></li>
+                        <li><a (click)="strings()" class="list-group-item list-group-item-action bg-light">STRINGS</a>
+                        </li>
+                        <li><a (click)="oopsconcepts()"
+                                class="list-group-item list-group-item-action bg-light">OoopsCONCEPTS</a>
+                        </li>
+                        <li><a (click)="interfacAB()" class="list-group-item list-group-item-action bg-light">INTERFACE
+                                AND ABSTRACTION</a>
+                        </li>
+                        <li><a (click)="inputoutput()"
+                                class="list-group-item list-group-item-action bg-light">I/OSTREAMS</a></li>
+                        <li><a (click)="exceptionHandling()"
+                                class="list-group-item list-group-item-action bg-light">EXCEPTIONHANDLING</a></li>
+                        <li><a (click)="threads()" class="list-group-item list-group-item-action bg-light">THREDS</a>
+                        </li>
+                        <li><a (click)="collections()"
+                                class="list-group-item list-group-item-action bg-light">COLLECTIONS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group list-group-flush">
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#advancejava"
+                        class="list-group-item list-group-item-action bg-light">ADVANCE JAVA<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="advancejava">
+                        <li><a (click)="jdbc()" class="list-group-item list-group-item-action bg-light">JDBC</a></li>
+                        <li><a (click)="servlet()" class="list-group-item list-group-item-action bg-light">SERVLET</a>
+                        </li>
+                        <li><a (click)="jsp()" class="list-group-item list-group-item-action bg-light">JSP</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <a (click)="hibernate()" class="list-group-item list-group-item-action bg-light">HIBERNATE</a>
+        <div class="list-group list-group-flush">
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#spring"
+                        class="list-group-item list-group-item-action bg-light">Spring <span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="spring">
+                        <li><a (click)="springCore()" class="list-group-item list-group-item-action bg-light">SPRING
+                                CORE</a></li>
+                        <li><a (click)="springJdbcdao()" class="list-group-item list-group-item-action bg-light">SPRING
+                                JDBC DAO</a>
+                        </li>
+                        <li><a (click)="springOr()" class="list-group-item list-group-item-action bg-light">SPRING
+                                ORM</a></li>
+                        <li><a (click)="springMvc()" class="list-group-item list-group-item-action bg-light">SPRING
+                                MVC</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <a (click)="springboot()" class="list-group-item list-group-item-action bg-light">SPRING BOOT</a>
+        <a (click)="microservices()" class="list-group-item list-group-item-action bg-light">MICROSERVICES</a>
+        <a (click)="webservices()" class="list-group-item list-group-item-action bg-light">WEBSERVICES</a>
+        <a (click)="html()" class="list-group-item list-group-item-action bg-light">HTML</a>
+        <a (click)="css()" class="list-group-item list-group-item-action bg-light">CSS</a>
+        <a (click)="javascript()" class="list-group-item list-group-item-action bg-light">JAVASCRIPT</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="languagefunda" *ngIf="languagefunda">
+            <h1 class="mt-4">LANGUAGEFUNDAMENTAL</h1>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+  </div> 
+
+			
+        </div>
+        <div class="string" *ngIf="string">
+            <h1 class="mt-4">STRINGS</h1>
+        </div>
+        <div class="oops" *ngIf="oops">
+            <h1 class="mt-4">OopsCONCEPTS</h1>
+        </div>
+        <div class="interface" *ngIf="interface">
+            <h1 class="mt-4">INTERFACE AND ABSRACTION</h1>
+        </div>
+        <div class="inout" *ngIf="inout">
+            <h1 class="mt-4">I/O STREAMS</h1>
+        </div>
+        <div class="exception" *ngIf="exception">
+            <h1 class="mt-4">EXCEPTION HANDLING</h1>
+        </div>
+        <div class="thred" *ngIf="thred">
+            <h1 class="mt-4">THREDS</h1>
+        </div>
+        <div class="collection" *ngIf="collection">
+            <h1 class="mt-4">COLLECTIONS</h1>
+        </div>
+        <div class="jdbcjava" *ngIf="jdbcjava">
+            <h1 class="mt-4">JDBC</h1>
+        </div>
+        <div class="servletjava" *ngIf="servletjava">
+            <h1 class="mt-4">SERVLET</h1>
+        </div>
+        <div class="jspjava" *ngIf="jspjava">
+            <h1 class="mt-4">JSP</h1>
+        </div>
+        <div class="hibernatejava" *ngIf="hibernatejava">
+            <h1 class="mt-4">HIBERNATE</h1>
+        </div>
+        <div class="springjava" *ngIf="springjava">
+            <h1 class="mt-4">SPRING CORE</h1>
+        </div>
+        <div class="springjdbc" *ngIf="springjdbc">
+            <h1 class="mt-4">SPRING JDBC DAO</h1>
+        </div>
+        <div class="springor" *ngIf="springor">
+            <h1 class="mt-4">SPRING ORM</h1>
+        </div>
+        <div class="springmv" *ngIf="springmv">
+            <h1 class="mt-4">SPRING MVC</h1>
+        </div>
+        <div class="springbootjava" *ngIf="springbootjava">
+            <h1 class="mt-4">SPRING BOOT</h1>
+        </div>
+        <div class="microjava" *ngIf="microjava">
+            <h1 class="mt-4">MICROSERVICES</h1>
+        </div>
+        <div class="webjava" *ngIf="webjava">
+            <h1 class="mt-4">WEBSERVICES</h1>
+        </div>
+        <div class="htmlint" *ngIf="htmlint">
+            <h1 class="mt-4">HTML</h1>
+        </div>
+        <div class="cssint" *ngIf="cssint">
+            <h1 class="mt-4">CSS</h1>
+        </div>
+        <div class="javascriptint" *ngIf="javascriptint">
+            <h1 class="mt-4">JAVASCRIPT</h1>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

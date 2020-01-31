@@ -1,0 +1,432 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#spring"
+                        class="list-group-item list-group-item-action bg-light">Spring <span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="spring">
+                        <li><a (click)="introductiontospringframework()"
+                                class="list-group-item list-group-item-action bg-light">Introduction to Spring
+                                Framework</a></li>
+                        <li><a (click)="pOJOandpOJImodelprogramming()"
+                                class="list-group-item list-group-item-action bg-light">POJO and POJI Model
+                                Programming</a>
+                        </li>
+                        <li><a (click)="introductiontomodulesofspring()"
+                                class="list-group-item list-group-item-action bg-light">Introduction to Modules of
+                                Spring</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#springcore"
+                        class="list-group-item list-group-item-action bg-light">Spring Core <span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="springcore">
+                        <li><a (click)="introductiontoiOC()"
+                                class="list-group-item list-group-item-action bg-light">Introduction to IOC</a></li>
+                        <li><a (click)="introductiontoSpringContainer()"
+                                class="list-group-item list-group-item-action bg-light">Introduction to Spring
+                                Container</a>
+                        </li>
+                        <li><a (click)="dependencyInjection()"
+                                class="list-group-item list-group-item-action bg-light">Dependency Injection</a></li>
+                        <li><a (click)="setterInjection()"
+                                class="list-group-item list-group-item-action bg-light">Setter Injection</a></li>
+                        <li><a (click)="constructorInjection()"
+                                class="list-group-item list-group-item-action bg-light">Constructor Injection</a>
+                        </li>
+                        <li><a (click)="injectingPrimitiveDatatypesandCollectionclasses()"
+                                class="list-group-item list-group-item-action bg-light">Injecting Primitive Data types
+                                and Collection classes</a></li>
+                        <li><a (click)="autowiring()"
+                                class="list-group-item list-group-item-action bg-light">Autowiring</a></li>
+                        <li><a (click)="innerbeans()" class="list-group-item list-group-item-action bg-light">Inner
+                                beans</a>
+                        </li>
+
+                        <li><a (click)="aliasNames()" class="list-group-item list-group-item-action bg-light">Alias
+                                Names</a></li>
+                        <li><a (click)="lazyInitialization()"
+                                class="list-group-item list-group-item-action bg-light">Lazy Initialization</a></li>
+                        <li><a (click)="beanInheritance()" class="list-group-item list-group-item-action bg-light">Bean
+                                Inheritance</a>
+                        </li>
+                        <li><a (click)="configurationFactorymethods()"
+                                class="list-group-item list-group-item-action bg-light">Configuration Factory
+                                methods</a></li>
+                        <li><a (click)="beanLifeCycle()" class="list-group-item list-group-item-action bg-light">Bean
+                                Life Cycle</a></li>
+                        <li><a (click)="beanScopes()" class="list-group-item list-group-item-action bg-light">Bean
+                                Scopes</a></li>
+                        <li><a (click)="dependencyCheck()"
+                                class="list-group-item list-group-item-action bg-light">Dependency Check</a>
+                        </li>
+                        <li><a (click)="dependsonattribute()"
+                                class="list-group-item list-group-item-action bg-light">Depends-on attribute</a></li>
+                        <li><a (click)="awareInterfaces()" class="list-group-item list-group-item-action bg-light">Aware
+                                Interfaces</a></li>
+                        <li><a (click)="workingwithpropertiesfiles()"
+                                class="list-group-item list-group-item-action bg-light">Working with properties
+                                files</a></li>
+                        <li><a (click)="multipleConfigurationfiles()"
+                                class="list-group-item list-group-item-action bg-light">Multiple Configuration files</a>
+                        </li>
+                        <li><a (click)="preprocessorandPostProcessors()"
+                                class="list-group-item list-group-item-action bg-light">Pre processor and Post
+                                Processors</a>
+                        </li>
+                        <li><a (click)="annotations()"
+                                class="list-group-item list-group-item-action bg-light">Annotations</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#springJDBCDAO"
+                        class="list-group-item list-group-item-action bg-light">Spring JDBC/DAO<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="springJDBCDAO">
+                        <li><a (click)="drawbacksofplainJDBC()"
+                                class="list-group-item list-group-item-action bg-light">Drawbacks of plain JDBC</a></li>
+                        <li><a (click)="JDBCTemplate()" class="list-group-item list-group-item-action bg-light">JDBC
+                                Template</a>
+                        </li>
+                        <li><a (click)="namedParameterJDBCTemplate()"
+                                class="list-group-item list-group-item-action bg-light">NamedParameter JDBC Template</a>
+                        </li>
+                        <li><a (click)="SimpleJDBCTemplate()"
+                                class="list-group-item list-group-item-action bg-light">Simple JDBC Template</a></li>
+                        <li><a (click)="allthemethodsdefinedinTemplates()"
+                                class="list-group-item list-group-item-action bg-light">All the methods defined in
+                                Templates</a>
+                        </li>
+                        <li><a (click)="DAOSupportclasses()"
+                                class="list-group-item list-group-item-action bg-light">DAOSupport classes</a></li>
+                        <li><a (click)="callbackinterface()"
+                                class="list-group-item list-group-item-action bg-light">Callback interfaces</a></li>
+                        <li><a (click)="drivermanagerDatasource()"
+                                class="list-group-item list-group-item-action bg-light">DrivermanagerDatasource</a>
+                        </li>
+
+                        <li><a (click)="basicDataSource()"
+                                class="list-group-item list-group-item-action bg-light">BasicDataSource</a></li>
+                        <li><a (click)="combopooledDataSource()"
+                                class="list-group-item list-group-item-action bg-light">CombopooledDataSource</a></li>
+                        <li><a (click)="serverSuppiledDataSource()"
+                                class="list-group-item list-group-item-action bg-light">ServerSuppiledDataSource</a>
+                        </li>
+                        <li><a (click)="ExamplesofdatabaseaccessoperationsusingspringDAO()"
+                                class="list-group-item list-group-item-action bg-light">Examples of database access
+                                operations using spring DAO</a></li>
+                        <li><a (click)="ExamplesofaccessingstoredproceduresusingspringDAO()"
+                                class="list-group-item list-group-item-action bg-light">Examples of accessing stored
+                                procedures using spring DAO</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#SpringORM"
+                        class="list-group-item list-group-item-action bg-light">Spring ORM<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="SpringORM">
+                        <li><a (click)="drawbacksofHibernate()"
+                                class="list-group-item list-group-item-action bg-light">Drawbacks of Hibernate</a></li>
+                        <li><a (click)="springwithHibernatewithoutHibernateTemplate()"
+                                class="list-group-item list-group-item-action bg-light">Spring with Hibernate without
+                                HibernateTemplate</a>
+                        </li>
+                        <li><a (click)="springwithHibernatewithHibernateTemplate()"
+                                class="list-group-item list-group-item-action bg-light">Spring with Hibernate with
+                                HibernateTemplate</a></li>
+                        <li><a (click)="hiberanteTemplate()"
+                                class="list-group-item list-group-item-action bg-light">HiberanteTemplate</a></li>
+                        <li><a (click)="hibernateDAOSupport()"
+                                class="list-group-item list-group-item-action bg-light">HibernateDAOSupport</a>
+                        </li>
+                        <li><a (click)="callbackinter()"
+                                class="list-group-item list-group-item-action bg-light">Callback interfaces</a></li>
+                        <li><a (click)="springwithJPAandotheORMintegration()"
+                                class="list-group-item list-group-item-action bg-light">Spring with JPA and other ORM
+                                integration</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#SpringMVC"
+                        class="list-group-item list-group-item-action bg-light">Spring MVC<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="SpringMVC">
+                        <li><a (click)="introduction()"
+                                class="list-group-item list-group-item-action bg-light">Introduction</a></li>
+                        <li><a (click)="springMVCResources()"
+                                class="list-group-item list-group-item-action bg-light">Spring MVC Resources</a>
+                        </li>
+                        <li><a (click)="commandsorModels()"
+                                class="list-group-item list-group-item-action bg-light">Commands or Models</a></li>
+                        <li><a (click)="dispatcherServlet()"
+                                class="list-group-item list-group-item-action bg-light">DispatcherServlet</a></li>
+                        <li><a (click)="controllerClasses()"
+                                class="list-group-item list-group-item-action bg-light">Controller Classes</a>
+                        </li>
+                        <li><a (click)="springMVCflow()" class="list-group-item list-group-item-action bg-light">Spring
+                                MVC flow</a></li>
+                        <li><a (click)="stepstodeveloptheSpringMVCapplication()"
+                                class="list-group-item list-group-item-action bg-light">Steps to develop the SpringMVC
+                                application</a></li>
+                        <li><a (click)="hadlerMappings()"
+                                class="list-group-item list-group-item-action bg-light">HadlerMappings</a>
+                        </li>
+
+                        <li><a (click)="beanNameUrlHandlerMapping()"
+                                class="list-group-item list-group-item-action bg-light">BeanNameUrlHandlerMapping</a>
+                        </li>
+                        <li><a (click)="simpleUrlHandlerMapping()"
+                                class="list-group-item list-group-item-action bg-light">SimpleUrlHandlerMapping</a></li>
+                        <li><a (click)="controllerClassNameHandlerMapping()"
+                                class="list-group-item list-group-item-action bg-light">ControllerClassNameHandlerMapping</a>
+                        </li>
+                        <li><a (click)="validations()"
+                                class="list-group-item list-group-item-action bg-light">Validations</a></li>
+                        <li><a (click)="viewResolvers()"
+                                class="list-group-item list-group-item-action bg-light">ViewResolvers</a></li>
+                        <li><a (click)="xmlViewResolver()"
+                                class="list-group-item list-group-item-action bg-light">XmlViewResolver</a></li>
+                        <li><a (click)="resourceBundleViewResolver ()"
+                                class="list-group-item list-group-item-action bg-light">ResourceBundleViewResolver </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="springJMS()" class="list-group-item list-group-item-action bg-light">Spring with JMS
+                Integration</a>
+            <a (click)="springSecurity()" class="list-group-item list-group-item-action bg-light">Spring Security</a>
+            <a (click)="springwithQuart()" class="list-group-item list-group-item-action bg-light">Spring with Quartz
+                Integration (Scheduler)</a>
+            <a (click)="springBatch()" class="list-group-item list-group-item-action bg-light">Spring Batch Overview</a>
+            <a (click)="springHibernate()" class="list-group-item list-group-item-action bg-light">Spring-Hibernate
+                Integration</a>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="introductionspring" *ngIf="introductionspring">
+            <h1 class="mt-4">Introduction to Spring</h1>
+        </div>
+
+        <div class="pojoandpojimodel" *ngIf="pojoandpojimodel">
+            <h1 class="mt-4">POJO and POJI Model Programming</h1>
+        </div>
+
+        <div class="introductiontomodules" *ngIf="introductiontomodules">
+            <h1 class="mt-4">Introduction to Modules of Spring</h1>
+        </div>
+
+        <div class="introductionioc" *ngIf="introductionioc">
+            <h1 class="mt-4">Introduction to IOC</h1>
+        </div>
+
+        <div class="introductionspringcont" *ngIf="introductionspringcont">
+            <h1 class="mt-4">Introduction to Spring Container</h1>
+        </div>
+
+        <div class="dependencyinjection" *ngIf="dependencyinjection">
+            <h1 class="mt-4">Dependency Injection</h1>
+        </div>
+
+        <div class="setterinjection" *ngIf="setterinjection">
+            <h1 class="mt-4">Setter Injection</h1>
+        </div>
+
+        <div class="constructorinjection" *ngIf="constructorinjection">
+            <h1 class="mt-4">Constructor Injection</h1>
+        </div>
+
+        <div class="injectingprimitive" *ngIf="injectingprimitive">
+            <h1 class="mt-4">Injecting Primitive Data types and Collection classes</h1>
+        </div>
+
+        <div class="autowirings" *ngIf="autowirings">
+            <h1 class="mt-4">Autowiring</h1>
+        </div>
+
+        <div class="innerbeanss" *ngIf="innerbeanss">
+            <h1 class="mt-4">Inner beans</h1>
+        </div>
+
+        <div class="alinames" *ngIf="alinames">
+            <h1 class="mt-4">Alias Names</h1>
+        </div>
+        <div class="lazyinitialization" *ngIf="lazyinitialization">
+            <h1 class="mt-4">Lazy Initialization</h1>
+        </div>
+        <div class="beaninheritance" *ngIf="beaninheritance">
+            <h1 class="mt-4">Bean Inheritance</h1>
+        </div>
+        <div class="factorymethods" *ngIf="factorymethods">
+            <h1 class="mt-4">Configuration Factory methods</h1>
+        </div>
+        <div class="beanlifecycle" *ngIf="beanlifecycle">
+            <h1 class="mt-4">Bean Life Cycle</h1>
+        </div>
+        <div class="beanscopes" *ngIf="beanscopes">
+            <h1 class="mt-4">Bean Scopes</h1>
+        </div>
+        <div class="dependencycheck" *ngIf="dependencycheck">
+            <h1 class="mt-4">Dependency Check</h1>
+        </div>
+        <div class="dependsonattributes" *ngIf="dependsonattributes">
+            <h1 class="mt-4">Depends-on attribute</h1>
+        </div>
+        <div class="awareinterfaces" *ngIf="awareinterfaces">
+            <h1 class="mt-4">Aware Interfaces</h1>
+        </div>
+        <div class="propertiesfiles" *ngIf="propertiesfiles">
+            <h1 class="mt-4">Working with properties files</h1>
+        </div>
+        <div class="configurationfiles" *ngIf="configurationfiles">
+            <h1 class="mt-4">Multiple Configuration files</h1>
+        </div>
+        <div class="preprocessorandpost" *ngIf="preprocessorandpost">
+            <h1 class="mt-4">Pre processor and Post Processors</h1>
+        </div>
+        <div class=" annotation" *ngIf=" annotation">
+            <h1 class="mt-4">Annotations</h1>
+        </div>
+        <div class="drawbacksofplainjdbc" *ngIf="drawbacksofplainjdbc">
+            <h1 class="mt-4">Drawbacks of plain JDBC</h1>
+        </div>
+        <div class="jdbctemplate" *ngIf="jdbctemplate">
+            <h1 class="mt-4">JDBC Template</h1>
+        </div>
+        <div class="namedparameterjdbctemplate" *ngIf="namedparameterjdbctemplate">
+            <h1 class="mt-4">NamedParameter JDBC Template</h1>
+        </div>
+        <div class="simplejdbctemplate" *ngIf="simplejdbctemplate">
+            <h1 class="mt-4">Simple JDBC Template</h1>
+        </div>
+        <div class="methodsdefinedintemplates" *ngIf="methodsdefinedintemplates">
+            <h1 class="mt-4">All the methods defined in Templates</h1>
+        </div>
+        <div class="daoSupport" *ngIf="daoSupport">
+            <h1 class="mt-4">DAOSupport classes</h1>
+        </div>
+        <div class="callbackinterfaces" *ngIf="callbackinterfaces">
+            <h1 class="mt-4">Callback interfaces</h1>
+        </div>
+        <div class="drivermanagerdatasource" *ngIf="drivermanagerdatasource">
+            <h1 class="mt-4">Drivermanager Datasource</h1>
+        </div>
+        <div class="basicdatasource" *ngIf="basicdatasource">
+            <h1 class="mt-4">Basic DataSource</h1>
+        </div>
+        <div class="combopooleddatasource" *ngIf="combopooleddatasource">
+            <h1 class="mt-4">Combopooled DataSource</h1>
+        </div>
+        <div class="suppileddatasource" *ngIf="suppileddatasource">
+            <h1 class="mt-4">Server Suppiled DataSource</h1>
+        </div>
+        <div class="databaseaccessoperationsusingspringdao" *ngIf="databaseaccessoperationsusingspringdao">
+            <h1 class="mt-4">Examples of database access operations using spring DAO</h1>
+        </div>
+        <div class="accessingstoredproceduresusingspringdao" *ngIf="accessingstoredproceduresusingspringdao">
+            <h1 class="mt-4">Examples of accessing stored procedures using spring DAO</h1>
+        </div>
+        <div class="drawbacksofhibernate" *ngIf="drawbacksofhibernate">
+            <h1 class="mt-4">Drawbacks of Hibernate</h1>
+        </div>
+        <div class="withouthibernatetemplate" *ngIf="withouthibernatetemplate">
+            <h1 class="mt-4">Spring with Hibernate without HibernateTemplate</h1>
+        </div>
+        <div class="withhibernatetemplate" *ngIf="withhibernatetemplate">
+            <h1 class="mt-4">Spring with Hibernate with HibernateTemplate</h1>
+        </div>
+        <div class="hiberantetemplate" *ngIf="hiberantetemplate">
+            <h1 class="mt-4">HiberanteTemplate</h1>
+        </div>
+        <div class="hibernatedaoSupport" *ngIf="hibernatedaoSupport">
+            <h1 class="mt-4">HibernateDAOSupport</h1>
+        </div>
+        <div class="daoSupportCallbackinterfaces" *ngIf="daoSupportCallbackinterfaces">
+            <h1 class="mt-4">Callback interfaces</h1>
+        </div>
+        <div class="jpaandotherormintegration" *ngIf="jpaandotherormintegration">
+            <h1 class="mt-4">Spring with JPA and other ORM integration</h1>
+        </div>
+
+        <div class="introductions" *ngIf="introductions">
+            <h1 class="mt-4">Introduction spring mvc</h1>
+        </div>
+        <div class="springmvcresources" *ngIf="springmvcresources">
+            <h1 class="mt-4">Spring MVC Resources</h1>
+        </div>
+        <div class="commandsormodels" *ngIf="commandsormodels">
+            <h1 class="mt-4">Commands or Models</h1>
+        </div>
+        <div class="dispatcherservlet" *ngIf="dispatcherservlet">
+            <h1 class="mt-4">DispatcherServlet</h1>
+        </div>
+        <div class="controllerclasses" *ngIf="controllerclasses">
+            <h1 class="mt-4">Controller Classes</h1>
+        </div>
+        <div class="springmvcflow" *ngIf="springmvcflow">
+            <h1 class="mt-4">Spring MVC flow</h1>
+        </div>
+        <div class="stepstodevelopthespringmvcapplication" *ngIf="stepstodevelopthespringmvcapplication">
+            <h1 class="mt-4">Steps to develop the SpringMVC application</h1>
+        </div>
+        <div class="hadlermappings" *ngIf="hadlermappings">
+            <h1 class="mt-4">HadlerMappings</h1>
+        </div>
+        <div class="beannameurlhandlermapping" *ngIf="beannameurlhandlermapping">
+            <h1 class="mt-4">BeanNameUrlHandlerMapping</h1>
+        </div>
+        <div class="simpleurlhandlermapping" *ngIf="simpleurlhandlermapping">
+            <h1 class="mt-4">SimpleUrlHandlerMapping</h1>
+        </div>
+        <div class="controllerclassnamehandlermapping" *ngIf="controllerclassnamehandlermapping">
+            <h1 class="mt-4">ControllerClassNameHandlerMapping</h1>
+        </div>
+        <div class="validations" *ngIf="validations">
+            <h1 class="mt-4">Validations</h1>
+        </div>
+        <div class="viewresolvers" *ngIf="viewresolvers">
+            <h1 class="mt-4">ViewResolvers</h1>
+        </div>
+        <div class="xmlviewresolver" *ngIf="xmlviewresolver">
+            <h1 class="mt-4">XmlViewResolver</h1>
+        </div>
+        <div class="resourcebundleview" *ngIf="resourcebundleview">
+            <h1 class="mt-4">ResourceBundleViewResolver</h1>
+        </div>
+        <div class="jmsintegration" *ngIf="jmsintegration">
+            <h1 class="mt-4">Spring with JMS Integration</h1>
+        </div>
+        <div class="springsecurity" *ngIf="springsecurity">
+            <h1 class="mt-4">Spring Security</h1>
+        </div>
+        <div class="withquartzintegration" *ngIf="withquartzintegration">
+            <h1 class="mt-4">Spring with Quartz Integration (Scheduler)</h1>
+        </div>
+        <div class=" springbatchoverview" *ngIf=" springbatchoverview">
+            <h1 class="mt-4">Spring Batch Overview</h1>
+        </div>
+        <div class="springhibernateintegration" *ngIf="springhibernateintegration">
+            <h1 class="mt-4">Spring-Hibernate Integration</h1>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,53 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a (click)="webServiceIntro()" class=" list-group-item list-group-item-action bg-light">Introduction to
+                WebServices</a>
+            <a (click)="dtd1()" class="list-group-item list-group-item-action bg-light">DTD</a>
+            <a (click)="xsd1()" class="list-group-item list-group-item-action bg-light">XSD</a>
+            <a (click)="jaxp1()" class="list-group-item list-group-item-action bg-light">JAX-P</a>
+            <a (click)="jaxb1()" class="list-group-item list-group-item-action bg-light">JAX-B</a>
+            <a (click)="jaxws1()" class="list-group-item list-group-item-action bg-light">JAX-WS</a>
+            <a (click)="apacheAxis2()" class="list-group-item list-group-item-action bg-light">Apache Axis2</a>
+            <a (click)="resultServices()" class="list-group-item list-group-item-action bg-light">Restfull Services</a>
+            <a (click)="postman1()" class="list-group-item list-group-item-action bg-light">Postman</a>
+            <a (click)="springIntegration()" class="list-group-item list-group-item-action bg-light">Spring Integration
+                With Rest</a>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="introductiontowebservices" *ngIf="introductiontowebservices">
+            <h1 class="mt-4">Introduction to WebServices</h1>
+        </div>
+        <div class="dtd" *ngIf="dtd">
+            <h1 class="mt-4">DTD</h1>
+        </div>
+        <div class="xsd" *ngIf="xsd">
+            <h1 class="mt-4">XSD</h1>
+        </div>
+        <div class="jaxp" *ngIf="jaxp">
+            <h1 class="mt-4">JAX-P</h1>
+        </div>
+        <div class="jaxb" *ngIf="jaxb">
+            <h1 class="mt-4">JAX-B</h1>
+        </div>
+        <div class="jaxws" *ngIf="jaxws">
+            <h1 class="mt-4">JAX-WS</h1>
+        </div>
+        <div class="apacheaxis2" *ngIf="apacheaxis2">
+            <h1 class="mt-4">Apache Axis2</h1>
+        </div>
+        <div class="restfullservices" *ngIf="restfullservices">
+            <h1 class="mt-4">Restfull Services</h1>
+        </div>
+        <div class="postman" *ngIf="postman">
+            <h1 class="mt-4">Postman</h1>
+        </div>
+        <div class="springintegrationwithrest" *ngIf="springintegrationwithrest">
+            <h1 class="mt-4">Spring Integration With Rest</h1>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

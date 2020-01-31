@@ -1,0 +1,124 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a (click)="angularIntro()" class="list-group-item list-group-item-action bg-light">Introduction to Angular</a>
+            <a (click)="setup()" class="list-group-item list-group-item-action bg-light">SetUp</a>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#gettingstarted"
+                        class="list-group-item list-group-item-action bg-light">Getting Started<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="gettingstarted">
+                        <li><a (click)="firstApp()" class="list-group-item list-group-item-action bg-light">Your First App</a>
+                        </li>                        
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#fundamentals"
+                        class="list-group-item list-group-item-action bg-light">Fundamentals<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="fundamentals">
+                        <li><a (click)="projectSetup()" class="list-group-item list-group-item-action bg-light">Project Setup</a></li>
+                        <li><a (click)="components()" class="list-group-item list-group-item-action bg-light">Components</a></li>
+                        <li><a (click)="modules()" class="list-group-item list-group-item-action bg-light">Modules</a></li>
+                        <li><a (click)="dataBinding()" class="list-group-item list-group-item-action bg-light">Data Binding</a></li>
+                        <li><a (click)="eventBinding()" class="list-group-item list-group-item-action bg-light">Event Binding</a></li>
+                        <li><a (click)="templates()" class="list-group-item list-group-item-action bg-light">Templates</a></li>
+                        <li><a (click)="directives()" class="list-group-item list-group-item-action bg-light">Directives</a></li>                        
+                        <li><a (click)="pipes()" class="list-group-item list-group-item-action bg-light">Pipes</a></li>
+                        <li><a (click)="routing()" class="list-group-item list-group-item-action bg-light">Routing</a></li>
+                        <li><a (click)="services()" class="list-group-item list-group-item-action bg-light">Services</a></li>
+                        <li><a (click)="httpServices()" class="list-group-item list-group-item-action bg-light">Http Service</a></li>
+                        <li><a (click)="httpClient()" class="list-group-item list-group-item-action bg-light">Http Client</a></li>
+                        <li><a (click)="forms()" class="list-group-item list-group-item-action bg-light">Forms</a></li>
+                        <li><a (click)="animations()" class="list-group-item list-group-item-action bg-light">Animations</a></li>
+                        <li><a (click)="meterials()" class="list-group-item list-group-item-action bg-light">Materials</a></li>
+                        <li><a (click)="cli()" class="list-group-item list-group-item-action bg-light">CLI</a></li>                        
+                    </ul>
+                </li>
+            </ul>         
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="angularintroduction" *ngIf="angularintroduction">
+            <h1 class="mt-4">Introduction to Angular</h1>
+        </div>
+
+        <div class="angularsetup" *ngIf="angularsetup">
+            <h1 class="mt-4">SetUp</h1>
+        </div>
+
+        <div class="angularfirstapp" *ngIf="angularfirstapp" > 
+            <h1 class="mt-4">Your First App</h1>
+        </div>
+
+        <div class="angularprojectsetup" *ngIf="angularprojectsetup">
+            <h1 class="mt-4">Project Setup</h1>
+        </div>
+
+        <div class="angularcomponents" *ngIf="angularcomponents">
+            <h1 class="mt-4">Components</h1>
+        </div>
+
+        <div class="angularmodules" *ngIf="angularmodules">
+            <h1 class="mt-4">Modules</h1>
+        </div>
+
+        <div class="angulardatabinding" *ngIf="angulardatabinding">
+            <h1 class="mt-4">Data Binding</h1>
+        </div>
+
+        <div class="angulareventbinding" *ngIf="angulareventbinding">
+            <h1 class="mt-4">Event Binding</h1>
+        </div>
+
+        <div class="angulartemplates" *ngIf="angulartemplates">
+            <h1 class="mt-4">Templates</h1>
+        </div>
+
+        <div class="angulardirectives" *ngIf="angulardirectives">
+            <h1 class="mt-4">Directives</h1>
+        </div>
+
+        <div class="angulsrpipes" *ngIf="angulsrpipes">
+            <h1 class="mt-4">Pipes</h1>
+        </div>
+
+        <div class="angularrouting" *ngIf="angularrouting">
+            <h1 class="mt-4">Routing</h1>
+        </div>
+
+        <div class="angularservices" *ngIf="angularservices">
+            <h1 class="mt-4">Services</h1>
+        </div>
+
+        <div class="angularhttpservices" *ngIf="angularhttpservices">
+            <h1 class="mt-4">Http Service</h1>
+        </div>
+
+        <div class="angularhttpclient" *ngIf="angularhttpclient">
+            <h1 class="mt-4">Http Client</h1>
+        </div>
+
+        <div class="angularforms" *ngIf="angularforms">
+            <h1 class="mt-4">Forms</h1>
+        </div>
+
+        <div class="angularanimatios" *ngIf="angularanimatios">
+            <h1 class="mt-4">Animations</h1>
+        </div>
+
+        <div class="angularmetrials" *ngIf="angularmetrials">
+            <h1 class="mt-4">Materials</h1>
+        </div>
+
+        <div class="angularcli" *ngIf="angularcli">
+            <h1 class="mt-4">CLI</h1>
+        </div>
+
+        
+    </div>
+</div>
+<app-footer></app-footer>

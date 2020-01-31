@@ -1,0 +1,2228 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a (click)="prosHibernate()" class="list-group-item list-group-item-action bg-light">Advantages of Hibernate
+                compared to JDBC</a>
+            <a (click)="introduction1()" class="list-group-item list-group-item-action bg-light">Introduction</a>
+            <a (click)="orm1()" class="list-group-item list-group-item-action bg-light">ORM (Object Relational
+                Mapping)</a>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#hibernateresources"
+                        class="list-group-item list-group-item-action bg-light">Hibernate Resources<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="hibernateresources">
+                        <li><a (click)="configurationfile1()"
+                                class="list-group-item list-group-item-action bg-light">Configuration file</a></li>
+                        <li><a (click)="mappingfile1()" class="list-group-item list-group-item-action bg-light">Mapping
+                                file</a></li>
+                        <li><a (click)="persistentclassorPOJO()"
+                                class="list-group-item list-group-item-action bg-light">Persistent class or POJO</a>
+                        </li>
+                        <li><a (click)="clientapplication1()"
+                                class="list-group-item list-group-item-action bg-light">Client application</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="hibernateArchitecture()" class="list-group-item list-group-item-action bg-light">Hibernate
+                Architecture</a>
+            <a (click)="installationDirectoryStructure()"
+                class="list-group-item list-group-item-action bg-light">Installation and Directory Structure</a>
+            <a (click)="hibernateDataTypes()" class="list-group-item list-group-item-action bg-light">Hibernate Data
+                Types</a>
+            <a (click)="firstApplicationusingHibernate()" class="list-group-item list-group-item-action bg-light">First
+                Application using Hibernate</a>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#hibernateapi"
+                        class="list-group-item list-group-item-action bg-light">Hibernate API<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="hibernateapi">
+                        <li><a (click)="configuration1()"
+                                class="list-group-item list-group-item-action bg-light">Configuration</a></li>
+                        <li><a (click)="sessionFactory()"
+                                class="list-group-item list-group-item-action bg-light">SessionFactory</a></li>
+                        <li><a (click)="session1()" class="list-group-item list-group-item-action bg-light">Session</a>
+                        </li>
+                        <li><a (click)="transaction1()"
+                                class="list-group-item list-group-item-action bg-light">Transaction</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#objectlifecycleinhibernate"
+                        class="list-group-item list-group-item-action bg-light">Object Life cycle in Hibernate<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="objectlifecycleinhibernate">
+                        <li><a (click)="transientobject1()"
+                                class="list-group-item list-group-item-action bg-light">Transient object</a></li>
+                        <li><a (click)="persistentobject1()"
+                                class="list-group-item list-group-item-action bg-light">Persistent object</a></li>
+                        <li><a (click)="detachedobject1()"
+                                class="list-group-item list-group-item-action bg-light">Detached object</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#crudoperationsusingsessionmethods"
+                        class="list-group-item list-group-item-action bg-light">CRUD operations using Session
+                        methods<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <ul class="sub-menu collapse list-group" id="crudoperationsusingsessionmethods">
+                        <li><a (click)="saveOrpersist()" class="list-group-item list-group-item-action bg-light">save,
+                                persist, SaveOrUpdate</a></li>
+                        <li><a (click)="update1()" class="list-group-item list-group-item-action bg-light">update,
+                                merge, delete</a></li>
+                        <li><a (click)="load1()" class="list-group-item list-group-item-action bg-light">load, get</a>
+                        </li>
+                        <li><a (click)="flush1()" class="list-group-item list-group-item-action bg-light">flush, evict,
+                                clear etc</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="versioning1()" class="list-group-item list-group-item-action bg-light">Versioning</a>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#primarykeygenerators"
+                        class="list-group-item list-group-item-action bg-light">Primary key Generators<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="primarykeygenerators">
+                        <li><a (click)="assigned1()"
+                                class="list-group-item list-group-item-action bg-light">Assigned</a></li>
+                        <li><a (click)="increment1()"
+                                class="list-group-item list-group-item-action bg-light">Increment</a></li>
+                        <li><a (click)="sequence1()"
+                                class="list-group-item list-group-item-action bg-light">Sequence</a></li>
+                        <li><a (click)="hilo1()" class="list-group-item list-group-item-action bg-light">Hilo</a></li>
+                        <li><a (click)="seqhilo1()" class="list-group-item list-group-item-action bg-light">Seqhilo</a>
+                        </li>
+                        <li><a (click)="identity1()"
+                                class="list-group-item list-group-item-action bg-light">Identity</a></li>
+                        <li><a (click)="foreign1()" class="list-group-item list-group-item-action bg-light">Foreign</a>
+                        </li>
+                        <li><a (click)="native1()" class="list-group-item list-group-item-action bg-light">Native</a>
+                        </li>
+                        <li><a (click)="uuid1()" class="list-group-item list-group-item-action bg-light">UUID</a></li>
+                        <li><a (click)="customgenerator1()"
+                                class="list-group-item list-group-item-action bg-light">Custom generator</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="hibernateQueryLanguage()" class="list-group-item list-group-item-action bg-light">Hibernate
+                Query Language (HQL)</a>
+            <a (click)="joinsinHibernate()" class="list-group-item list-group-item-action bg-light">Joins in
+                Hibernate</a>
+            <a (click)="batchprocessing()" class="list-group-item list-group-item-action bg-light">Batch processing and
+                Native SQL </a>
+            <a (click)="api()" class="list-group-item list-group-item-action bg-light">Criteria API</a>
+            <a (click)="projections()" class="list-group-item list-group-item-action bg-light">Criteria with
+                projections</a>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#inheritancemapping"
+                        class="list-group-item list-group-item-action bg-light">Inheritance Mapping<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="inheritancemapping">
+                        <li><a (click)="class()" class="list-group-item list-group-item-action bg-light">Table per
+                                class</a></li>
+                        <li><a (click)="subclass()" class="list-group-item list-group-item-action bg-light">Table per
+                                sub class</a></li>
+                        <li><a (click)="concreteclass()" class="list-group-item list-group-item-action bg-light">Table
+                                per concrete class</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="componentMapping()" class="list-group-item list-group-item-action bg-light">Component
+                Mapping</a>
+            <a (click)="customMapping()" class="list-group-item list-group-item-action bg-light">Custom Mapping</a>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#collectionmapping"
+                        class="list-group-item list-group-item-action bg-light">Collection Mapping<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="collectionmapping">
+                        <li><a (click)="list1()" class="list-group-item list-group-item-action bg-light">list</a></li>
+                        <li><a (click)="set1()" class="list-group-item list-group-item-action bg-light">set</a></li>
+                        <li><a (click)="map1()" class="list-group-item list-group-item-action bg-light">map</a></li>
+                        <li><a (click)="bag1()" class="list-group-item list-group-item-action bg-light">bag</a></li>
+                        <li><a (click)="mappingarray1()" class="list-group-item list-group-item-action bg-light">Mapping
+                                array</a></li>
+                        <li><a (click)="sortingcollections1()"
+                                class="list-group-item list-group-item-action bg-light">Sorting collections</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#associationmapping"
+                        class="list-group-item list-group-item-action bg-light">Association Mapping<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="associationmapping">
+                        <li><a (click)="one1()" class="list-group-item list-group-item-action bg-light">one to one</a>
+                        </li>
+                        <li><a (click)="many1()" class="list-group-item list-group-item-action bg-light">one to many</a>
+                        </li>
+                        <li><a (click)="manytoone1()" class="list-group-item list-group-item-action bg-light">many to
+                                one</a></li>
+                        <li><a (click)="manytomany1()" class="list-group-item list-group-item-action bg-light">many to
+                                many</a></li>
+                        <li><a (click)="directional1()" class="list-group-item list-group-item-action bg-light">Uni
+                                directional</a></li>
+                        <li><a (click)="bidirectional1()" class="list-group-item list-group-item-action bg-light">Bi
+                                directional</a></li>
+                        <li><a (click)="explanation1()"
+                                class="list-group-item list-group-item-action bg-light">Explanation on inverse and
+                                cascade attributes</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#caching"
+                        class="list-group-item list-group-item-action bg-light">Caching<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="caching">
+                        <li><a (click)="firstlevel1()" class="list-group-item list-group-item-action bg-light">First
+                                level Cache(Session cache)</a></li>
+                        <li><a (click)="secondlevel1()" class="list-group-item list-group-item-action bg-light">Second
+                                level Cache(SessionFactory cache)</a></li>
+                        <li><a (click)="querylevel1()" class="list-group-item list-group-item-action bg-light">Query
+                                level cache</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#connectionpool"
+                        class="list-group-item list-group-item-action bg-light">Connection Pool<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="connectionpool">
+                        <li><a (click)="default1()" class="list-group-item list-group-item-action bg-light">Default
+                                connection pool</a></li>
+                        <li><a (click)="server1()" class="list-group-item list-group-item-action bg-light">Server
+                                supplied pool</a></li>
+                        <li><a (click)="thirdparty1()" class="list-group-item list-group-item-action bg-light">Third
+                                party vendor connection pool</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li>
+                    <a data-toggle="collapse" data-target="#transactionsandconcurrency"
+                        class="list-group-item list-group-item-action bg-light">Transactions and Concurrency<span
+                            class="fa fa-chevron-down pull-right left-chevron"></span></a>
+                    <ul class="sub-menu collapse list-group" id="transactionsandconcurrency">
+                        <li><a (click)="programmatictransactions1()"
+                                class="list-group-item list-group-item-action bg-light">Programmatic transactions with
+                                JTA</a></li>
+                        <li><a (click)="optimisticconcurrency1()"
+                                class="list-group-item list-group-item-action bg-light">Optimistic Concurrency
+                                control</a></li>
+                        <li><a (click)="pessimisticconcurrency1()"
+                                class="list-group-item list-group-item-action bg-light">Pessimistic Concurrency
+                                control</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a (click)="pagination1()" class="list-group-item list-group-item-action bg-light">Hibernate Pagination</a>
+            <a (click)="filter1()" class="list-group-item list-group-item-action bg-light">Hibernate Filter</a>
+            <a (click)="interceptor1()" class="list-group-item list-group-item-action bg-light">Hibernate
+                Interceptor</a>
+            <a (click)="connectingwithmultiple1()" class="list-group-item list-group-item-action bg-light">Connecting
+                with Multiple Databases(Oracle,  HypersonicSQL)</a>
+            <a (click)="integratinghibernatewithservlet1()"
+                class="list-group-item list-group-item-action bg-light">Integrating Hibernate with Servlet</a>
+            <a (click)="integratinghibernatewithspring1()"
+                class="list-group-item list-group-item-action bg-light">Integrating Hibernate with Spring</a>
+            <a (click)="annotations()" class="list-group-item list-group-item-action bg-light">Working with Hibernate
+                Annotations</a>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="advantagesofhibernate" *ngIf="advantagesofhibernate">
+            <h1 class="mt-4">Advantages of Hibernate compared to JDBC</h1>
+			<ul>
+                <li>Hibernate persists java objects into database (Instead of primitives)</li>
+           <li>It provides Database services in Database vendor independent Manner, so that java
+            applications become portable across the multiple databases.</li>
+            <li>Hibernate generates efficient queries for java application to communicate with Database.
+            </li>
+            <li>It provides fine-grained exception handling mechanism. In hibernate we only have Unchecked</li>
+            <li> Exceptions, so no need to write try, catch, or no need to write throws (In hibernate we
+                have.</li>
+            <li>It supports synchronization between in-memory java objects and relational records </li>
+            <li>Hibernate provides implicit connection pooling mechanism. </li>
+            <li>Hibernate supports Inheritance, Associations, Collections.</li>
+            <li>Hibernate supports a special query language(HQL) which is Database vendor independent</li>
+            <li>Hibernate has capability to generate primary keys automatically while we are storing the
+                records into database. </li>
+            <li>Hibernate addresses the mismatches between java and database. </li>
+            <li>Hibernate provides automatic change detection Hibernate often reduces the amount of
+                code needed to be written, so it lrnproves the productivity.</li>
+            <li>Database objects (tables, views, procedures, cursors, functions ... etc) name changes will
+                not affect hibernate code .</li>
+            <li>Supports over 30 dialects.
+            </li>
+            <li>Hibernate provides caching mechanism for efficient data retrieval .</li>
+            <li>Lazy loading concept is also included in hibernate so you can easily load objects on start
+                up time.</li>
+            <li>Getting pagination in hibernate is quite simple.
+            </li>
+            <li>Hibernate Supports automatic versioning of rows.</li>
+            
+            </ul>
+        </div>
+
+
+        <div class="introduction" *ngIf="introduction">
+            <h1 class="mt-4">Introduction</h1>
+			<hr>
+            <h4>Histroy </h4>
+            <p>Hibernate was started in 2001 by Gavin King as an alternative to using EJB2-style entity beans.  Its mission back then was to simply offer better persistence capabilities than offered by EJB2 by simplifying the complexities and allowing for missing features. <br>
+                Early in 2003, the Hibernate development team began Hibernate2 releases which offered many significant improvements over the first release and would go on to catapult HIbernate as the  "de facto" standard for persistence in Java... <br>
+                Hibernate3, JPA, etc.. 
+            </p>
+            <p></p>
+            <h5>What is Hibernate? </h5>
+
+            <ul>
+                <li>Hibernate is the ORM tool given to transfer the data between a java (object) application and a database (Relational) in the form of the objects. </li>
+                <li>Hibernate is the open source light weight tool given by Gavin King, actually JBoss server is also created by this person only. </li>
+                <li> Hibernate is a non-invasive framework, means it won’t forces the programmers to extend/implement any class/interface, and in hibernate we have all POJO classes so its light weight. </li>
+                <li> Hibernate can runs with in or without server, i mean it will suitable for all types of java applications (stand alone or desktop or any servlets etc....) </li>
+                <li> Hibernate goal is to relieve the developer from 95 percent of common data persistence related programming tasks. </li>
+            </ul>
+            <h5>&rarr; Type--ORM S/W (or) ORM Persistence Tech .</h5>
+            <h5>&rarr; Vendor--SoftTree(RedHat) </h5>
+            <h5>&rarr; OpenSource S/w </h5>
+            <h5>&rarr; Creator--Mr.Gavin King </h5>
+            <h5>&rarr; Versions – 2.X,  3.X, 4.X </h5><br>
+              <h6>What is persistence in java based enterprise applications? </h6>
+                <p>The process of storing enterprise data into the relational database is known as persistence. <br>
+                <b>Persistence Stores:-</b><br>
+                The place where the application data can be stored and managed permanently is called  as persistence store.   <br>
+                <b>Ex:- </b><br>
+                Files,Database s/w's .
+                </p>
+                <h6>Persistence Operations</h6>
+                <p>insert,update and delete & select operations are perfomed on the persistance stores to manipulate it's data and these operations are  called as persistance operations. </p>
+                <h6>Persistence Logic </h6>
+                <p>The logic that resides in our s/w applications to interact with persistance stores and  to manipulate data of persistance stores through operations is called as persistance logic. <br>
+                    In java application we can use either  jdbc(or) ORM  persistance logic to perform  persistance operation on DB s/w. 
+                </p>
+                <h6>DAO:- </h6>
+                <p>It is the Design the Pattern which seperates   DataAccessLogic from Bussiness Logic. <br>
+                    DAO classes can be developed with JDBC API,Hibernate,Ibatis Spring/JDBC etc.. 
+                </p>
+                <h6>What is a FrameWork? </h6>
+                <p>A framework is an abstraction layer on the top of the existing technologies. <br>
+                    A frame work is a semi finished app it provides some predefined support in the application  
+                    Development to developers. <br>
+                    A framework is a special kind of software which  comes in the form of set of jar files and it makes an application development in a less time. <br>
+                    All the frameworks are non-installble s/w .It means the s/w will be in the form  of  a set of jar files. 
+                </p>
+
+        </div>
+
+        <div class="orm" *ngIf="orm">
+            <h1 class="mt-4">ORM (Object Relational Mapping)</h1>
+        </div>
+
+        <div class="configurationfile" *ngIf="configurationfile">
+            <h1 class="mt-4">Configuration file</h1>
+			<p>Configuration is the file loaded into hibernate application when working with hibernate, this configuration file contains 3 types of information.</p>
+            <ol>
+                <li>Connection Properties</li>
+                <li>Hibernate Properties</li>
+                <li>Mapping file name&#40;s&#41;</li>
+            </ol>
+            <p>We must create one configuration file for each database</p>
+            <p>we are going to use, suppose if we want to connect with 2 databases, like Oracle, MySql,then we must create 2 configuration files.</p>
+            <p><b>No. of databases we are using = That many number of configuration files</b></p>
+            <p>We can write this configuration in 2 ways…</p>
+            <p>xml</p>
+            <p>By writing Properties file. We don’t have annotations ,Actually in hibernate 2.x we defined this configuration file by writing .properties file, but from 3.x xml came into picture.</p>
+            <p>So, finally</p>
+            <p>Mapping –> xml, annotations</p>
+            <p>Configuration –> xml, .properties &#40;old style&#41;</p>
+            <h5>Syntax Of Configuration xml:</h5>
+            <textarea class="Configuration" rows="20" cols="140" readonly>
+                <hibernate-configuration>
+                    <session-factory>
+                    <!-- Related to the connection START -->
+                    <property name="connection.driver_class">Driver Class Name </property>
+                    <property name="connection.url">URL </property>
+                    <property name="connection.username">user </property>
+                    <property name="connection.password">password</property>
+                    <!-- Related to the connection END -->
+                    <!-- Related to hibernate properties START -->
+                    <property name="show_sql">true/false</property>
+                    <property name="dialect">Database dialect class</property>
+                    <property name="hbm2ddl.auto">create/update/create-drop</property>
+                    <!-- Related to hibernate properties END-->
+                    <!-- Related to mapping START-->
+                    <mapping resource="hbm file 1 name .xml" / >
+                    <mapping resource="hbm file 2 name .xml" / >
+                    <!-- Related to the mapping END -->
+                    </session-factory>
+                    </hibernate-configuration>
+            </textarea>
+            <h5>Dialect in Hibernate:-</h5>
+            <p>It is a simple java class,which contains mapping b/w java language data type ana database data type.</p>
+            <p>This class contains queries format for predefined hibernate methods.</p>
+            <p>Hibernate generates queries for the specific database based on the Dialect class. If you want to shift from one data base to another just change the Dialect class name and connection Details in hibernate.cfg.xml file</p>
+            <p>All Dialect classes must extend Dialect&#40;Abstract class&#41;</p>
+            <p>Hibernate supports almost 30 dialect classes.</p>
+            <p>All the Dialect classes are present in org.hibernate.dialect package</p>
+            <p>We can write our own Dialect by extending Dialect class.</p>
+            <p>Dialect class is used to convert HQL queries into Database specific queries.</p>
+            <p><b>The following table showing the Supported database dialects in Hibernate:</b></p>
+            <table class="table table-hover table-bordered">
+               <thead>
+                   <tr>
+                       <td><b>Database</b></td>
+                       <td><b>Dialect</b></td>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td>DB2</td>
+                       <td>org.hibernate.dialect.DB2Dialect</td>
+                   </tr>
+                   <tr>
+                    <td>DB2 AS/400</td>
+                    <td>org.hibernate.dialect.DB2400Dialect</td>
+                </tr>
+                <tr>
+                    <td>DB2 AS/400</td>
+                    <td>org.hibernate.dialect.DB2400Dialect</td>
+                </tr>
+                <tr>
+                    <td>DB2 OS390</td>
+                    <td>org.hibernate.dialect.DB2390Dialect</td>
+                </tr>
+                <tr>
+                    <td>Firebird</td>
+                    <td>org.hibernate.dialect.FirebirdDialect</td>
+                </tr>
+                <tr>
+                    <td>FrontBase</td>
+                    <td>org.hibernate.dialect.FrontbaseDialect</td>
+                </tr>
+                <tr>
+                    <td>HypersonicSQL</td>
+                    <td>org.hibernate.dialect.HSQLDialect</td>
+                </tr>
+                <tr>
+                    <td>Informix</td>
+                    <td>org.hibernate.dialect.InformixDialect</td>
+                </tr>
+                <tr>
+                    <td>Interbase</td>
+                    <td>org.hibernate.dialect.InterbaseDialect</td>
+                </tr>
+                <tr>
+                    <td>Ingres</td>
+                    <td>org.hibernate.dialect.IngresDialect</td>
+                </tr>
+                <tr>
+                    <td>Microsoft SQL Server 2005</td>
+                    <td>org.hibernate.dialect.SQLServer2005Dialect</td>
+                </tr>
+                <tr>
+                    <td>Microsoft SQL Server 2008</td>
+                    <td>org.hibernate.dialect.SQLServer2008Dialect</td>
+                </tr>
+                <tr>
+                    <td>Mckoi SQL</td>
+                    <td>org.hibernate.dialect.MckoiDialect</td>
+                </tr>
+                <tr>
+                    <td>MySQL</td>
+                    <td>org.hibernate.dialect.MySQLDialect</td>
+                </tr>
+                <tr>
+                    <td>MySQL with InnoDB</td>
+                    <td>org.hibernate.dialect.MySQL5InnoDBDialect</td>
+                </tr>
+                <tr>
+                    <td>MySQL with MyISAM</td>
+                    <td>org.hibernate.dialect.MySQLMyISAMDialect</td>
+                </tr>
+                <tr>
+                    <td>Oracle 8i</td>
+                    <td>org.hibernate.dialect.Oracle8iDialect</td>
+                </tr>
+                <tr>
+                    <td>Oracle 9i</td>
+                    <td>org.hibernate.dialect.Oracle9iDialect</td>
+                </tr>
+                <tr>
+                    <td>Oracle 10g</td>
+                    <td>org.hibernate.dialect.Oracle10gDialect</td>
+                </tr>
+                <tr>
+                    <td>Pointbase</td>
+                    <td>org.hibernate.dialect.PointbaseDialect</td>
+                </tr>
+                <tr>
+                    <td>PostgreSQL</td>
+                    <td>org.hibernate.dialect.PostgreSQLDialect</td>
+                </tr>
+                <tr>
+                    <td>Progress</td>
+                    <td>org.hibernate.dialect.ProgressDialect</td>
+                </tr>
+                <tr>
+                    <td>SAP DB</td>
+                    <td>org.hibernate.dialect.SAPDBDialect</td>
+                </tr>
+                <tr>
+                    <td>Sybase ASE 15.5</td>
+                    <td>org.hibernate.dialect.SybaseASE15Dialect</td>
+                </tr>
+                <tr>
+                    <td>Sybase ASE 15.7</td>
+                    <td>org.hibernate.dialect.SybaseASE157Dialect</td>
+                </tr>
+                <tr>
+                    <td>Sybase Anywhere</td>
+                    <td>org.hibernate.dialect.SybaseAnywhereDialect</td>
+                </tr>
+               </tbody>
+            </table>
+        </div>
+
+        <div class="mappingfile" *ngIf="mappingfile">
+            <h1 class="mt-4">Mapping file</h1>
+            <ul>
+                <li>     
+                    In this file hibernate application developer specify the mapping from entity class name to table name and entity properties names to table column names. i.e. mapping of an object oriented data to relational data is done in this file. 
+                </li>
+                <li>Standard name for this file is&#60;domain-object-name.hbm.xml&#62;</li>
+                    <li>Mapping can be done using annotations also. If we use annotations for mapping then we no need to write mapping file.</li>
+                    <li>From hibernate 3.x version on wards it provides support for annotations,So mapping can be done in two ways</li>
+                    <h5> XML </h5>
+                    <h5>Annotations</h5>
+                    <li>Mapping is a meta data ,but not the data. Through mapping meta data hibernate stores (OR) reads  the data from database.</li>
+                    <li>Mapping is a meta data ,but not the data. Through mapping meta data hibernate stores (OR) reads  the data from database.</li>
+                    <li>Every ORM tool needs  mapping, mapping is the mechanism of placing an object properties(state) into columns of a table.</li>
+                    <li>Generally an object contains 3 properties like Identity (Object Name) State (Object values) Behavior (Object Methods).</li>
+                    <li>In ORM, Storing of an Object is nothing but storing the state of an Object, but not the Identity and behavior.</li>
+            </ul>
+            <h5>For Example:-</h5>
+            <img src="\assets\images\hibernate\maping1.png">
+            <p>An ORM tool cannot understand what class Object is needed to stored in what table. To give this information programmer must create/construct mapping</p>
+            <p>Mapping between Employee class to Employee Table will be like</p>
+            <img src="\assets\images\hibernate\mapping3.png">
+            <p>While constructing a mapping file in hibernate , It is possible to write multiple java classes mapping in a  single mapping file.</p>
+            <p>In Realtime project’s , for each domain object we create  one mapping file</p>
+            <p>I,e Number of Entity classes=that many number of mapping files</p>
+            <h5>Syntax Of Mapping xml:</h5>
+            <textarea class="map" rows="10" cols="140" readonly>
+                <!DOCTYPE ……….  >   <hibernate-mapping> 
+                    <class name="Fully qualified name of the class" table="database table Name "> 
+                    <id name="variable name" column="column name " type="java/hibernate type" /> 
+                    <property name="variable1 name" column="column name" type="java/hibernate type" /> 
+                    <property name="variable2 name" column="column name" type="java/hibernate type" /> 
+                    <class> 
+                    </hibernate-mapping> 
+            </textarea>
+            <ul>
+                <li>Each hibernate mapping file must contain  one &#60;id&#62; tag. java object identified uniquely by the &#60;id&#62; tag property. </li>
+                <li>&#60;id&#62; tag property corresponding  column can be primary key(or)non-primary key in the DataBase</li>
+            </ul>
+            <h5>Note:- </h5>
+            <ul>
+                <li>In Mapping file class names and Property names are Case-sensitive .</li>
+                <li>
+                    But Table Names and Column Names are not case sensitive. When the Property name and column name both are same we no need to give Column attribute.</li>
+                    <li> When the Persistence class name and table name both are same we no need to give table attribute.</li>
+                    <li>In the Mapping file not required to map all the properties of the entity (pojo class) and all the columns of table.</li>
+                    <li>As for our requirement we can configure required properties of the entity   with required columns of the table.</li>
+            </ul>
+
+        </div>
+
+        <div class="persistentclassorpojo" *ngIf="persistentclassorpojo">
+            <h1 class="mt-4">Persistent class or POJO</h1>
+        </div>
+
+        <div class="clientapplication" *ngIf="clientapplication">
+            <h1 class="mt-4">Client application.</h1>
+        </div>
+
+        <div class="hibernatearchitecture" *ngIf="hibernatearchitecture">
+            <h1 class="mt-4">HibernateArchitecture</h1>
+			<p>The Hibernate architecture includes many objects persistent object, session factory, sessions,
+                mapping files, configuration files .
+                </p>
+                <img src="\assets\images\hibernet\SERVLET.png">
+                <h6>The following diagram shows the high level architecture of Hibernate with mapping file and
+                    configuration file.
+                    </h6>
+                    <img src="\assets\images\hibernate\hibernatearc.png">
+                <p>Hibernate framework uses many objects i,e session factory, session, transaction etc. Along with
+                    existing Java API such as JDBC<b>(Java Database Connectivity)</b>, JTA (Java Transaction API) and JNDI
+                    (Java Naming Directory Interface).</p>
+        </div>
+
+        <div class="installationdirectorystructure " *ngIf="installationdirectorystructure">
+            <h1 class="mt-4">Installation and Directory Structure </h1>
+        </div>
+
+        <div class="hibernatedatatypes " *ngIf="hibernatedatatypes">
+            <h1 class="mt-4">Hibernate Data Types </h1>
+			            <p>Hibernate data type plays an important roll as it acts like a bridge between java types and DB data types.</p>
+            <p>It is necessary to choose correct data type during table creation.</p>
+            <p>Hibernate data types are used when we write hibernate mapping files&#40;*.hbm.xml&#41; . This is also known as mapping types.</p>
+            <p>Here we are categorizing the mapping types in Hibernate :-</p>
+            <p><b>1.Primitive Types :</b></p>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <td><b>Java Type</b></td>
+                        <td><b>Hibernate Type</b></td>
+                        <td><b>SQL Type</b></td>
+                    </tr>
+                </thead>    
+                    <tbody>    
+                    <tr>
+                        <td>int/java.lang.Integer</td>
+                        <td>integer</td>
+                        <td>INTEGER</td>
+                    </tr>
+                    <tr>
+                        <td>long/java.lang.Long</td>
+                        <td>long</td>
+                        <td>BIGINT</td>
+                    </tr>
+                    <tr>
+                        <td>short/java.lang.Short</td>
+                        <td>short</td>
+                        <td>SMALLINT</td>
+                    </tr>
+                    <tr>
+                        <td>float/java.lang.Float</td>
+                        <td>float</td>
+                        <td>Float</td>
+                    </tr>
+                    <tr>
+                        <td>double/java.lang.Double</td>
+                        <td>double</td>
+                        <td>DOUBLE</td>
+                    </tr>
+                    <tr>
+                        <td>java.math.BigDecimal</td>
+                        <td>big_decimal</td>
+                        <td>NUMERIC</td>
+                    </tr>
+                    <tr>
+                        <td>java.lang.String</td>
+                        <td>character</td>
+                        <td>CHAR(1)</td>
+                    </tr>
+                    <tr>
+                        <td>java.lang.String</td>
+                        <td>string</td>
+                        <td>VARCHAR</td>
+                    </tr>
+                    <tr>
+                        <td>byte/java.lang.Byte</td>
+                        <td>byte</td>
+                        <td>TINYINT</td>
+                    </tr>
+                    <tr>
+                        <td>boolean/java.lang.Boolean</td>
+                        <td>boolean</td>
+                        <td>BIT</td>
+                    </tr>
+                    <tr>
+                        <td>boolean/java.lang.Boolean</td>
+                        <td>yes_no</td>
+                        <td>CHAR(1)('Y' or 'N')</td>
+                    </tr>
+                    <tr>
+                        <td>boolean/java.lang.Boolean</td>
+                        <td>true/false</td>
+                        <td>CHAR(1)('T' or 'F')</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+            <p><b>2.Date and Time Type :</b></p>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <td><b>Java Type</b></td>
+                        <td><b>Hibernate Type</b></td>
+                        <td><b>SQL Type</b></td>
+                    </tr>
+                    </thead>
+                    <tbody> 
+                    <tr>
+                        <td>java.util.Date/java.sql.Date</td>
+                        <td>date</td>
+                        <td>DATE</td>
+                    </tr>
+                    <tr>
+                        <td>java.util.Date/java.sql.Time</td>
+                        <td>time</td>
+                        <td>TIME</td>
+                    </tr>
+                    <tr>
+                        <td>java.util.Date/java.sql.Time stamp</td>
+                        <td>time stamp</td>
+                        <td>TIME STAMP</td>
+                    </tr>
+                    <tr>
+                        <td>java.util.Calender</td>
+                        <td>calender</td>
+                        <td>TIMESTAMP</td>
+                    </tr>
+                    <tr>
+                        <td>java.util.Calender</td>
+                        <td>calender_date</td>
+                        <td>DATE</td>
+                    </tr>
+
+                </tbody>
+
+         </table>
+         <p><b>3.Binary and Large Object Type :</b></p>
+         <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <td><b>Java Type</b></td>
+                    <td><b>Hibernate Type</b></td>
+                    <td><b>SQL Type</b></td>
+                </tr>
+                </thead>
+                <tbody> 
+                    <tr>
+                        <td>byte[]</td>
+                        <td>binary</td>
+                        <td>VARBINARY/BLOB</td>
+                    </tr>
+                    <tr>
+                        <td>java.lang.String any java class that implements</td>
+                        <td>text</td>
+                        <td>CLOB</td>
+                    </tr>
+                    <tr>
+                        <td>java.io.Serializable</td>
+                        <td>serializable</td>
+                        <td>VARBINARY/BLOB</td>
+                    </tr>
+                    <tr>
+                        <td>java.sql.Clob</td>
+                        <td>clob</td>
+                        <td>CLOB</td>
+                    </tr>
+                    <tr>
+                        <td>java.sql.Blob</td>
+                        <td>blob</td>
+                        <td>BLOB</td>
+                    </tr>
+                </tbody>
+         </table>
+         <p><b>4.Other JDK-related Type :</b></p>
+         <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <td><b>Java Type</b></td>
+                    <td><b>Hibernate Type</b></td>
+                    <td><b>SQL Type</b></td>
+                </tr>
+                </thead>
+                <tbody> 
+                    <tr>
+                        <td>java.lang.Class</td>
+                        <td>class</td>
+                        <td>VARCHAR</td>
+                    </tr>
+                    <tr>
+                        <td>java.util.Locale</td>
+                        <td>locale</td>
+                        <td>VARCHAR</td>
+                    </tr>
+                    <tr>
+                        <td>java.util.TimeZone</td>
+                        <td>timezone</td>
+                        <td>VARCHAR</td>
+                    </tr>
+                    <tr>
+                        <td>java.util.Currency</td>
+                        <td>currency</td>
+                        <td>VARCHAR</td>
+                    </tr>
+
+                </tbody>
+        </table>
+        </div>
+
+        <div class="firstapplicationusinghibernate " *ngIf="firstapplicationusinghibernate">
+            <h1 class="mt-4">First Application using Hibernate</h1>
+			  <h5>How to create java Project</h5>
+                <textarea rows="12" cols="140" class="textArea" readonly>
+Step 1:   Open IDE Eclipcs,while opening name the workspace(folder)and click "OK".
+Step 2:   click on file->new->project->java project,name the project and click "Finish".
+      NOTE:"hibernate jars" file to the name the project as follows:
+            Right click on the Javaproject->Buildpath->ConfigurationBuildpath->libraries->add Externaljars->Browse->Select requred->then click on open->copy total jars->then click on apply.
+Step 3:create packege
+          Right click on src->new->package,name the package and click "Finish".
+Step 4:create Class
+          Right click on package->new->class,name the class and click "Finish"
+          </textarea><br><br>
+          <img src="\assets\images\hibernate1.png"><br>
+          <h5>Employee.java</h5>
+          <textarea rows="35" cols="140" class="textArea" readonly>
+            package com.integra.model;
+
+            public class Employee {
+            
+                private long eid;
+                private String ename;
+                private String salary;
+                
+                public long getEid() {
+                    return eid;
+                }
+                public void setEid(long eid) {
+                    this.eid = eid;
+                }
+                public String getEname() {
+                    return ename;
+                }
+                public void setEname(String ename) {
+                    this.ename = ename;
+                }
+                public String getSalary() {
+                    return salary;
+                }
+                public void setSalary(String salary) {
+                    this.salary = salary;
+                }
+                @Override
+                public String toString() {
+                    return "Employee [eid=" + eid + ", ename=" + ename + ", salary=" + salary + "]";
+                }
+                
+                
+            }
+            
+          </textarea><br>
+          <h5>employee.hbm.xml</h5>
+          <textarea rows="18" cols="140" class="textArea" readonly>
+            <?xml version="1.0"?>
+
+            <!DOCTYPE hibernate-mapping PUBLIC
+                "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+            
+                <hibernate-mapping>
+                <class name="com.integra.model.Employee" table="Employee">
+                <id name="eid"></id>
+                <property name="ename" column="ename"></property>
+                <property name="salary" column="salary"></property>
+                    
+                </class>	
+                
+                </hibernate-mapping>
+          </textarea><br><br>
+          <h5>hibernate.cfg.xml</h5>
+          <textarea rows="25" cols="140" class="textArea" readonly>
+            <?xml version="1.0"?>
+            <!DOCTYPE hibernate-configuration PUBLIC
+                    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+            
+            <hibernate-configuration>
+                <session-factory>
+                  
+                    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+                    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/abid</property>
+                    <property name="hibernate.connection.username">root</property>
+                    <property name="hibernate.connection.password">root</property>
+                    
+                      <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+                      <property name="hibernate.hbm2ddl.auto">update</property>
+                      <property name="show_sql">true</property>
+                     <mapping resource="com/integra/cfg/employee.hbm.xml" />
+                   
+                </session-factory>
+            </hibernate-configuration>
+          </textarea><br>
+          <h5>Employeetest.java</h5>
+          <textarea rows="40" cols="140" class="textArea" readonly>
+            package com.integra.test;
+
+            import org.hibernate.Session;
+            import org.hibernate.SessionFactory;
+            import org.hibernate.Transaction;
+            import org.hibernate.cfg.Configuration;
+            
+            import com.integra.model.Employee;
+            
+            public class EmployeeTest {
+                public static void main(String[] args) {
+                    
+                Configuration configuration= new Configuration();
+                    
+                    configuration.configure("com/integra/cfg/hibernate.cfg.xml");
+                    SessionFactory sessionFactory=configuration.buildSessionFactory();
+                    
+                    Session session=sessionFactory.openSession();
+                    
+                    Transaction transaction=null;
+                    
+                    Employee emp =new Employee();
+                    emp.setEid(1);
+                    emp.setEname("ali");
+                    emp.setSalary("7777");
+                    
+                    try {
+                        
+                        transaction=session.beginTransaction();
+                        session.save(emp);
+                        transaction.commit();
+                        
+                    } catch (Exception e) {
+                        transaction.rollback();
+                        e.printStackTrace();
+                    }
+            
+                }
+         
+        </textarea>
+        <h5>output:</h5>
+        <img src="\assets\images\hibernate\hiberntdb.png"><br> 
+        </div>
+
+        <div class="configuration" *ngIf="configuration">
+            <h1 class="mt-4">Configuration</h1>
+			
+        </div>
+
+        <div class="sessionfactory" *ngIf="sessionfactory">
+            <h1 class="mt-4">SessionFactory</h1>
+			<ul>
+                <li>SessionFactory is an interface, present in <b>"org.hibernate"</b> package.</li>
+            <li>SessionFactoryImpl is an implemented class of SessionFactory interface </li>
+            <li>SessionFactory is a heavy weight object that has to be created only once per application.</li>
+            <li>SessionFactory is not a singleton.</li>
+            <li>SessionFactory object provides lightweight session object's.
+            </li>
+            <li>Session Factory object is the factory for session objects.</li>
+            <li>Generally one sessionfactory should be created for one database.</li>
+            <li>When you have multiple databases in your application you should create multiple
+                SessionFactory objects.</li>
+            <li>For Example : 
+            </li>
+            <li>If you are using two databases called mysql and oracle in your hibernate application then
+                you need to build 2 SessionFactory object's.</li>
+            <li>Sessionfactory is long live multithreaded object. </li>
+            <li>SessionFactory is a ThreadSafe object.</li>
+            <li>SessionFactory is an ImmutableObject.</li>
+            <li>To build the SessionFactory object we can call buildSessionFactory() method from
+                Configuration class.</li>
+            </ul>
+            <h5>method</h5>
+            <p>public SessionFactory buildSessionFactory()</p>
+            <h5>example</h5>
+            <textarea class="textArea" rows="4" cols="140" readonly>
+                Configuration cfg=new Configuration();
+                cfg.configure("/hibernate.cfg.xml");
+                SessionFactory sessionFactory=cfg.buildSessionFactory();
+            </textarea>
+            <img src="\assets\images\hibernate\session factory1.png">
+            <h6>Why Session factory is a heavy weight?</h6>
+<p>Session factory encapsulates session object,connections,Hibernate properties caching and
+    mappings.</p>
+    <h5>How To Create Session Factory in Hibernate</h5>
+    <p>There are many APIs deprecated in the hibernate core framework. One of the frustrating point at
+        this time is, hibernate official documentation is not providing the clear instructions on how to use
+        the new API and it stats that the documentation is in complete. Also each incremental version gets
+        changes on some of the important API.In our earlier versions we have created the session factory as
+        below: -</p>
+        <p>SessionFactory sessionFactory=cfg.buildSessionFactory();</p>
+        <p>since Hibernate 4.x, this approach is deprecated. According to Hibernate 4.0 API docs,
+            the Configuration class’ buildSessionFactory() method is deprecated and it recommends
+            developers to use the buildSessionFactory(ServiceRegistry) instead.</p>
+            <p>Here is the new recommended code that is used to builds the SessionFactory based on a
+                ServiceRegistry and obtains the Session:</p>
+                <textarea class="textArea" rows="7" cols="140" readonly>
+      Configuration configuration = new Configuration().configure();
+      ServiceRegistryBuilder registry = new ServiceRegistryBuilder();
+      registry.applySettings(configuration.getProperties());
+      ServiceRegistry serviceRegistry = registry.buildServiceRegistry();
+      SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+      Session session = sessionFactory.openSession();
+ </textarea>
+                <p>In hibernate 4.3 ServiceRegistryBuilder is deprecated so in the new Version’s it is recommended toStandardServiceRegistryBuilder instead of ServiceRegitryBuilder.</p>
+<h5>Example code</h5>
+<textarea class="textArea
+" rows="6" cols="140" readonly>
+    Configuration configuration = new Configuration().configure(“/hibernate.cfg.xml”);
+    ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder();
+    serviceRegistry .applySettings(configuration.getProperties()).build();
+    // builds a session factory from the service registry
+   SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry); 
+ </textarea>
+        </div>
+
+        <div class="session" *ngIf="session">
+            <h1 class="mt-4">Session</h1>
+			<ul>
+                <li>Session is an interface present in org.hibernate package and Sessionlmpl is an implemented
+                    class.</li>
+                <li>Session object is called persistent manager for the hibernate application.</li>
+                <li>It is a single-threaded (not-thread safe), short-lived object.</li>
+                <li>It encapsulates the functionality of JDBC connection, statement obj.</li>
+                <li>It has convenience methods to perform persistent operations.</li>
+                <li>When a session is opened then internally a connection with the database will be
+                    established.
+                    </li>
+                <li>It is a factory for Transaction objects.</li>
+                <li>Session Holds a mandatory (first-level) cache of persistent objects
+                </li>
+            </ul>
+            <p><b>Note:</b> After we complete the use of the Sesson, It has to be closed, to release all the resources
+                such as associated objects and jdbc connection.</p>
+                <p>The SessionFactory object is used to open a Hibernate Session .To do this we can use any one of the
+                    openSession() methods of SessionFactory.
+                    </p>
+                    <table class="table table-hover table-bordered">
+                        <tbody>
+                        <tr> 
+                            <td>public Session openSession() </td>
+                            <td>This method Prepares a new session that
+                               obtains a jdbc connection object by using the
+                               connection Manager
+                               </td>  
+                               </tr>
+                               <tr>
+                                <td>public Session openSession(Connection con) </td>
+                                <td>This method prepares a new session that uses
+                                    the given Connection</td>
+                               </tr>
+                               <tr>
+                                   <td>public Session openSession(Interceptor icr)</td>
+                                   <td>This method prepares a new session that
+                                    obtains a Jdbc connection object by using the
+                                    connection manager.The session is registered
+                                    with the given Interceptor</td>
+                               </tr>
+                               <tr>
+                                   <td>public Session openSession(Connection
+                                    con,Interceptor icr).
+                                    </td>
+                                    <td>This method prepares a new session that uses
+                                        the given Jdbc connection object .The session is registered with the given Interceptor.</td>
+                               </tr>
+                               </tbody>
+         </table><br>
+         <br>
+         <h5>The following code shows for creating a new session </h5>
+         <textarea class="textArea" rows="5" cols="140" readonly>
+          Configuration cfg=new Configuration();
+          cfg.configure("/hibernate.cfg.xml");
+          SessionFactory sessionFactory=cfg.buildSessionFactory();
+          Session session=sessionFactory.openSession();
+         </textarea>
+         <p>The Session interface has various convenience methods to perform the persistence operations.</p><br>
+         <p>After obtaining the session we can use the session methods to perform
+          CRUD(Create,Read,Update,Delete) operations on the instances of mapped persisten classes.</p>
+          <textarea class="textArea" rows="9" cols="140" readonly>
+              //get SessionFactory object reference
+              // After getting the sessionFactory object we can obtain the session from
+              sessionFactory
+              Session session=sessionFactory.openSession();
+              //Use the session for performing persistence operations
+              //After the use of session,close the session
+               session.close();
+          </textarea> 
+          
+          <p>After we complete the use of session, it has to be closed to release all the resources such as cached
+              entity object’s ,collections,proxies,and a jdbc connection.</p>
+<p>But it is recomnded to close the session explicitly by calling close().</p> 
+ 
+        </div>
+
+        <div class="transaction" *ngIf="transaction">
+            <h1 class="mt-4">Transaction</h1>
+        </div>
+
+        <div class="transientobject" *ngIf="transientobject">
+            <h1 class="mt-4">Transient object</h1>
+        </div>
+
+        <div class="persistentobject" *ngIf="persistentobject">
+            <h1 class="mt-4">Persistent object</h1>
+			<p>An object is said to be in persistence state, when it is associated with session as well as object present in database.</p>
+            <p><b>Example:Table ACCOUNT</b></p>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <td><b>ACCNO</b></td>
+                        <td><b>NAME</b></td>
+                        <td><b>BALANCE</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1001</td>
+                        <td>Pavan</td>
+                        <td>15000.0</td>
+                    </tr>
+                    <tr>
+                        <td>1002</td>
+                        <td>Ramu</td>
+                        <td>20000.0</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <h5>Application Code:</h5>
+                    <h5>Account account = (Account) session.get(Account.class,1002);</h5>
+                    <p>In the above example account object is associated with session and there is a matching record in ACCOUNT table. So we can say that account object is in persistent state.</p>
+                    <p>In this state object is transactional. i.e. the object is synchronized with database record.</p>
+                    <p>Changes made to objects in a persistent state are automatically saved to the database without invoking session persistence methods.</p> 
+        </div>
+
+
+        <div class="detachedobject" *ngIf="detachedobject">
+            <h1 class="mt-4">Detached object</h1>
+			 <p>An object is said to be in detached state, when the object is not associated with session but present in data base.</p>
+                    <p><b>Example:</b>Table Account</p>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <td><b>ACCNO</b></td>
+                                <td><b>NAME</b></td>
+                                <td><b>BALANCE</b></td>
+                            </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>1001</td>
+                                <td>Pavan</td>
+                                <td>15000.0</td>
+                            </tr>
+                            <tr>
+                                <td>1002</td>
+                                <td>Ramu</td>
+                                <td>20000.0</td>
+                            </tr>
+                            <tr>
+                                <td>1003</td>
+                                <td>Raju</td>
+                                <td>210000.0</td>
+                            </tr>
+                        </tbody>
+                 </table>
+                 <h5>Application code :</h5>
+                 <h5>Account account = new Account&#40;&#41;;</h5>
+                 <h5>account.setAccNum&#40;1003&#41;;</h5>
+                 <h5>account.setName &#40;"Raju"&#41;</h5>
+                 <h5>account.setBalance&#40;21000&#41;;</h5>
+                 <h5>&#47;&#47;Now the account object is said to be in transient state</h5>
+                 <h5>session.save &#40;account&#41;</h5>
+                 <h5>session.beginTransaction&#40;&#41;.commit&#40;&#41;;</h5>
+                 <p>&#47;&#47; Now the account object is said to be in persistence state</p>
+                 <p>session.close &#40;&#41; &#47;&#47; Now the account object is said to be in detached state.</p>
+                 <p>In the above example after calling session.close&#40;&#41; method, account object is moved to Detached
+                    state from persistent state. As session i s garbage collected, if we try to perform some modifications
+                    to entity object those changes will not be stored into database.</p>
+        </div>
+
+
+        <div class="saveorpersist" *ngIf="saveorpersist">
+            <h1 class="mt-4">save, persist, SaveOrUpdate</h1>
+        </div>
+
+
+        <div class="update" *ngIf="update">
+            <h1 class="mt-4">update, merge, delete</h1>
+        </div>
+
+
+        <div class="load" *ngIf="load">
+            <h1 class="mt-4">load, get</h1>
+			<hr>
+            <h5>load operation/select operation/read operation :- </h5>
+            <p>load/select/read operation is nothing but reading an object from a database into a java application. <br>
+                In order to perform a load operation/select  operation a java programmer has to call any  one of the following method from session interfa
+            </p>
+            <ol>
+                <li> public Object get(String className , Serializable id) </li>
+                <li> public Object get(Class clz , Serializable id) </li>
+                <li> public Object load(String className, Serializable id) </li>
+                <li> public Object load(Class clz, Serializable id) </li>
+            </ol>
+            <p>While loading,Hibernate creates internally  an Object of a pojo class for storing the selected data from a database. For creating an Object of pojo class, hibernate internally calls   newInstance() of  java.lang.Class. <br>
+                When session.get(className ,id) method is called for loading an Object from database.  Hibernate first verifies weather the given id record is exist in the database (OR) not. If exist then immediately reads it from the database and creates persistence Object internally and finally returns the persistence class Object back to java app. <br>
+                If the given id record  is not exist in the database then get(-,-)  returns null value back to the java app. <br>
+                In the case of load(-,-) method, first  hibernate creates a pojoclass Object with empty state(data) and returns that Object back to a java program. here the Object returned by hibernate is not  a real Object.It means the Object does not contain the data of a database. And it is called as a  proxy Object <br>
+                
+                 When we try to access the non-identifier properties from proxy object, at that time Hibernate will hit the database and reads the data from database and put's it into the pojoclass Object  this mechanism  is called lazy-loading <br>
+                 If the given id does not exist in the database then hibernate throws org.hibernate.ObjectNotFoundException 
+             </p>
+             <h6>What is the difference between load() and get() methods? </h6>
+             <p>-->>If the given id does not exist in the database then load method throws an Exception but get() method returns null. <br>
+             -->load() loads the data from database on demand. It is supporting lazy loading. 
+ 
+             But get() immediately loads  the  data from database so it is early loading. <br>
+              In the case of get() if the given identifier record is not exist then hibernate returns null value 
+            </p>
+            <p>Example to call the get(-,-) method : </p>
+            <textarea name="" id="" cols="140" rows="8">
+                Session session=sessionFactory.openSession();
+                 Account account=(Account)session.get(Account.class,1001);
+                //At this line put a break point.... Now observe the console ,After this line executed,
+                 //We can find select statement .
+                 //And the account object initialized with database data
+                  System.out.println(account.getName()); 
+            </textarea>
+            <p><b>Example to call the load (-,-) method:</b></p>
+            <textarea name="" id="" cols="140" rows="20">
+                Session session=sessionFactory.openSession(); 
+                       try{
+                            Account account=(Account)session.load(Account.class,1001);
+                            
+                            //At this line put a break point.... Now observe the console ,After this line executed,
+                            //We can’not  find select statement .
+                             //And the account object not  initialized with the database data And the Account is proxy object 
+                             System.out.println(account.getName());
+                             //After this line you can find select query on the console ,And now account object is 
+                             //initialized with database data 
+                            }
+                            catch(ObjectNotFoundException e){
+                                 e.printStackTrace(); 
+                         } 
+            </textarea> 
+            <hr>
+            <p>When we use session.get(-,-) method if object is present we have to implement some logic,if not we need to implement some other logic. </p>
+            <p><b>Example : </b></p>
+            <textarea name="" id="" cols="140" rows="10">
+                Session session=sessionFactory.openSession();
+                 Account account=(Account)session.get(Account.class,1001); 
+                 if(account!=null){
+                      System.out.println(account.getName());
+                     System.out.println(account.getBalance());
+                     }
+                     else{
+                          System.out.println(“Account Not Found “);
+                         } 
+            </textarea>
+            <p>But in the case of load(-,-) method if the given id record is not exist load(-,-) method will rise org.hibernate.ObjectNotFoundException.So we cannot implement logic like above code . </p>
+
+        </div>
+
+
+        <div class="flush" *ngIf="flush">
+            <h1 class="mt-4">flush, evict, clear etc</h1>
+			<hr>
+            <h5><a href="">What is session.flush() method in Hibernate ? </a></h5>
+            <h6>public void flush() throws HibernateExceptio</h6>
+            <h6>This method is used to synchronize session data with  database. </h6>
+            <p>Example : <br>
+            
+            </p>
+            <textarea name="" id="" cols="140" rows="10">
+                Session session = sessionFactory.openSession(); 
+                Transaction tx=session.beginTransaction(); 
+                Account account=(Account)session.get(“com.nareshit.pojo.Account”,1001); 
+                account.setName(“java sathish “); 
+                account.setBalance(17000.0); 
+                session.flush(); 
+                System.out.println(“Break….point and observe the console”); 
+                System.in.read(); 
+                tx.commit(); 
+            </textarea>
+            <p>In the above example when we call session.flush(), Hibernate checks (OR) compares account object data and corresponding record in the database.If it is finds difference ,It will execute update query to update Object data into the database record. <br>
+                When tx.commit() is called it will also check object data and corresponding record data. If it finds difference it will update Object data into the database. <br>
+                So after tx.commit() call ,we should not call session.flush() method because when we call tx.commit()  method is called session is sync with the database. 
+            </p>
+            <hr>
+
+            <h5>clear():    public void clear()</h5>
+            <p>This method used to de-associate all the object's from session.</p>
+            <p><b>evict(Object obj) : public void evict(Object obj)</b><br>
+                This method is used to de-associate the specified object from session
+            </p>
+            <h6>Note :</h6>
+            <p>When a session is opened then internally a connection with the database will be
+                established. <br>
+                when a session is opened in hibernate then internally a cache (buffer) is opened
+                along with the session.<br>
+            </p>
+            <ol>
+                <h6>Hibernate supported two-levels of caching</h6>
+                <li>First-Level Cache (part of session)</li>
+                <li>Second-Level Cache(part of SessionFactory)(we will discuss about second
+                    level cache in the next chapters)</li>
+            </ol>
+            <p>As a programmer we are not taking any responsibility to create first-level in
+                session.but second-level cahce expilictly configured/created by programmer.</p>
+              <p>The First level cache is automatically created when a session is opened and
+                automatically closed when a session is closed.</p>
+               <p>First level cache associated with session object And is available only till session
+                object is live. It is available to session object only and is not accessible to any other
+                session object in any other part of application.</p>
+               <p>The operations done on the persistence Objects will be stored in a cache,it means if
+                we perform insert (OR) delete (OR) update (OR) select then the result of those
+                operations will be stored by hibernate internally in the cache of that session.</p>
+                <img src="assets/images/hibernate/cvit.png" alt="">
+                <h6>Important Points</h6>
+                <ol>
+                    <li>First level cache is associated with “session” object and other session objects in
+                        application can not see it</li>
+                      <li>The scope of cache objects is of session. Once session is closed, cached objects
+                        are gone forever.
+                        </li>
+                      <li>When we read/select/load an object first time, it is retrieved from database
+                        and stored in first level cache associated with hibernate session.</li>
+                       <li>If we read/select/load same object again with same session object, it will be
+                        loaded from cache and no sql query will be executed.</li>
+                        <li>The loaded object can be removed from session using session.evict(obj)
+                            method. The next time loading of this object will again make a database call if
+                            it has been removed using evict(-) method.</li>
+                          <li>. The whole session cache can be removed using session.clear() method. It will
+                            remove all the objects data stored in cache.</li>       
+                </ol>  
+                <h6>For Example :</h6>
+                <p>If we load an Object from a database then first hibernate verifies whether the Object
+                    is there in session cache(OR) not . if it is yes ,then hibernate reads the Object from
+                    cache instead of Database.so the trips between java app and database will be
+                    reduced .
+                    In this example, I am retrieving AccountEntity object from database usin</p>
+                    <p>In this example, I am retrieving AccountEntity object from database using hibernate
+                        session. I will retrieve it multiple times, and will observe the sql logs to see the
+                        differences.</p>
+                   <textarea name="" id="" cols="140" rows="15">
+                    //Open the Session
+                    Session session=sessionFactory.openSession();
+                    //fetch the Account entity from database first time
+                   Account acc1=(Account)session.get("com.nareshit.pojo.Account",3001);
+                   System.out.println("Name : "+acc1.getName());
+                   System.out.println("Balance : "+ acc1.getBalance());
+                   System.out.println();
+                   //fetch the same Account entity second time
+                   Acc1=(Account)session.get("com.nareshit.pojo.Account",3001);
+                   System.out.println("Name : "+acc1.getName());
+                   System.out.println("Balance : "+acc1.getBalance());
+                   </textarea>      
+                   <h6>Removing cache objects from first level cache example</h6>
+                   <p>Though we can not disable the first level cache in hibernate, but we can remove
+                    some of objects from it when needed. This is done using session interface methods :</p>
+                    <p><b>evict(object obj)</b></p>
+                    <p><b>clear()</b></p>
+                    <p><b>Here evict(-) is used to remove a particular object from cache associated with
+                        session, and clear() method is used to remove all cached objects associated with
+                        session.</b>So they are essentially like remove one and remove all.</p>
+                        <textarea name="" id="" cols="140" rows="25">
+                            //open the session
+                            Session session=sessionFactory.openSession();
+                            //fetch the Account entity from database first time
+                            Account
+                            acc1=(Account)session.get("com.nareshit.pojo.Account",3001);
+                            System.out.println("Name : "+acc1.getName());
+                            System.out.println("Balance : "+ acc1.getBalance());
+                            System.out.println();
+                            //fetch the same Account entity second time
+                            acc1=(Account)session.get("com.nareshit.pojo.Account",3001);
+                            System.out.println("Name : "+acc1.getName());
+                            System.out.println("Balance : "+acc1.getBalance());
+                            System.out.println();
+                            session.evict(acc1);
+                            //session.clear();
+                            //After calling evict(-) method fetch the same Account
+                            entity third time
+                            acc1=(Account)session.get("com.nareshit.pojo.Account",3001);
+                            System.out.println("Name : "+acc1.getName());
+                            HIBERNATE NOTES Mr.Sathish
+                            Naresh i Technologies, Ameerpet, Hyderabad, Ph: 040-23734842, website: www.nareshit.com
+                            ::27::
+                            System.out.println("Balance : "+acc1.getBalance());
+                        </textarea> 
+                        <p>hibernate :select account0 <br>
+                        name: ramu <br>
+                        balance:8000<br>
+                        <b>you can see that second session.get(-,-) statement does not generated select
+                            query again and account object is loaded from first level cache.
+                            </b><br>
+                            <b>And you can see that third session.get(-,-) statement does generated the select
+                                query again and account object is loaded from database because with
+                                session.evict(acc1); method call is deleted acc1 object from first level cache.</b>
+
+                        </p>
+        </div>
+
+        <div class="versioning" *ngIf="versioning">
+            <h1 class="mt-4">Versioning</h1>
+        </div>
+
+        <div class="assigned" *ngIf="assigned">
+            <h1 class="mt-4">Assigned</h1>
+			 <h5>2. Assigned (org.hibernate.id.Assigned)</h5>
+         <p>This generator supports in all the databases This is the default generator class used by the hibernate, if we do not specify &#60;generator&#47;&#62;element under &#60;id&#47;&#62; element, then hibernate by default assumes it as "assigned" generator class.  If generator class is assigned, then the programmer is responsible for assigning the identifier value to entity before saving into the database. </p>
+          <h5>Example in code Mapping File:- </h5>
+          <textarea  class="seq" rows="10" cols="140" readonly>
+            <id name=" empNo " column=”empNo"> 
+            <generator class="org.hibernate.id.Assigned" /> 
+            </id > 
+            (OR) 
+            <id name=" empNo " column="EmpNO"> 
+            <generator class="assigned" /> 
+            </id > 
+
+        </textarea>
+          <h5>Internal Code: </h5>
+          <textarea  class="seq" rows="15" cols="140" readonly>
+            public class Assigned implements IdentifierGenerator,Configurable{ 
+            public Serializable generate(-,- ){ 
+            final Serializable id = . . . it will gets the developer glven id. 
+            if (id==null) { throw new IdentifierGenerationException("ids for this class must be manually assigned before 
+            calling save(): " entityName); 
+            }  return id; 
+             }//end of generate(-,-)  
+            -- 
+            --- 
+            --  
+            } 
+         </textarea>
+        </div>
+
+        <div class="increment" *ngIf="increment">
+            <h1 class="mt-4">Increment</h1>
+			 <h5> increment &#40;org.hibernate.id.IncrementGenerator&#41;</h5>
+            <p>This generator supports in all the databases, so it is database independent generator class. This generator is used for generating the id value for the new record by using the formula Max of id value in Database + 1 <br>If there is no record initially in the database, then for the first time this will saves primary key value as 1.  </p>
+           <h5>Example:- </h5>
+           <textarea class="incre" rows="8" cols="140" readonly>
+            <id name=" empNo " column=”empNo"> 
+            <generator class="increment" /> 
+            </id >  
+            (or)  
+            <id name=" empNo " column=”empNo">  
+            <generator class=" org.hibernate.id.lncrementGenerator " /> </id>   
+           </textarea>
+        </div>
+
+        <div class="sequence" *ngIf="sequence">
+            <h1 class="mt-4">Sequence</h1>
+			<h5>sequence (org.hibernate.id.SequenceGenerator) </h5>
+            <p>This generator class is database dependent it means, we cannot use this generator class for all the databases, we should know whether the database supports sequence or not before we are working with it - It is not supporting  by MYSQL db. </p>
+            <p>Here we write a sequence and it should be configured in HBM file and while persisting the object in the database, sequence is going to generate the identifier and it will assign to the Id property of persistent object, then it will store the persistent object into Database. </p>
+             <h5>Steps:- </h5>
+             <h5>1.Create a Sequence  in Database </h5>
+             <p> <b>SQL></b> create sequence empno_sequence start with 1000 increment by 1; to get the next value select empno_sequence.nextval from dual </p>
+           <h5>2.Configure Sequence in HBM File. </h5>
+           <textarea  class="seq" rows="15" cols="140" readonly>
+            <hibernate-mapping>
+                <class name="com.nareshit.pojo.Employee"  table="employee">
+                <id  name="empno"> 
+                <generator class="sequence"> 
+                <param name="sequence">Empno_SEQUENCE</param>
+                </generator>
+                </id> 
+                <property name="name">
+                      </property> 
+                <property name="salary"></property> 
+                </class> 
+                </hibernate-mapping> 
+
+           </textarea>
+           
+           <p><b>Note:</b>If we don't configure any sequence name then it will take default sequence name(HIBERNATE_SEQUENCE ). But hibernate won't create the sequence, if already sequence is available with name "HIBERNATE_SEQUENCE", then it is used by hibernate. Otherwise hibernate raises the exception.   </p>
+           <p><b>Note:</b> But remember, if we enable hbm2ddl.auto property in hibernate configuration file, then hibernate will create the  database tables,sequences if they are not exist. </p>
+           <p><b>Note:</b> It is not advisable to use the default sequence, always prefer to create a different sequence to each enitity seperately. </p>
+            <h5>3. Create the entity and save it without assigning identifier.</h5>
+            <p>1. Session session = SessionUtil.getSession(); <br> 
+                2. session. getTransaction ( ) .begin ( ) ;<br> 
+                3. Employee emp=new Employee(); <br>
+                4. emp. setName ("sathish") ; <br>
+                5. emp. setSalary (5000) ; <br>
+                6. Serializable id = session. save (emp) ; <br>
+                7. System. out. println (“Employee is created with No  : "+id) ; <br>
+                8. session. getTransaction () . commit () ; </p>
+            <p><b>Note:</b> When we execute the above code, we can find the sequence execution query on the console, which is used to get identifier for the saving enitity.   </p>
+             <h5>Internal Code </h5>
+             <textarea  class="seq" rows="15" cols="140" readonly>
+                public class SequenceGenerator implements PersistentldentifierGenerator, Configurable {
+                public static final String SEQUENCE = "sequence"; 
+                public void configure(. . .){ 
+                sequenceName = PropertiesHelper.getString(SEQUENCE, params,"hibernate_sequence"); // default sequence name 
+                parameters = params.getProperty(PARAMETERS);  
+                public Serializable generate(. .. ) { 
+                Preparedstatement st =. . ..prepareSelectStatement(sql); 
+                Resultset rs = st.executeQuery(); rs.next(); 
+                Serializable result = . . iterate results ... return result; 
+            }
+        </textarea>
+        <p><b>Note:</b> Now onwards for the following generator classes just give the HBM configuration, you can use the  same entity saving logic(which we used in the above example as part of step-3) to test them.</p>
+        
+        </div>
+
+        <div class="hilo" *ngIf="hilo">
+            <h1 class="mt-4">Hilo</h1>
+			<h5>4. High-low alg (org.hibernate.id.TableHiLoGenerator) </h5>
+             <p>This generator is database independent hilo uses a high/low algorithm to generate Identifiers.  
+                This alg uses High-Low Alg to Generate identity values </p>
+                <ul>
+
+                    <li>This alg uses specified table,related column value as the  source of high value </li>
+                    <li> uses the max_lo parameter value as the source of lo value. </li>
+                    <li> uses following formula to generate identity value. (helper table column value)*(max_lo value+1) </li>
+               </ul>
+               <h5>Example:- </h5>
+               <p>create helper table having helper column with value.<br>  
+                <b>SQL></b>>create table mytable(mycolumn number(10)); <br>
+                <b>SQL></b>insert into mytable value(10); <br>
+                <b>SQL></b>commit; </p>
+                <h5>Ex:-</h5>
+                <textarea  class="seq" rows="15" cols="140" readonly>
+                    <id  name="empNo" column="empNo"> 
+                    <generator class="hilo"> 
+                    <param name="table">mytable</param>
+                    <param name="column">mycolumn</param> 
+                    <param name="max_lo">5</param>  
+                    </generator>
+                     </id>  
+                     It is used the following formula to generate the Identifier (helpercolval)*(max_lo value+1)  
+                     &#26;(10)*(5+1)                 
+                      60-->11  
+                    next  
+                    11*(5+1) 
+                    &#61;&#61;&#62;66&#26;12 
+                     </textarea>
+                     <p> If we are not configure helper table name ,helper column value and max_lo value.</p>
+                    <p><b>By default hibernate will use helper table name as hibernate_unique_key and helper column name as next_hi</b></p>
+                    <ul>
+                       <li> And   for the first record, the id value will be inserted as 1</li>
+                       <li>for the second record the id value will be inserted as 32768 </li>
+                       <li>for the next records the id value will be incremented by 32768 and will stores into the database (i mean adds to the previous)</li>
+                       <li> actually this hibernate stores the count of id values generated in a column of separated table, with name<b> “hibernate_unique_key”</b> by default with the column name <b>“next_hi”</b></li>
+
+                    </ul>
+        </div>
+
+        <div class="seqhilo" *ngIf="seqhilo">
+            <h1 class="mt-4">Seqhilo</h1>
+        </div>
+
+        <div class="identity" *ngIf="identity">
+            <h1 class="mt-4">Identity</h1>
+        </div>
+
+        <div class="foreign" *ngIf="foreign">
+            <h1 class="mt-4">Foreign</h1>
+        </div>
+
+        <div class="native" *ngIf="native">
+            <h1 class="mt-4">Native</h1>
+			<p>native is not having any generator class because,it uses internally identity (or) sequence (or) hilo generator classes.</p>
+            <p>when we use this generator class, it first checks whether the database supports identity or not, if the database not supporting the identity then it checks for sequence. if the database not supporting sequence then hilo will be used finally .</p>
+            <p>so the order will be..</p>
+            <p>identity</p>
+            <p>sequence</p>
+            <p>hilo</p>
+            <p>For example, if we are connecting with oracle, if we use generator class as native then it is equal to the generator class as sequence.</p>
+        </div>
+
+        <div class="uuid" *ngIf="uuid">
+            <h1 class="mt-4">UUID</h1>
+			<p>uuid uses a 128- bit id algorithm to generate identifiers of type string.</p>
+            <p>uuid generated identifier is unique with in a network.</p>
+            <p>uuid algorithm generates identifier using IP address.</p>
+            <p>uuid algorithm codes identifier as a string(hexadecima1 digits) of length 32.</p>
+            <p>Generally uuld is used to generate passwords.</p>
+            <h5>Example:-</h5>
+            <textarea class="universalUniqueId" rows="5" cols="140" readonly>
+                <id name="empNo" column="empNO">
+                    <generator class="uuid" >
+                    </generator>
+                    </id>
+            </textarea>
+        </div>
+
+        <div class="customgenerator" *ngIf="customgenerator">
+            <h1 class="mt-4">Custom generator</h1>
+			<p>When we feel the existing generator classes are not fit for our requirement, then we will go for user defined generator class.</p>
+            <p>Steps to implement user defined generator class.</p>
+            <p><b>Step 1:-</b></p>
+            <p>Take any java class and implement org.hibernate.id .IdentifierGenerator and override generate() method.</p>
+            <p>In this method implement the identifier generation logic as per the requirement.</p>
+            <p><b>Step 2:-</b></p>
+            <p>Give the Generator class entity in the generator tag of HBM file.</p>
+                <p><b>Step1:EmpNoGenerator.java:</b></p>
+                <textarea class="generator" rows="30" cols="140" readonly>
+                    package com.guruji.id;
+                    import java.io.Serializable;
+                    import java.sql.Connection;
+                    import java.sql.PreparedStatement;
+                    import java.sql.ResultSet;
+                    import java.sql.SQLException;
+                    import org.hibernate.HibernateException;
+                    import org.hibernate.engine.spi.SessionImplementor;
+                    import org.hibernate.id.IdentifierGenerator;
+                    public class EmpNoGenerator implements IdentifierGenerator{
+                    public Serializable generate(SessionImplementor session, Object obj)
+                    throws HibernateException {
+                    String empNo="Emp";
+                    try{
+                    Connection connection=session.connection();
+                    String query="select emp_no_sequence.nextval from dual";
+                    PreparedStatement pst=connection.prepareStatement(query);
+                    ResultSet resultSet=pst.executeQuery();
+                    if(resultSet.next()){
+                    empNo=empNo+resultSet.getString(1);
+                    }
+                    }catch(SQLException se){
+                    se.printStackTrace();
+                    }
+                    return empNo;
+                    }
+                    }
+                </textarea>
+                <p>In the above user defined Generator class i used database sequence to generate next value... And I got the connection from session object.</p>
+                <p><b>Step 2: Employee Mapping file :</b></p>
+                <textarea class="generator" rows="15" cols="140" readonly>
+                    <!DOCTYPE hibernate-mapping PUBLIC
+                          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                          <hibernate-mapping>
+                           <class name="com.nareshit.pojo.Employee" table="emp">
+                           <id name="empNo">
+                           <generator class="com.nareshit.id.EmpNoGenerator">
+                           </generator>
+                           </id>
+                           <property name="name" length="12"></property>
+                           <property name="salary" length="12"></property>
+                           </class>
+                            </hibernate-mapping>
+
+                </textarea>
+                <p><b>Employee.java:</b></p>
+                <textarea class="generator" rows="9" cols="140" readonly>
+                    package com.guruji.pojo;
+                    public class Employee {
+                    private String empNo;
+                    private String name;
+                    private double salary;
+                    //required setters and getters
+                    }
+                </textarea>
+                <p><b>Application Code :</b></p>
+                <textarea class="generator" rows="10" cols="140" readonly>
+                    Session session=sessionFactory.openSession();
+                    Transaction tx=session.beginTransaction();
+                    Employee emp=new Employee();
+                    emp.setName("ajay");
+                    emp.setSalary(22000.0);
+                    String id=(String)session.save(emp);
+                    tx.commit();
+                    System.out.println("Emp Record Inserted with the following :"+id);
+            </textarea>
+        </div>
+
+
+        <div class="hibernatequerylanguage" *ngIf="hibernatequerylanguage">
+            <h1 class="mt-4">Hibernate Query Language (HQL)</h1>
+        </div>
+
+        <div class="joinsinhibernate" *ngIf="joinsinhibernate">
+            <h1 class="mt-4">Joins in Hibernate</h1>
+        </div>
+
+        <div class="batchprocessingandnativesql" *ngIf="batchprocessingandnativesql">
+            <h1 class="mt-4">Batch processing and Native SQL</h1>
+        </div>
+
+        <div class="criteriaapi" *ngIf="criteriaapi">
+            <h1 class="mt-4">Criteria API</h1>
+        </div>
+
+        <div class="criteriawithprojections" *ngIf="criteriawithprojections">
+            <h1 class="mt-4">Criteria with projections</h1>
+        </div>
+
+        <div class="tableperclass" *ngIf="tableperclass">
+            <h1 class="mt-4">Table per class</h1>
+        </div>
+
+        <div class="tablepersubclass" *ngIf="tablepersubclass">
+            <h1 class="mt-4">Table per sub class</h1>
+        </div>
+
+        <div class="tableperconcreteclass" *ngIf="tableperconcreteclass">
+            <h1 class="mt-4">Table per concrete class</h1>
+        </div>
+
+        <div class="componentmapping" *ngIf="componentmapping">
+            <h1 class="mt-4">Component Mapping</h1>
+        </div>
+
+        <div class="custommapping" *ngIf="custommapping">
+            <h1 class="mt-4">Custom Mapping</h1>
+        </div>
+
+        <div class="list" *ngIf="list">
+            <h1 class="mt-4">list</h1>
+        </div>
+
+        <div class="set" *ngIf="set">
+            <h1 class="mt-4">set</h1>
+        </div>
+
+        <div class="map" *ngIf="map">
+            <h1 class="mt-4">map</h1>
+			<p>The question with Maps is where the key value is stored. There are everal options. Maps can borrow their keys from one of the associated entity properties or have dedicated columns to store an explicit key.</p>
+            <p>To use one of the target entity property as a key of the map, use @MapKey(name="myProperty"), where myProperty is a property name in the target entity. When using @MapKey without the name attribuate, the target entity primary key is used. The map key uses the same column as the property pointed out. There is no additional column defined to hold the map key, because the map key represent a target property. Be aware that once loaded, the key is no longer kept in sync with the property. In other words, if you change the property value, the key will not change automatically in your Java model.</p>
+			            <h5>Use of target entity property as map key via @MapKey</h5>
+            <textarea class="map1" rows="65" cols="140" readonly>
+                   @Entity
+                   public class Customer {
+                   @Id 
+                   @GeneratedValue public Integer getId() { 
+                   return id; 
+                }
+                   public void setId(Integer id) { 
+                       this.id = id; 
+                }
+                   private Integer id;
+                
+                   @OneToMany(mappedBy="customer")
+                   @MapKey(name="number")
+                   public Map<String,Order> getOrders()  { 
+                    return orders; 
+                
+                }
+                   public void setOrders(Map<String,Order> order) { 
+                       
+                    this.orders = orders; 
+                }
+                   private Map<String,Order> orders;
+                }
+                
+                   @Entity
+                   public class Order {
+                   @Id @GeneratedValue public Integer getId() { 
+                    return id; 
+                }
+                   public void setId(Integer id) { 
+                   this.id = id; 
+                }
+                   private Integer id;
+                
+                   public String getNumber() { 
+                   return number; 
+                }
+                   public void setNumber(String number) { 
+                   this.number = number; 
+                }
+                   private String number;
+                
+                   @ManyToOne
+                   public Customer getCustomer() { 
+                   return customer; 
+                }
+                   public void setCustomer(Customer customer) { 
+                   this.customer = customer; 
+                }
+                   private Customer number;
+                }
+                
+                -- Table schema
+                |-------------| |-------------|
+                |    Order     |  | Customer |
+                |-------------| |-------------|
+                |      id          |     |    id     |
+                | number      | |----------| 
+                | customer_id |
+                |-------------|
+
+
+</textarea>
+<p>Alternatively the map key is mapped to a dedicated column or columns. In order to customize the mapping use one of the following annotations:</p>
+<ul>
+<li>@MapKeyColumn if the map key is a basic type. If you don't specify the column name, the name of the property followed by underscore followed by KEY is used (for example orders_KEY).
+</li>
+<li>@MapKeyEnumerated / @MapKeyTemporal if the map key type is respectively an enum or a Date.</li>
+<li>@MapKeyJoinColumn/@MapKeyJoinColumns if the map key type is another entity.</li>
+<li>@AttributeOverride/@AttributeOverrides when the map key is a embeddable object. Use key. as a prefix for your embeddable object property names.</li>
+</ul>
+<p>You can also use @MapKeyClass to define the type of the key if you don't use generics.</p>
+<h5>Map key as basic type using @MapKeyColumn</h5>
+<textarea class="map1" rows="40" cols="140" readonly>
+    @Entity
+    public class Customer {
+       @Id @GeneratedValue public Integer getId() { return id; }
+       public void setId(Integer id) { this.id = id; }
+       private Integer id;
+    
+       @OneToMany @JoinTable(name="Cust_Order")
+       @MapKeyColumn(name="orders_number")
+       public Map<String,Order> getOrders() { return orders; }
+       public void setOrders(Map<String,Order> orders) { this.orders = orders; }
+       private Map<String,Order> orders;
+    }
+    
+    @Entity
+    public class Order {
+       @Id @GeneratedValue public Integer getId() { return id; }
+       public void setId(Integer id) { this.id = id; }
+       private Integer id;
+    
+       public String getNumber() { return number; }
+       public void setNumber(String number) { this.number = number; }
+       private String number;
+    
+       @ManyToOne
+       public Customer getCustomer() { return customer; }
+       public void setCustomer(Customer customer) { this.customer = customer; }
+       private Customer number;
+    }
+    
+    -- Table schema
+    |-------------|      |----------|       |---------------|
+    | Order       |      | Customer |       | Cust_Order    |
+    |-------------|      |----------|       |---------------|
+    | id          |           | id       |         | customer_id   |
+    | number      |      |----------|       | order_id      |
+    | customer_id |                         | orders_number |
+    |-------------|                         |---------------|
+
+</textarea>
+        </div>
+
+        <div class="bag" *ngIf="bag">
+            <h1 class="mt-4">bag</h1>
+			<p>An unordered collection that permits duplicate elements is called a bag. Curiously, the Java Collections framework doesn’t include a bag implementation. However, the java.util.Collection interface has bag semantics, so you only need a matching implementation. You have two choices:</p>
+             <ul>
+                 <li> <b>Write the collection property with the java.util.Collection interface, </b>and, on declaration, initialize it with an ArrayList of the JDK. Map the collection in Hibernate with a standard &#60;bag&#62; or &#60;idbag&#62; element. Hibernate has a built-in PersistentBag that can deal with lists; however, consistent with the contract of a bag, it ignores the position of elements in the ArrayList. In other words, you get a persistent Collection.</li>
+                 <li><b>Write the collection property with the java.util.List interface,</b> and, on declaration, initialize it with an ArrayList of the JDK. Map it like the previous option, but expose a different collection interface in the domain model class. This approach works but isn’t recommended, because clients using this collection property may think the order of elements is always preserved, which isn’t the case if it’s mapped as a &#60;bag&#62; or &#60;idbag&#62;.</li>
+            </ul>
+            <h5>We recommend the first option. Change the type of images in the Item class from Set to Collection, and initialize it with an ArrayList:</h5>
+             <textarea class="bag1" rows="10" cols=140 readonly>
+              private collections images=new ArrayList();
+              {
+                public collection getImages();
+                return this.images;
+              }
+              public void setImages(collection images)
+              {
+                this.images=images;
+              }
+            </textarea>
+             <p>Note that the setter method accepts a Collection, which can be anything in the JDK collection interface hierarchy. However, Hibernate is smart enough to replace this when persisting the collection. (It also relies on an ArrayList internally, like you did in the declaration of the field.)</p>
+             <h5>You also have to modify the collection table to permit duplicate FILENAMEs; the table needs a different primary key. An &#60;idbag&#62; mapping adds a surrogate key column to the collection table, much like the synthetic identifiers you use for entity classes:</h5>
+            <textarea class="bag1" rows="8" cols="140" readonly>
+                <idbag name="images" table="ITEM_IMAGE">
+                    <collection-id type="long" column="ITEM_IMAGE_ID">
+                        <generator class="sequence"/>
+                       <element type="string" column="FILENAME" not-null="true"/>
+                    </collection-id>
+               </idbag>
+            </textarea>
+            <img src="assets/images/hibernate/bagtable.png"/>
+            <h5>A surrogate primary key allows duplicate bag elements.</h5>
+            <p>In this case, the primary key is the generated ITEM_IMAGE_ID, as you can see in figure 6.2. Note that the native generator for primary keys isn’t supported for &#60;idbag&#62; mappings; you have to name a concrete strategy. This usually isn’t a problem, because real-world applications often use a customized identifier generator anyway.<br>
+
+Also note that the ITEM_IMAGE_ID column isn’t exposed to the application in any way. Hibernate manages it internally.<br>
+
+A more likely scenario is one in which you wish to preserve the order in which images are attached to the Item. There are a number of good ways to do this; one way is to use a real list, instead of a bag.</p>
+			
+        </div>
+
+        <div class="mappingarray" *ngIf="mappingarray">
+            <h1 class="mt-4">Mapping array</h1>
+        </div>
+
+        <div class="sortingcollections" *ngIf="sortingcollections">
+            <h1 class="mt-4">Sorting collections</h1>
+        </div>
+
+        <div class="one" *ngIf="one">
+            <h1 class="mt-4">one to one</h1>
+        </div>
+
+        <div class="many" *ngIf="many">
+            <h1 class="mt-4">one to many</h1>
+        </div>
+
+        <div class="manytoone" *ngIf="manytoone">
+            <h1 class="mt-4">many to one</h1>
+        </div>
+
+        <div class="manytomany" *ngIf="manytomany">
+            <h1 class="mt-4">many to many</h1>
+        </div>
+
+        <div class="directional" *ngIf="directional">
+            <h1 class="mt-4">Uni directional</h1>
+        </div>
+
+        <div class="bidirectional" *ngIf="bidirectional">
+            <h1 class="mt-4">Bi directional</h1>
+        </div>
+
+
+        <div class="explanation" *ngIf="explanation">
+            <h1 class="mt-4">Explanation on inverse and cascade attributes</h1>
+        </div>
+
+
+
+        <div class="firstlevel" *ngIf="firstlevel">
+            <h1 class="mt-4">First level Cache(Session cache)</h1>
+        </div>
+
+
+        <div class="secondlevel" *ngIf="secondlevel">
+            <h1 class="mt-4">Second level Cache(SessionFactory cache)</h1>
+        </div>
+
+
+        <div class="querylevel" *ngIf="querylevel">
+            <h1 class="mt-4">Query level cache</h1>
+        </div>
+
+
+        <div class="default" *ngIf="default">
+            <h1 class="mt-4">Default connection pool</h1>
+        </div>
+
+
+        <div class="server" *ngIf="server">
+            <h1 class="mt-4">Server supplied pool</h1>
+        </div>
+
+
+        <div class="thirdparty" *ngIf="thirdparty">
+            <h1 class="mt-4">Third party vendor connection pool</h1>
+        </div>
+
+        <div class="programmatictransactions" *ngIf="programmatictransactions">
+            <h1 class="mt-4">Programmatic transactions with JTA</h1>
+        </div>
+
+        <div class="optimisticconcurrency" *ngIf="optimisticconcurrency">
+            <h1 class="mt-4">Optimistic Concurrency control</h1>
+        </div>
+
+        <div class="pessimisticconcurrency" *ngIf="pessimisticconcurrency">
+            <h1 class="mt-4">Pessimistic Concurrency control</h1>
+        </div>
+
+        <div class="pagination" *ngIf="pagination">
+            <h1 class="mt-4">Hibernate Pagination</h1>
+        </div>
+
+        <div class="filter" *ngIf="filter">
+            <h1 class="mt-4">Hibernate Filter</h1>
+			<p>Filters are used to select some specific data from the database.</p>
+            <p>A filter in the HB provides environment to pass conditions of the persistent logic from outside the
+                java sources through HB mapping file. A HB filter is a global, named, parameterized filter
+                representing conditions like where clause. Having the ability of enabling or disabling them for a
+                particular Hibernate Session.</p>
+                <p>Working with filters is nothing but making the conditions of the queries coming to application
+                 through hibernate mapping file.</p>
+                 <p>Filters of hibernate are introduced from Hibernate 3.x version.</p>
+                 <p>Steps to work with HB Filters to filter the data through the restrictions:</p>
+                 <p><b>1)Define filter having parameters in Hibernate mapping file:</b></p>
+                 <textarea class="generator" rows="12" cols="140" readonly>
+                    <hibernate-mapping>
+                        <class>
+                        ……
+                        ……
+                        </class>
+                        <filter-def name=”myFilter”>
+                        <filter-param name=”mId1″ type=” java.lang.Integer”/>
+                        <filter-param name=”myId2″ type=” java.lang.Integer”/>
+                        </filter-def>
+                        </hibernate-mapping>
+                 </textarea>
+                 <p><b>2)link/configure filter with Hibernate pojo class through the Hibernate mapping file:</b></p>
+                 <textarea class="generator" rows="12" cols="140" readonly>
+                    <hibernate-mapping>
+                        <class>
+                            ……
+                            ……
+                            <filter name=”MyFilter” condition=”empId >= :myId1 and empId &lt;= :myId2″></filter>
+                            </class>
+                            <filter-def name=”myFilter”>
+                            <filter-param name=”myId1″ type=”java.lang.Integer”/>
+                            <filter-param name=”myId2″ type=” java.lang.Integer”/>
+                            </filter-def>
+                            </hibernate-mapping>
+                            </textarea>
+                <p><b>3)Enable filter on Hibernate Session Object and supplies values for filter parameters:</b></p>
+                            <textarea class="generator" rows="4" cols="140" readonly>
+                                Filter filter = session.enableFilter(“myFilter”);
+                                filter.setParameter(“myId1″,new Integer(1001));
+                                filter.setParameter(“myId2″,new Integer(1004));
+                            </textarea>
+            <p><b>When to use Hibernate Filters:</b></p>
+                <p>Suppose a web application that does the reporting for various flights. In future course there is some
+                changes in requirement such that flights are to be shown as per their status (on time, delayed or
+                cancelled).</p>
+                <p>This can also be done using a WHERE clause within the SQL SELECT query or Hibernate’s HQL
+                 SELECT query. For a mini application it is fine to do this, but for a huge and complex application it
+                 might be a tiresome effort. Although it will be like searching each and every SQL query and making
+                 the changes in the existing code. But it has been thoroughly tested.</p>
+                 <p>This can also be done using Hibernate's Criteria API but that also means changing the code at
+                 numerous places that is all working fine. Moreover in both the approaches, one needs to be very
+                  cautious so that they are not changing existing working SQL queries in inadvertent way.</p>
+                 <p>Filters can be used like database views and data dictionary, but parameterized inside any
+                 application. This way they are essential when developers have very little control over DB
+                 operations. Here weare going to show you the usage of Hibernate filters to solve this problem.
+                 When the end users select the status, our application activates the flight's status for the end user's
+                 Hibernate session.</p>
+                 <p>Any SQL query will only return the subset of flights with the user chooses status. Flight status is
+                 maintained at two places- Hibernate Session and flight status filter.</p>
+                <p>Getting started with the example</p>
+                 <p>First define filters in the Hibernate mapping documents, using the &#60;filter-def&#62; XML element.</p>
+                 <p>These filter declaration should contain the name of the filter and the names and types of any filter
+                  parameters. Demonstrate filter parameters with the &#60;filter-param&#62; XML element. Filter parameters
+                 are same to the named parameters for HQL queries. We need to specify a : ( colon) before the
+                 parameter condition. Here is the mapping file from the code.</p>
+                <p><b>Listing 1: Mapping File</b></p>
+        <textarea class="generator" rows="20" cols="140" readonly>
+                 <?xml version="1.0"?>
+                 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD "
+                "http://hibernate.sourceforge.net/hibernate-mapping">
+                 <hibernate-mapping package="data">
+                 <class name="Flight" table="hibernate_filter_demo.flightdb">
+                 <id name="id" type = "int" column="id">
+                  <generator class = "increment"/>
+                  </id>
+                 <property name="fliteNo" type="string" length="10" column="flight_No"/>
+                  <property name="src" type="string" length="15" column="source"/>
+                  <property name="dest" type="string" length="15"column="destination"/>
+                  <property name="info" type="string" length="20" column="info"/>
+                 <strong><filter name="statusFilter" condition=":statusParam=status"/>
+                 </class>
+                 <filter-def name="statusFilter">
+                 <filter-param name="statusParam" type="string"/>
+                 </filter-def></strong>
+                 </hibernate-mapping>
+         </textarea>
+         <p>Now attach the filters to class or collection mapping elements. We can join a single filter to more
+            than one class or collection. To do this, you add a &#60;filter&#62; XML element to each class or collection.
+            The &#60;filter&#62; XML element has two attributes viz. values and condition. The value references a filter
+            definition while condition is analogous to a WHERE clause in HQL. Let’s see the complete coding
+            from the HibernateFilters.zip archive.</p>
+            <p><b>Note :</b> Each &#60;filter&#62; XML element must correspond to a &#60;filter-def&#62; element. It may be possible to
+            have more than one filter for each filter definition, and each class may have more than one filter.</p>
+            <p>Concept is to define all the filter parameters in one place and then refer them in the individual filter
+            conditions.</p>
+            <p>In the java code, we can programmatically enable or hide the filter. By default the Hibernate
+            Session doesn't have any filters visible on it.</p>
+            <p><b>Methods of Session Interface:</b></p>
+            <ul>
+                <li>public Filter enableFilter(String NameofFilter)</li>
+                <li>public Filter getEnabledFilter(String NameofFilter)</li>
+                <li>public void disableFilter(String NameofFilter)</li>
+            </ul>
+            <p><b>Methods of Filter Interface:</b></p>
+            <ul>
+                <li>public Filter setParameter(String NameofFilter, Object value)</li>
+                <li>public Filter setParameterList(String NameofFilter, Collection values)</li>
+                <li>public Filter setParameterList(String NameofFilter, Object[] values)</li>
+            </ul>
+            <p>setParameter() method is almost used. Be careful and define only the type of java object that we
+            have mentioned in the parameter at the time of defining filter in the mapping file.</p>
+            <p>The two setParameterList() methods are useful for using IN clauses in your filters. If we want to use
+             BETWEEN clauses, must use two different filter parameters with different names.</p>
+             <p>At the time of enabling the filter on session-use the name that you have provided in the mapping
+            file for the filter name for the corresponding column in the table. Similarly string name should
+            contain one of the possible values for that particular column.</p>
+            <p><b>Listing 2:</b>This condition is set on the filter</p>
+     <textarea class="generator" rows="25" cols="140" readonly>
+            public class HibernateFilterDemo{
+            public static void main(String argsp[]){
+            SessionFactory factory = HibernateUtil.getSessionFactory();
+            Session session = factory.openSession();
+            insertData("DL6159", "RFC", "JCK", "dealy 15 min", session);
+            ......
+            <strong>Filter filter = session.enableFilter("statusFilter");
+            filter.setParameter("statusParam", "delayed");</strong>
+            showData(session);
+            .........
+            session.close();
+            }
+            public static void insertData(String fliteNo, String src,
+            String dest, String info, Session ses){
+            session.beginTransaction();
+            session.getTransaction().commit();
+            }
+            public static void showData(Session session){
+            session.beginTransaction();
+            Query query = session.createQuery("from Flight");
+            .........
+            session.getTransaction().commit();
+            }
+            }
+    </textarea>
+           <p><b>Conclusion:</b></p>
+           <p>Hibernate filters is one of the best optionto DB views, Hibernate Criteria API and SQL where
+           clause.It is an efficient way to separate database concerns from the remaining application code.
+           They help in minimizing the complexity of HQL or SQL queries. Filters can be made visible/on as and
+           when they are required.</p>
+           <p><b>Example Program on Filters:</b></p>
+          <p><b>User.java:</b></p>
+ <textarea class="generator" rows="25" cols="140" readonly>
+           public class User{
+           private int id;
+           private String name;
+           private boolean activated;
+           public boolean isActivated(){
+           return activated;
+           }
+           public void setActivated(boolean activated){
+           this.activated = activated;
+           }
+           public int getId(){
+           return id;
+           }
+           public void setId(int id){
+           this.id = id;
+           }
+           public String getName(){
+           return name;
+           }
+           public void setName(String name){
+           this.name = name;
+           }
+           }
+</textarea>
+           <p><b>User.hbm.xml:</b></p>
+
+<textarea class="generator" rows="20" cols="140" readonly>
+
+         <?xml version='1.0' encoding='utf-8'?>
+         <!DOCTYPE hibernate-mapping
+         PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        <hibernate-mapping>
+         <class name="User" table="user_data">
+        <id name="id" type="int">
+        <generator class="increment"/>
+        </id>
+        <property name="name" type="string" length="32"/>
+        <property name="activated" type="boolean"/>
+        <filter name="activatedFilter"
+        condition=":activatedParam = activated"/>
+        </class>
+        <filter-def name="activatedFilter">
+        <filter-param name="activatedParam" type="boolean"/>
+        </filter-def>
+        </hibernate-mapping>
+</textarea>
+        <p><b>hibernate.cfg.xml:</b></p>
+<textarea class="generator" rows="20" cols="140" readonly>
+       <?xml version='1.0' encoding='utf-8'?>
+       <!DOCTYPE hibernate-configuration
+       PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+       "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+       <hibernate-configuration>
+       <session-factory>
+       <property
+       name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+       <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+       <property name="hibernate.connection.username">system</property>
+       <property name="connection.password">manager</property>
+       <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+       <property name="hibernate.autocommit">true</property>
+       <property name="show_sql">false</property>
+       <mapping resource="User.hbm.xml"/>
+       </session-factory>
+       </hibernate-configuration>
+
+</textarea>
+<p><b>SimpleFilterExample.java:</b></p>
+<textarea class="generator" rows="55" cols="140" readonly>
+    
+
+       import java.util.Iterator;
+       import org.hibernate.cfg.Configuration;
+       import org.hibernate.Filter;
+       import org.hibernate.Query;
+       import org.hibernate.Session;
+       import org.hibernate.SessionFactory;
+       import org.hibernate.Transaction;
+       public class SimpleFilterExample{
+       public static void main (String args[]){
+       SessionFactory factory = new Configuration().configure().buildSessionFactory();
+       Session session = factory.openSession();
+       //insert the users
+       insertUser("pavan",true,session);
+       insertUser("chiru",false,session);
+       insertUser("ramu",false,session);
+       //Show all users
+       System.out.println("===ALL USERS===");
+       displayUsers(session);
+       //Show activated users
+       Filter filter = session.enableFilter("activatedFilter");
+       filter.setParameter("activatedParam",new Boolean(true));
+       System.out.println("===ACTIVATED USERS===");
+       displayUsers(session);
+       //Show non-activated users
+       filter.setParameter("activatedParam",new Boolean(false));
+       System.out.println("===NON-ACTIVATED USERS===");
+       displayUsers(session);
+       session.close();
+      }
+       public static void displayUsers(Session session){
+       Query query = session.createQuery("from User");
+       Iterator results = query.iterate();
+       while (results.hasNext()){
+       User user = (User) results.next();
+       System.out.print(user.getName() + " is ");
+       if (user.isActivated()){
+       System.out.println("activated.");
+       }
+       else {
+       System.out.println("not activated.");
+       }
+       }
+       }
+       public static void insertUser(String name, boolean activated, Session session){
+       Transaction trans = session.beginTransaction();
+       User user = new User();
+       user.setName(name);
+       user.setActivated(activated);
+       session.save(user);
+       trans.commit();
+       }
+       }
+</textarea>
+        </div>
+
+        <div class="interceptor" *ngIf="interceptor">
+            <h1 class="mt-4">Hibernate Interceptor</h1>
+        </div>
+
+        <div class="connectingwithmultiple" *ngIf="connectingwithmultiple">
+            <h1 class="mt-4">Connecting with Multiple Databases(Oracle,  HypersonicSQL)</h1>
+        </div>
+
+        <div class="integratinghibernatewithservlet" *ngIf="integratinghibernatewithservlet">
+            <h1 class="mt-4">Integrating Hibernate with Servlet</h1>
+        </div>
+
+        <div class="integratinghibernatewithspring" *ngIf="integratinghibernatewithspring">
+            <h1 class="mt-4">Integrating Hibernate with Spring</h1>
+        </div>
+
+        <div class="workingwithhibernateannotations" *ngIf="workingwithhibernateannotations">
+            <h1 class="mt-4">Working with Hibernate Annotations</h1>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

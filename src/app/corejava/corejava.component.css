@@ -1,0 +1,155 @@
+body {
+  overflow-x: hidden;
+}
+#identifier1{
+  width: 370px;
+}
+#enum{
+width: 500px;
+}
+
+/* Sai CSS for THREAD */
+
+#lifecycle{
+margin-top: -8px;
+}
+sup{
+vertical-align: super;
+font-size: smaller;
+}
+.tb1{
+width: fit-content;
+margin-left: 200px;
+border: 1px solid black;
+}
+
+#reserved{
+width: 500px;
+}
+#primitivedatatype{
+width: 800px;
+}
+#reservedliterals{
+width: 500px;
+}
+#floating{
+width: 650px;
+}
+.textArea{
+border-left: 4px solid #6b5;
+box-shadow: 6px 3px 8px #d4d4d4;
+resize: none;
+}
+#literals{
+width: 400px;
+}
+#integralLitrals{
+width: 480px;
+margin-left: 100px;
+}
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+
+span.italic {
+  font-style: italic;
+}
+
+p.improves{
+  padding-left: 50px;
+}
+
+ol.NoteAbstraction{
+
+  padding-left: 70px;
+}
+
+b.EncapsulationDataHiding{
+  padding-left: 150px;
+}
+
+p.pEncapsulation{
+  padding-left: 150px;
+}
+
+#stackmachenism{
+  width: 800px;
+}
+
+#multiDimension1{
+   width: 380px;
+}
+
+#multiDimension2{
+  width: 380px;
+}
+
+#initializationofarrays{
+  width: 380px;
+}
+
+#arrayelementassignments{
+  width: 100px;
+}
+
+#arraysize{
+  width: 130px;
+  margin-left: 100px;
+}
+#typesofvariables{
+  width: 300px;
+}
+
+#staticvariables{
+  width: 300px;
+}
+
+#varargexample{
+  background-color: black;
+  color: white;
+  resize: none;
+}
+
+#commandlineargument{
+  width: 500px;
+
+}
+

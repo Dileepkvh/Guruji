@@ -1,0 +1,107 @@
+body {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+	
+	.textArea {
+        border-left: 4px solid #6b5;
+        box-shadow: 9px 5px 10px #d4d4d4;
+        resize: none;
+    }
+	
+    .Configuration {
+        border-left: 4px solid #6b5;
+        box-shadow: 6px 3px 8px #d4d4d4;
+        resize: none;
+    }
+
+    .universalUniqueId {
+        border-left: 4px solid #6b5;
+        box-shadow: 6px 3px 8px #d4d4d4;
+        resize: none;
+    }
+
+.generator{
+        border-left: 4px solid #6b5;
+        box-shadow: 6px 3px 8px #d4d4d4;
+        resize: none;
+    }
+.HibernateFilters{
+        border-left: 4px solid #6b5;
+        box-shadow: 6px 3px 8px #d4d4d4;
+        resize: none;
+    }
+	.incre{
+
+        border-left: 4px solid #6b5;
+    box-shadow: 6px 3px 8px #D4D4D4;
+    resize: none;
+    }
+    .seq{
+        border-left: 4px solid #6b5;
+        box-shadow: 6px 3px 8px #D4D4D4;
+        resize: none;
+
+
+    }
+	.map1{
+        
+        border-left: 4px solid #6b5;
+    box-shadow: 6px 3px 8px #D4D4D4;
+    resize: none;
+}
+.bag1{
+    
+    border-left: 4px solid #6b5;
+    box-shadow: 6px 3px 8px #D4D4D4;
+    resize: none;
+}
+
+textarea{
+    
+    border-left: 4px solid #6b5;
+    box-shadow: 9px 5px 10px #d4d4d4;
+    resize: none;
+
+
+}
+	

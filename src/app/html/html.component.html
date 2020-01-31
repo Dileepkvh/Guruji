@@ -1,0 +1,230 @@
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a (click)="htmlhome()" class="list-group-item list-group-item-action bg-light">HTML HOME</a>
+            <a (click)="htmlintro()" class="list-group-item list-group-item-action bg-light">HTML Introduction</a>
+            <a (click)="htmleditors()" class="list-group-item list-group-item-action bg-light">HTML Editors</a>
+            <a (click)="htmlbasics()" class="list-group-item list-group-item-action bg-light">HTML Basic</a>
+            <a (click)="htmlelements()" class="list-group-item list-group-item-action bg-light">HTML Elements</a>
+            <a (click)="attribute()" class="list-group-item list-group-item-action bg-light">HTML Attributes</a>
+            <a (click)="htmlheadings()" class="list-group-item list-group-item-action bg-light">HTML Headings</a>
+            <a (click)="htmlparagraphs()" class="list-group-item list-group-item-action bg-light">HTML Paragraphs</a>
+            <a (click)="htmlstyles()" class="list-group-item list-group-item-action bg-light">HTML Styles</a>
+            <a (click)="htmltextformating()" class="list-group-item list-group-item-action bg-light">HTML Text
+                Formatting</a>
+            <a (click)="htmlquotations()" class="list-group-item list-group-item-action bg-light">HTML Quotations</a>
+            <a (click)="htmlcomments()" class="list-group-item list-group-item-action bg-light">HTML Comments</a>
+            <a (click)="htmlcolors()" class="list-group-item list-group-item-action bg-light">HTML Colors</a>
+            <a (click)="htmlcss()" class="list-group-item list-group-item-action bg-light">HTML CSS</a>
+            <a (click)="htmllinks()" class="list-group-item list-group-item-action bg-light">HTML Links</a>
+            <a (click)="htmlimages()" class="list-group-item list-group-item-action bg-light">HTML Images</a>
+            <a (click)="htmltables()" class="list-group-item list-group-item-action bg-light">HTML Tables</a>
+            <a (click)="htmllists()" class="list-group-item list-group-item-action bg-light">HTML Lists</a>
+            <a (click)="htmlblocks()" class="list-group-item list-group-item-action bg-light">HTML Blocks</a>
+            <a (click)="htmlclasses()" class="list-group-item list-group-item-action bg-light">HTML Classes</a>
+            <a (click)="htmlid()" class="list-group-item list-group-item-action bg-light">HTML Id</a>
+            <a (click)="htmliframes()" class="list-group-item list-group-item-action bg-light">HTML Iframes</a>
+            <a (click)="htmljavascript()" class="list-group-item list-group-item-action bg-light">HTML JavaScript</a>
+            <a (click)="htmlfilepaths()" class="list-group-item list-group-item-action bg-light">HTML File Paths</a>
+            <a (click)="htmlhead()" class="list-group-item list-group-item-action bg-light">HTML Head</a>
+            <a (click)="htmllayouts()" class="list-group-item list-group-item-action bg-light">HTML Layouts</a>
+            <a (click)="htmlresponsive()" class="list-group-item list-group-item-action bg-light">HTML Responsive</a>
+            <a (click)="htmlcomputercodes()" class="list-group-item list-group-item-action bg-light">HTML
+                ComputerCodes</a>
+            <a (click)="htmlentities()" class="list-group-item list-group-item-action bg-light">HTML Entities</a>
+            <a (click)="htmlsymbols()" class="list-group-item list-group-item-action bg-light">HTML Symbols</a>
+            <a (click)="htmlcharset()" class="list-group-item list-group-item-action bg-light">HTML CharSet</a>
+            <a (click)="htmlurlencode()" class="list-group-item list-group-item-action bg-light">HTML URL Encode</a>
+            <a (click)="htmlxhtml()" class="list-group-item list-group-item-action bg-light">HTML XHTML</a>
+            <a (click)="htmlforms()" class="list-group-item list-group-item-action bg-light">HTML Forms</a>
+            <a (click)="htmlformelements()" class="list-group-item list-group-item-action bg-light">HTML Form
+                Elements</a>
+            <a (click)="htmlinputtypes()" class="list-group-item list-group-item-action bg-light">HTML Input Types</a>
+            <a (click)="htmlinputattributes()" class="list-group-item list-group-item-action bg-light">HTML Input
+                Attributes</a>
+            <a (click)="html5intro()" class="list-group-item list-group-item-action bg-light">HTML5 Introduction</a>
+            <a (click)="html5support()" class="list-group-item list-group-item-action bg-light">HTML5 Support</a>
+            <a (click)="html5newelements()" class="list-group-item list-group-item-action bg-light">HTML5 New
+                Elements</a>
+            <a (click)="html5semantics()" class="list-group-item list-group-item-action bg-light">HTML5 Semantics</a>
+            <a (click)="html5migration()" class="list-group-item list-group-item-action bg-light">HTML5 Migration</a>
+            <a (click)="html5styleguide()" class="list-group-item list-group-item-action bg-light">HTML5 Style Guide</a>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="html" *ngIf="html">
+            <h1 class="mt-4">HTML HOME</h1>
+        </div>
+        <div class="introductiontohtml" *ngIf="introductiontohtml">
+
+            <h1 class="mt-4">Introduction to HTML</h1>
+        </div>
+        <div class="htmleditor" *ngIf="htmleditor">
+
+            <h1 class="mt-4">HTML EDITORS </h1>
+        </div>
+        <div class="htmlbasic" *ngIf="htmlbasic">
+
+            <h1 class="mt-4">HTML BASICS </h1>
+        </div>
+        <div class="htmlelement" *ngIf="htmlelement">
+
+            <h1 class="mt-4">HTML ELEMENTS </h1>
+        </div>
+        <div class="htmlattribute" *ngIf="htmlattribute">
+            <h1 class="mt-4">HTML ATTRIBUTES </h1>
+        </div>
+        <div class="htmlheading" *ngIf="htmlheading">
+
+            <h1 class="mt-4">HTML HEADINGS </h1>
+        </div>
+        <div class="htmlparagraph" *ngIf="htmlparagraph">
+
+            <h1 class="mt-4">HTML PARAGRAPHS </h1>
+        </div>
+        <div class="htmlstyle" *ngIf="htmlstyle">
+
+            <h1 class="mt-4">HTML STYLES </h1>
+        </div>
+        <div class="htmltextformatings" *ngIf="htmltextformatings">
+
+            <h1 class="mt-4">HTML FORMATTING </h1>
+        </div>
+        <div class="htmlquotation" *ngIf="htmlquotation">
+
+            <h1 class="mt-4">HTML QUOTATIONS </h1>
+        </div>
+        <div class="htmlcomment" *ngIf="htmlcomment">
+
+            <h1 class="mt-4">HTML COMMENTS </h1>
+        </div>
+        <div class="htmlcolor" *ngIf="htmlcolor">
+
+            <h1 class="mt-4">HTML COLORS </h1>
+        </div>
+        <div class="htmlcss1" *ngIf="htmlcss1">
+
+            <h1 class="mt-4">HTML CSS </h1>
+        </div>
+        <div class="htmllink" *ngIf="htmllink">
+
+            <h1 class="mt-4">HTML LINKS </h1>
+        </div>
+        <div class="htmlimage" *ngIf="htmlimage">
+
+            <h1 class="mt-4">HTML IMAGES </h1>
+        </div>
+        <div class="htmltable" *ngIf="htmltable">
+
+            <h1 class="mt-4">HTML TABLES </h1>
+        </div>
+        <div class="htmllist" *ngIf="htmllist">
+
+            <h1 class="mt-4">HTML LISTS </h1>
+        </div>
+        <div class="htmlblock" *ngIf="htmlblock">
+
+            <h1 class="mt-4">HTML BLOCKS </h1>
+        </div>
+        <div class="htmlclasse" *ngIf="htmlclasse">
+
+            <h1 class="mt-4">HTML CLASSES </h1>
+        </div>
+        <div class="htmlids" *ngIf="htmlids">
+
+            <h1 class="mt-4">HTML ID </h1>
+        </div>
+        <div class="htmliframe" *ngIf="htmliframe">
+
+            <h1 class="mt-4">HTML IFRAMES </h1>
+        </div>
+        <div class="htmljavascripts" *ngIf="htmljavascripts">
+
+            <h1 class="mt-4">HTML JAVASCRIPT </h1>
+        </div>
+        <div class="htmlfilepath" *ngIf="htmlfilepath">
+
+            <h1 class="mt-4">HTML FILEPATHS </h1>
+        </div>
+        <div class="htmlheads" *ngIf="htmlheads">
+
+            <h1 class="mt-4">HTML HEAD </h1>
+        </div>
+        <div class="htmllayout" *ngIf="htmllayout">
+
+            <h1 class="mt-4">HTML LAYOUT </h1>
+        </div>
+        <div class="htmlresponsives" *ngIf="htmlresponsives">
+
+            <h1 class="mt-4">HTML RESPONSIVE </h1>
+        </div>
+        <div class="htmlcomputercode" *ngIf="htmlcomputercode">
+
+            <h1 class="mt-4">HTML COMPUTERCODES </h1>
+        </div>
+        <div class="htmlentitie" *ngIf="htmlentitie">
+
+            <h1 class="mt-4">HTML ENTITIES </h1>
+        </div>
+        <div class="htmlsymbol" *ngIf="htmlsymbol">
+
+            <h1 class="mt-4">HTML SYMBOLS </h1>
+        </div>
+        <div class="htmlcharsets" *ngIf="htmlcharsets">
+
+            <h1 class="mt-4">HTML CHARSET </h1>
+        </div>
+        <div class="htmlurlencodes" *ngIf="htmlurlencodes">
+
+            <h1 class="mt-4">HTML URL ENCODE </h1>
+        </div>
+        <div class="htmlxhtmls" *ngIf="htmlxhtmls">
+
+            <h1 class="mt-4">HTML XHTML </h1>
+        </div>
+        <div class="htmlform" *ngIf="htmlform">
+
+            <h1 class="mt-4">HTML FORMS </h1>
+        </div>
+        <div class="htmlformelement" *ngIf="htmlformelement">
+
+            <h1 class="mt-4">HTML FORM ELEMENTS </h1>
+        </div>
+        <div class="htmlinputtype" *ngIf="htmlinputtype">
+
+            <h1 class="mt-4">HTML INPUT TYPES </h1>
+        </div>
+        <div class="htmlinputattribute" *ngIf="htmlinputattribute">
+
+            <h1 class="mt-4">HTML INPUT ATTRIBUTES </h1>
+        </div>
+        <div class="html5intros" *ngIf="html5intros">
+
+            <h1 class="mt-4">HTML5 INTRODUCTION </h1>
+        </div>
+        <div class="html5supports" *ngIf="html5supports">
+
+            <h1 class="mt-4">HTML5 SUPPORT </h1>
+        </div>
+        <div class="html5newelement" *ngIf="html5newelement">
+
+            <h1 class="mt-4">HTML5 NEW ELEMENTS </h1>
+        </div>
+        <div class="html5semantic" *ngIf="html5semantic">
+
+            <h1 class="mt-4">HTML5 SEMANTICS </h1>
+        </div>
+        <div class="html5migrations" *ngIf="html5migrations">
+
+            <h1 class="mt-4">HTML5 MIGRATION </h1>
+        </div>
+        <div class="html5styleguides" *ngIf="html5styleguides">
+
+            <h1 class="mt-4">HTML5 STYLE GUIDE </h1>
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>

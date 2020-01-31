@@ -1,0 +1,2208 @@
+<div class="d-flex" id="wrapper">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="list-group list-group-flush">
+      <a (click)="introduction()" class="list-group-item list-group-item-action bg-light">Introduction to JDBC</a>
+      <a (click)="architecture()" class="list-group-item list-group-item-action bg-light">JDBC architecture</a>
+      <a (click)="drivertypes()" class="list-group-item list-group-item-action bg-light">JDBC Driver Types</a>
+      <a (click)="connection()" class="list-group-item list-group-item-action bg-light">JDBC Connection</a>
+      <a (click)="statement()" class="list-group-item list-group-item-action bg-light">JDBC Statement</a>
+      <a (click)="resultset()" class="list-group-item list-group-item-action bg-light">JDBC ResultSet</a>
+      <a (click)="preparestatement()" class="list-group-item list-group-item-action bg-light">JDBC PrepareStatement</a>
+      <a (click)="callablestatement()" class="list-group-item list-group-item-action bg-light">JDBC
+        CallableStatement</a>
+      <a (click)="scrollable()" class="list-group-item list-group-item-action bg-light">Scrollable & Updatable</a>
+      <a (click)="batchupdates()" class="list-group-item list-group-item-action bg-light">JDBC Batch Updates</a>
+      <a (click)="resultSetMeta()" class="list-group-item list-group-item-action bg-light">JDBC ResultSetMetaData</a>
+      <a (click)="transaction()" class="list-group-item list-group-item-action bg-light">Transaction Management</a>
+      <a (click)="fileupload()" class="list-group-item list-group-item-action bg-light">File Upload & Download</a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="introductiontojdbc" *ngIf="introductiontojdbc">
+      <h1 class="mt-4">Introduction to JDBC</h1>
+      <p>
+        The JDBC API is a Java API that can access any kind of tabular data,
+        especially data stored in a Relational Database.</p>
+      <p>JDBC helps you to write Java applications that manage these
+        three programming activities:
+      </p>
+      <ol>
+        <li>Connect to a data source, like a database</li>
+        <li>Send queries and update statements to the database</li>
+        <li>
+          Retrieve and process the results received from the database in answer
+          to your query
+        </li>
+      </ol>
+      <p>
+        The following simple code fragment gives a simple example of these three
+        steps:
+      </p>
+      <textarea class="Jdbcintroduction" cols="120" rows="14" readonly>
+
+    public void connectToAndQueryDatabase(String username, String password) 
+            &#123;
+    Connection con = DriverManager.getConnection("jdbc:myDriver:myDatabase",username,password);
+                
+                    Statement stmt = con.createStatement();
+                    ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM Table1");
+                    while (rs.next()) &#123;
+                        int x = rs.getInt("a");
+                        String s = rs.getString("b");
+                        float f = rs.getFloat("c");
+                        &#125;
+                    &#125;
+                </textarea>
+      <br /><br />
+      <p>
+        This short code fragment instantiates a DriverManager object to connect
+        to a database driver and log into the database, instantiates a Statement
+        object <br />that carries your SQL language query to the database;
+        instantiates a ResultSet object that retrieves the results of your
+        query, and executes a simple while <br />
+        loop, which retrieves and displays those results. It's that simple.
+      </p>
+      <h3>JDBC Product Components</h3>
+      <p><b>JDBC includes four components:</b></p>
+      <h6><b>1. The JDBC API : </b></h6>
+      <p>
+        The JDBC™ API provides programmatic access to relational data from the
+        Java™ programming language. Using the JDBC API,<br />
+        applications can execute SQL statements, retrieve results, and propagate
+        changes back to an underlying data source. The JDBC API can also
+        interact <br />
+        with multiple data sources in a distributed, heterogeneous environment.
+        <br /><br />
+        The JDBC API is part of the Java platform, which includes the Java™
+        Standard Edition (Java™ SE ) and the Java™ Enterprise Edition (Java™
+        EE). <br />
+        The JDBC 4.0 API is divided into two packages: java.sql and javax.sql.
+        Both packages are included in the Java SE and Java EE platforms.
+      </p>
+      <h6><b>2. JDBC Driver Manager :</b></h6>
+      <p>
+        The JDBC DriverManager class defines objects which can connect Java
+        applications to a JDBC driver. DriverManager <br />
+        has traditionally been the backbone of the JDBC architecture. It is
+        quite small and simple.
+        <br /><br />
+        The Standard Extension packages javax.naming and javax.sql let you use a
+        DataSource object registered with a Java Naming and Directory<br />
+        Interface™ (JNDI) naming service to establish a connection with a data
+        source.<br />
+        You can use either connecting mechanism, but using a DataSource object
+        is recommended whenever possible.
+      </p>
+      <h6><b>3. JDBC Test Suite :</b></h6>
+      <p>
+        The JDBC driver test suite helps you to determine that JDBC drivers will
+        run your program. These tests are not comprehensive or <br />
+        exhaustive, but they do exercise many of the important features in the
+        JDBC API.
+      </p>
+      <h6><b>4. JDBC-ODBC Bridge :</b></h6>
+      <p>
+        The Java Software bridge provides JDBC access via ODBC drivers. Note
+        that you need to load ODBC binary code onto each <br />
+        client machine that uses this driver. As a result, the ODBC driver is
+        most appropriate on a corporate network where client installations are
+        not a major<br />
+        problem, or for application server code written in Java in a three-tier
+        architecture.
+      </p>
+      <p>
+        This Trail uses the first two of these these four JDBC components to
+        connect to a database and then build a java program that uses SQL
+        commands to <br />
+        communicate with a test Relational Database. The last two components are
+        used in specialized environments to test web applications, or to
+        communicate with
+        <br />ODBC-aware DBMSs.
+      </p>
+    </div>
+
+    <div class="jdbcarchitecture" *ngIf="jdbcarchitecture">
+      <h1 class="mt-4">JDBC Architecture</h1>
+      <p>The <b>JDBC API</b> supports both two-tier and three-tier processing models for database access.<br><br>
+        Figure 1: Two-tier Architecture for Data Access.
+
+      </p>
+      <img src="assets\images\jdbc.archi.png "><br>
+      <br>
+      <p>In the two-tier model, a Java application talks directly to the data source. This requires a JDBC driver that
+        can communicate with the particular data source being accessed. A user's commands are delivered to the database
+        or other data source, and the results of those statements are sent back to the user. The data source may be
+        located on another machine to which the user is connected via a network. This is referred to as a client/server
+        configuration, with the user's machine as the client, and the machine housing the data source as the server. The
+        network can be an intranet, which, for example, connects employees within a corporation, or it can be the
+        Internet.
+      </p>
+      <p>
+        In the three-tier model, commands are sent to a "middle tier" of services, which then sends the commands to the
+        data source. The data source processes the commands and sends the results back to the middle tier, which then
+        sends them to the user. MIS directors find the three-tier model very attractive because the middle tier makes it
+        possible to maintain control over access and the kinds of updates that can be made to corporate data. Another
+        advantage is that it simplifies the deployment of applications. Finally, in many cases, the three-tier
+        architecture can provide performance advantages.
+      </p>
+      <p><b>Figure 2: Three-tier Architecture for Data Access.</b></p>
+      <img src="assets/images/jdbcarc.png"><br>
+      <br>
+      <p>Until recently, the middle tier has often been written in languages such as C or C++, which offer fast
+        performance. However, with the introduction of optimizing compilers that translate Java bytecode into efficient
+        machine-specific code and technologies such as Enterprise JavaBeans™, the Java platform is fast becoming the
+        standard platform for middle-tier development. This is a big plus, making it possible to take advantage of
+        Java's robustness, multithreading, and security features.
+      </p>
+      <p>
+        With enterprises increasingly using the Java programming language for writing server code, the JDBC API is being
+        used more and more in the middle tier of a three-tier architecture. Some of the features that make JDBC a server
+        technology are its support for connection pooling, distributed transactions, and disconnected rowsets. The JDBC
+        API is also what allows access to a data source from a Java middle tier.
+      </p>
+
+    </div>
+
+    <div class="jdbcdrivertypes" *ngIf="jdbcdrivertypes">
+      <h1 class="mt-4">Jdbc Driver Types</h1>
+      <hr />
+      <p>
+        A JDBC drivers a software component enabling a Java application to
+        interact with a database.[1] JDBC drivers are analogous to ODBC drivers,
+        ADO.NET data providers, and OLE DB providers.
+      </p>
+      <p>
+        To connect with individual databases, JDBC (the Java Database
+        Connectivity API) requires drivers for each database. The JDBC driver
+        gives out the connection to the database and implements the protocol for
+        transferring the query and result between client and database.
+      </p>
+      <p>JDBC technology drivers fit into one of four categories.</p>
+      <ol>
+        <li>JDBC-ODBC bridge</li>
+        <li>Native-API driver</li>
+        <li>Network-Protocol driver (Middleware driver)</li>
+        <li>Database-Protocol driver (Pure Java driver) or thin driver.</li>
+      </ol>
+      <div class="contents"></div>
+      <br /><br /><br />
+      <h2>Type 1 driver – JDBC-ODBC bridge</h2>
+      <hr />
+      <p>
+        The JDBC type 1 driver, also known as the JDBC-ODBC bridge, is a
+        database driver implementation that employs the ODBC driver to connect
+        to the database. The driver converts JDBC method calls into ODBC
+        function calls.
+      </p>
+      <p>
+        The driver is platform-dependent as it makes use of ODBC which in turn
+        depends on native libraries of the underlying operating system the JVM
+        is running upon. Also, use of this driver leads to other installation
+        dependencies; for example, ODBC must be installed on the computer having
+        the driver and the database must support an ODBC driver. The use of this
+        driver is discouraged if the alternative of a pure-Java driver is
+        available. The other implication is that any application using a type 1
+        driver is non-portable given the binding between the driver and
+        platform. This technology isn't suitable for a high-transaction
+        environment. Type 1 drivers also don't support the complete Java command
+        set and are limited by the functionality of the ODBC driver.
+      </p>
+      <p>
+        Sun (now Oracle) provided a JDBC-ODBC Bridge driver:
+        sun.jdbc.odbc.JdbcOdbcDriver. This driver is native code and not Java,
+        and is closed source. Sun's/Oracle's JDBC-ODBC Bridge was removed in
+        Java 8 (other vendors' are available).[3][4][5][6]
+      </p>
+      <p>
+        If a driver has been written so that loading it causes an instance to be
+        created and also calls DriverManager.registerDriver with that instance
+        as the parameter (as it should do), then it is in the DriverManager's
+        list of drivers and available for creating a connection.
+      </p>
+      <p>
+        It may sometimes be the case that more than one JDBC driver is capable
+        of connecting to a given URL. For example, when connecting to a given
+        remote database, it might be possible to use a JDBC-ODBC bridge driver,
+        a JDBC-to-generic-network-protocol driver, or a driver supplied by the
+        database vendor. In such cases, the order in which the drivers are
+        tested is significant because the DriverManager will use the first
+        driver it finds that can successfully connect to the given URL.
+      </p>
+      <p>
+        First the DriverManager tries to use each driver in the order it was
+        registered. (The drivers listed in jdbc.drivers are always registered
+        first.) It will skip any drivers that are untrusted code unless they
+        have been loaded from the same source as the code that is trying to open
+        the connection.
+      </p>
+      <p>
+        It tests the drivers by calling the method Driver.connect on each one in
+        turn, passing them the URL that the user originally passed to the method
+        DriverManager.getConnection. The first driver that recognizes the URL
+        makes the connection.
+      </p>
+      <img src="assets/images/JDBC_driver.png" width="300" height="424" text-align="center" />
+      <h6>Schematic of the JDBC-ODBC bridge</h6>
+
+      <h5>Advantages</h5>
+      <p>
+        <b>.</b> Almost any database for which an ODBC driver is installed can
+        be accessed, and data can be retrieved.
+      </p>
+      <ul>
+        <h5>Disvantages</h5>
+        <li>
+          Performance overhead since the calls have to go through the JDBC( java
+          database connectivity) bridge to the ODBC(open database
+          connectivity)driver, then to the native database connectivity
+          interface (thus may be slower than other types of drivers).
+        </li>
+        <li>The ODBC driver needs to be installed on the client machine.</li>
+        <li>
+          Not suitable for applets, because the ODBC driver needs to be
+          installed on the client.
+        </li>
+        <li>
+          Specific ODBC drivers are not always available on all platforms;
+          hence, portability of this driver is limited.
+        </li>
+      </ul>
+      <br /><br />
+      <h2>Type 2 driver – Native-API driver</h2>
+      <hr />
+      <p>
+        The JDBC type 2 driver, also known as the Native-API driver, is a
+        database driver implementation that uses the client-side libraries of
+        the database. The driver converts JDBC method calls into native calls of
+        the database API. For example: Oracle OCI driver is a type 2 driver.
+      </p>
+      <br />
+      <ul>
+        <h5>Advantages</h5>
+        <li>
+          As there is no implementation of JDBC-ODBC bridge, it may be
+          considerably faster than a Type 1 driver.
+        </li>
+      </ul>
+      <br />
+      <ul>
+        <h5>Disadvantages</h5>
+        <li>
+          The vendor client library needs to be installed on the client machine.
+        </li>
+        <li>Not all databases have a client-side library.</li>
+        <li>This driver is platform dependent.</li>
+        <li>This driver supports all Java applications except applets.</li>
+      </ul>
+
+      <img src="assets/images/Native.png" width="300" height="424" text-align="center" />
+      <h6>Schematic of the Native API driver</h6>
+
+      <br />
+      <br />
+
+      <h2>Type 3 driver – Network-Protocol driver (middleware driver)</h2>
+      <hr />
+      <p>
+        The JDBC type 3 driver, also known as the Pure Java driver for database
+        middleware,[7] is a database driver implementation which makes use of a
+        middle tier between the calling program and the database. The
+        middle-tier (application server) converts JDBC calls directly or
+        indirectly into a vendor-specific database protocol.
+      </p>
+      <p>
+        This differs from the type 4 driver in that the protocol conversion
+        logic resides not at the client, but in the middle-tier. Like type 4
+        drivers, the type 3 driver is written entirely in Java.
+      </p>
+      <p>
+        The same client-side JDBC driver may be used for multiple databases. It
+        depends on the number of databases the middleware has been configured to
+        support. The type 3 driver is platform-independent as the
+        platform-related differences are taken care of by the middleware. Also,
+        making use of the middleware provides additional advantages of security
+        and firewall access.
+      </p>
+      <ul>
+        <h4>Functions</h4>
+        <li>
+          Sends JDBC API calls to a middle-tier net server that translates the
+          calls into the DBMS-specific network protocol. The translated calls
+          are then sent to a particular DBMS.
+        </li>
+        <li>Follows a three-tier communication approach.</li>
+        <li>Can interface to multiple databases – Not vendor specific.</li>
+        <li>
+          The JDBC Client driver written in java, communicates with a
+          middleware-net-server using a database independent protocol, and then
+          this net server translates this request into database commands for
+          that database.
+        </li>
+        <li>
+          Thus the client driver to middleware communication is database
+          independent.
+        </li>
+      </ul>
+      <ul>
+        <h5>Advantages</h5>
+        <li>
+          Since the communication between client and the middleware server is
+          database independent, there is no need for the database vendor library
+          on the client. The client need not be changed for a new database.
+        </li>
+        <li>
+          The middleware server (which can be a full-fledged J2EE Application
+          server) can provide typical middleware services like caching (of
+          connections, query results, etc.), load balancing, logging, and
+          auditing.
+        </li>
+        <li>
+          A single driver can handle any database, provided the middleware
+          supports it.
+        </li>
+        <li>E.g.: IDA Server.</li>
+      </ul>
+      <ul>
+        <h5>Disadvantages</h5>
+        <li>
+          Requires database-specific coding to be done in the middle tier.
+        </li>
+        <li>
+          The middle ware layer added may result in additional latency, but is
+          typically overcome by using better middle ware services..
+        </li>
+      </ul>
+
+      <img src="assets/images/Network.png" width="300" height="424" text-align="center" />
+      <h6>Schematic of the Network Protocol driver</h6>
+
+      <br /><br />
+      <h2>
+        Type 4 driver – Database-Protocol driver/Thin Driver(Pure Java driver)
+      </h2>
+      <hr />
+      <p>
+        The JDBC type 4 driver, also known as the Direct to Database Pure Java
+        Driver, is a database driver implementation that converts JDBC calls
+        directly into a vendor-specific database protocol.
+      </p>
+      <p>
+        Written completely in Java, type 4 drivers are thus platform
+        independent. They install inside the Java Virtual Machine of the client.
+        This provides better performance than the type 1 and type 2 drivers as
+        it does not have the overhead of conversion of calls into ODBC or
+        database API calls. Unlike the type 3 drivers, it does not need
+        associated software to work.
+      </p>
+      <p>
+        As the database protocol is vendor specific, the JDBC client requires
+        separate drivers, usually vendor supplied, to connect to different types
+        of databases.
+      </p>
+      <ul>
+        <h5>Advantages</h5>
+        <li>
+          Completely implemented in Java to achieve platform independence.
+        </li>
+        <li>
+          These drivers don't translate the requests into an intermediary format
+          (such as ODBC).
+        </li>
+        <li>
+          The client application connects directly to the database server. No
+          translation or middleware layers are used, improving performance.
+        </li>
+        <li>
+          The JVM can manage all aspects of the application-to-database
+          connection; this can facilitate debugging.
+        </li>
+      </ul>
+      <ul>
+        <h5>Disadvantages</h5>
+        <li>
+          Drivers are database specific, as different database vendors use
+          widely different (and usually proprietary) network protocols.
+        </li>
+        <img src="assets/images/Native_Protocol.png" width="300" height="424" text-align="center" />
+        <h6>Schematic of the Native-Protocol driver</h6>
+      </ul>
+      <br />
+      <hr />
+      <br />
+    </div>
+
+    <div class="jdbcconnection" *ngIf="jdbcconnection">
+      <h1 class="mt-4">Jdbc Connection</h1>
+      <h4 class="mt-4">Interface Connection</h4>
+      <br />
+      <p><b>All Superinterfaces:</b></p>
+      <p>AutoCloseable, Wrapper</p>
+      <hr />
+      <pre>
+           public interface <b>Connection</b> 
+            extends Wrapper, AutoCloseable</pre>
+      <div>
+        <p>
+          A connection (session) with a specific database. SQL statements are
+          executed and results are returned within the context of a connection.
+        </p>
+        <p>
+          A Connection object's database is able to provide information
+          describing its tables, its supported SQL grammar, its stored
+          procedures, the capabilities of this connection, and so on. This
+          information is obtained with the getMetaData method.
+        </p>
+        <p>
+          <b>Note: </b>When configuring a Connection, JDBC applications should
+          use the appropriate Connection method such as setAutoCommit or
+          setTransactionIsolation. Applications should not invoke SQL commands
+          directly to change the connection's configuration when there is a JDBC
+          method available. By default a Connection object is in auto-commit
+          mode, which means that it automatically commits changes after
+          executing each statement. If auto-commit mode has been disabled, the
+          method commit must be called explicitly in order to commit changes;
+          otherwise, database changes will not be saved.
+        </p>
+        <p>
+          A new Connection object created using the JDBC 2.1 core API has an
+          initially empty type map associated with it. A user may enter a custom
+          mapping for a UDT in this type map. When a UDT is retrieved from a
+          data source with the method ResultSet.getObject, the getObject method
+          will check the connection's type map to see if there is an entry for
+          that UDT. If so, the getObject method will map the UDT to the class
+          indicated. If there is no entry, the UDT will be mapped using the
+          standard mapping.
+        </p>
+        <p>
+          A user may create a new type map, which is a java.util.Map object,
+          make an entry in it, and pass it to the java.sql methods that can
+          perform custom mapping. In this case, the method will use the given
+          type map instead of the one associated with the connection.
+        </p>
+        <p>
+          For example, the following code fragment specifies that the SQL type
+          ATHLETES will be mapped to the class Athletes in the Java programming
+          language. The code fragment retrieves the type map for the Connection
+          object con, inserts the entry into it, and then sets the type map with
+          the new entry as the connection's type map.
+        </p>
+        <pre>
+                java.util.Map map = con.getTypeMap();
+                map.put("mySchemaName.ATHLETES", Class.forName("Athletes"));
+                con.setTypeMap(map);
+               </pre>
+      </div>
+      <div>
+        <p><b>Connection Example:</b></p>
+        <textarea class="connection" rows="19" cols="120" readonly>
+                package com.integra.jdbc;
+                import java.sql.Connection;
+                import java.sql.DriverManager;
+                import java.sql.SQLException;
+
+                public class TestJDBC &#123;
+                  public static void main(String[] args) &#123;
+                       try &#123;
+                           Class.forName("com.mysql.cj.jdbc.Driver");
+                           Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                       &#125; catch (ClassNotFoundException | SQLException e) &#123;
+                                   e.printStackTrace();
+                           &#125;
+                   &#125;
+                &#125;             
+             </textarea>
+      </div>
+    </div>
+
+    <div class="jdbcstatement" *ngIf="jdbcstatement">
+      <h1 class="mt-4">Jdbc Statement</h1>
+
+      <pre>
+        public interface Statement
+                        extends Wrapper, AutoCloseable</pre>
+      <p>
+        The object used for executing a static SQL statement and returning the
+        results it produces.<br />
+        By default, only one ResultSet object per Statement object can be open
+        at the same time. Therefore, if the reading of one ResultSet object is
+        interleaved with the reading of another, each must have been generated
+        by different Statement objects. All execution methods in the Statement
+        interface implicitly close a statment's current ResultSet object if an
+        open one exists.
+      </p>
+      <textarea class="statement" rows="50" cols="120" readonly>
+
+                package com.integra.jdbc;
+            ​    import java.sql.Connection;
+                import java.sql.DriverManager;
+                import java.sql.SQLException;
+                import java.sql.Statement;
+             
+             public class StatementExample {
+                private static final String URL = "jdbc:mysql://localhost:3306/integra?useSSL=false";
+                private static final String USERNAME = "YOUR USERNAME;
+                private static final String PASSWORD = "YOUR PASSWORD";
+                private static final String INSERT_SQL = "insert into student values (104,'ANUP','Hyd','5555555')";
+                private static final String UPDATE_SQL = "update student set sname='RAJITA' where sid = 101";
+                private static final String DELETE_SQL = "delete from student where sid = 103";
+
+            ​  
+              public static void main(String[] args) {
+                    Connection connection = null;
+                    Statement statement = null;
+                    try {
+                        Object object = Class.forName("com.mysql.cj.jdbc.Driver");
+                        System.out.println(object);
+                        connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                        System.out.println(connection);
+                        statement = connection.createStatement();
+                        System.out.println("statement==> " + statement);
+                        int result = statement.executeUpdate(DELETE_SQL);
+                        System.out.println(result);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (statement != null)
+                            try {
+                                statement.close();
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        if (connection != null)
+                            try {
+                                connection.close();
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                    }
+                }
+            }
+        </textarea>
+    </div>
+
+    <div class="jdbcresultset" *ngIf="jdbcresultset">
+      <h1 class="mt-4">Jdbc ResultSet</h1>
+      <p>A ResultSet is a Java object that contains the results of executing an SQL query. In other words, it
+        contains the rows that satisfy the conditions of the query. The data stored in a ResultSet object is
+        retrieved through a set of get methods that allows access to the various columns of the current row. The
+        ResultSet.next method is used to move to the next row of the ResultSet, making it the current row.
+      </p>
+      <p>The general form of a result set is a table with column headings and the corresponding values returned by
+        a query. For example, if your query is SELECT a, b, c FROM Table1, your result set will have the
+        following form:
+      </p>
+      <blockquote>
+        <pre>
+
+                           a           b               c
+                          ----------  ------------    ----------- 
+                          12345       Cupertino       2459723.495
+                          83472       Redmond         1.0
+                          83492       Boston          35069473.43
+                             
+                         </pre>
+      </blockquote>
+      <p>The following code fragment is an example of executing an SQL statement that will return a collection of
+        rows, with column a as an int, column b as a String, and column c as a float:
+      </p>
+      <textarea class="resultset" rows="11" cols="140" readonly>
+                         java.sql.Statement stmt = con.createStatement();
+                         ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM Table1");
+                         while (rs.next()) &#123;
+                             // retrieve and print the values for the current row
+                             int i = rs.getInt("a");
+                             String s = rs.getString("b");
+                             float f = rs.getFloat("c");
+                             System.out.println("ROW = " + i + " " + s + " " + f);
+                             &#125;
+                     </textarea>
+      <h5>Rows and Columns</h5>
+      <p>A relational database is made up of tables, with each table consisting of rows and columns. A row in a
+        relational database table can be thought of as representing an instance of the entity that the table
+        represents. For example, if there is a table of employees, each row will contain information about a
+        particular employee. Each piece of data about the employee is stored in a column, so, for instance, the
+        table of employees could have columns for an identification number, a name, a salary, and a date of
+        hire. The columns in a row would contain the ID number, name, salary, and date of hire for a particular
+        employee.
+      </p>
+      <p>A result set is also a table with rows and columns, but it contains only the column values from a
+        database table that satisfy the conditions of a query. In other words, a result set row will contain a
+        subset of the columns in the underlying database table (unless the query selects everything in the
+        table, in which case the result set table will include all of the column values for every row in the
+        database table). In the past, a column value in a relational database table (and consequently in a
+        result set table) had to be atomic; that is, it could be only one indivisible value. For instance, an
+        array could not be a column value because an array may be made up of multiple elements. With the advent
+        of SQL3 data types, however, the permissible content of table columns has expanded dramatically. It is
+        now possible for an array or even a user-defined structured type to be a column value. Because this new
+        capability allows a relational database to store instances of complex types as column values, it makes a
+        relational database more like an object database, blurring the distinction between relational and object
+        databases. Programmers can take advantage of these new data types if they use a JDBC 2.0 driver that
+        supports SQL3 types.
+      </p>
+      <h5>Cursors</h5>
+      <p>A ResultSet object maintains a cursor, which points to its current row of data. The cursor moves down one
+        row each time the method next is called. When a ResultSet object is first created, the cursor is
+        positioned before the first row, so the first call to the next method puts the cursor on the first row,
+        making it the current row. ResultSet rows can be retrieved in sequence from top to bottom as the cursor
+        moves down one row with each successive call to the method next. This ability to move its cursor only
+        forward is the default behavior for a ResultSet and is the only cursor movement possible with drivers
+        that implement only the JDBC 1.0 API. This kind of result set has the type ResultSet.TYPE_FORWARD_ONLY
+        and is referred to as a forward only result set.
+      </p>
+      <p>If a driver implements the cursor movement methods in the JDBC 2.0 core API, its result sets can be
+        scrollable. A scrollable result set's cursor can move both forward and backward as well as to a
+        particular row. The following methods move the cursor backward, to the first row, to the last row, to a
+        particular row number, to a specified number of rows from the current row, and so on: previous, first,
+        last, absolute, relative, afterLast, and beforeFirst. An explanation and example of how to make a result
+        set scrollable will be presented in the section "Creating Different Types of Result Sets" on page 55.
+      </p>
+      <p>When a cursor is positioned on a row in a ResultSet object (not before the first row or after the last
+        row), that row becomes the current row. This means that any methods called while the cursor is
+        positioned on that row will (1) operate on values in that row (methods such as getXXX and updateXXX),
+        (2) operate on the row as a whole (such as the methods updateRow, insertRow, deleteRow, refresh-Row), or
+        (3) use that row as a starting point for moving to other rows (such as the method relative).
+      </p>
+      <p>A cursor remains valid until the ResultSet object or its parent Statement object is closed.</p>
+      <h5>Cursor Movement Examples</h5>
+      <p>As stated in the previous section, the standard cursor movement for forward only result sets is to use
+        the method next to iterate through each row of a result set once from top to bottom. With scrollable
+        result sets, it is possible to revisit a row or to iterate through the result set multiple times. This
+        is possible because the cursor can be moved before the first row at any time (with the method
+        beforeFirst method (ResultSet interface)>beforeFirst). The cursor can begin another iteration through
+        the result set with the method next. The following example positions the cursor before the first row and
+        then iterates forward through the contents of the result set. The methods getString and getFloat
+        retrieve the column values for each row until there are no more rows, at which time the method next
+        returns the value false.
+      </p>
+      <textarea class="resultset" rows="5" cols="140" readonly>
+                         rs.beforeFirst();
+                         while (rs.next()) &#123;
+                             System.out.println(rs.getString("EMP_NO") +" " + rs.getFloat("SALARY");  
+                                 &#125;
+                                 </textarea>
+      <p>It is also possible to iterate through a result set backwards, as is shown in the next example. The
+        cursor is first moved to the very end of the result set (with the method afterLast), and then the method
+        previous is invoked within a while loop to iterate through the contents of the result set by moving to
+        the previous row with each iteration. The method previous returns false when there are no more rows, so
+        the loop ends after all the rows have been visited.
+      </p>
+      <textarea class="resultset" rows="5" cols="140" readonly>
+                             rs.afterLast();
+                             while (rs.previous()) &#123;
+                           System.out.println(rs.getString("EMP_NO") +" " + rs.getFloat("SALARY");
+                              &#125;
+                     </textarea>
+      <p>The interface ResultSet offers still other ways to iterate through the rows of a scrollable result set.
+        Care should be taken, however, to avoid incorrect alternatives such as the one illustrated in the
+        following example:
+      </p>
+      <textarea class="resultset" rows="6" cols="140" readonly>
+                 // incorrect!
+                 while (!rs.isAfterLast()) &#123;
+                 rs.relative(1);
+                 System.out.println(rs.getString("EMP_NO") + " " + rs.getFloat("SALARY"));
+                    &#125;
+                 </textarea>
+      <p>This example attempts to iterate forward through a scrollable result set and is incorrect for several
+        reasons. One error is that if ResultSet.isAfterLast is called when the result set is empty, it will
+        return a value of false since there is no last row. The loop body will be executed, which is not what is
+        wanted. An additional problem occurs when the cursor is positioned before the first row of a result set
+        that contains data. In this case, calling rs.relative(1) is erroneous because there is no current row.
+        The method relative moves the cursor the specified number of rows from the current row, and it must be
+        invoked only while the cursor is on the current row.
+      </p>
+      <p>The following code fragment fixes the problems in the previous example. Here a call to the method
+        ResultSet.first is used to distinguish the case of an empty result set from one that contains data.
+        Because ResultSet.isAfterLast is called only when the result set is non-empty, the loop control works
+        correctly. Since ResultSet.first method (ResultSet interface)>first initially positions the cursor on
+        the first row, the method ResultSet.relative(1) steps through the rows of the result set as expected.
+      </p>
+      <textarea class="resultset" rows="7" cols="140" readonly>
+                     if (rs.first()) &#123;
+                         while (!rs.isAfterLast()) &#123;
+                           System.out.println(rs.getString("EMP_NO") + " " + rs.getFloat("SALARY"));
+                           rs.relative(1);
+                           &#125;
+                         &#125;
+                 </textarea>
+      <h5>Determining the Number of Rows in a Result Set</h5>
+      <p>With the new cursor movement methods, it is easy to see how many rows a scrollable ResultSet object
+        contains. All that is necessary is to go to the last row of the result set and get the number of that
+        row. In the following example, rs will have one row for each employee.
+      </p>
+      <textarea class="resultset" rows="10" cols="140" readonly>
+                     esultSet rs = stmt.executeQuery(
+                 "SELECT LAST_NAME, FIRST_NAME FROM EMPLOYEES");
+                     rs.last();
+                     int numberOfRows = rs.getRow();
+                     System.out.println("XYZ, Inc. has " + numberOfRows + " employees");
+                     rs.beforeFirst();
+                     while (next()) &#123;
+                   . . . // retrieve first and last names of each employee
+                     &#125;
+                 </textarea>
+      <p>Though not as convenient, it is also possible to find out how many rows a nonscrollable result set has. The
+        following example shows one way to determine the number of rows.</p>
+      <textarea class="resultset" rows="10" cols="140" readonly>
+                     ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM EMPLOYEES");
+                     rs.next();
+                     int count = rs.getInt(1);
+                     System.out.println("XYZ, Inc. has " + count + " employees");
+                     ResultSet rs2 = stmt.executeQuery(
+                 "SELECT LAST_NAME, FIRST_NAME FROM EMPLOYEES");
+                     while (rs2.next()) {
+                   . . . // retrieve first and last names of each employee
+                            }
+                 </textarea>
+      <p>Though not as convenient, it is also possible to find out how many rows a nonscrollable result set has. The
+        following example shows one way to determine the number of rows.</p>
+      <textarea class="resultset" rows="10" cols="140" readonly>
+                     ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM EMPLOYEES");
+                     rs.next();
+                     int count = rs.getInt(1);
+                     System.out.println("XYZ, Inc. has " + count + " employees");
+                     ResultSet rs2 = stmt.executeQuery("SELECT LAST_NAME, FIRST_NAME FROM EMPLOYEES");
+                     while (rs2.next()) {
+                         . . . // retrieve first and last names of each employee
+                     }
+                 </textarea>
+      <p>With the scrollable result set, the cursor was just repositioned to start iterating through the same result set
+        to retrieve its data. In the preceding example, however, one query is needed to get the count, and another query
+        is needed to get a result set with the data that is desired. Both queries must, of course, produce result sets
+        of the same size for the count to be accurate.</p>
+      <p>A second way to determine the number of rows in a forward-only result set is to iterate through the result set,
+        incrementing a variable with each iteration, which is shown in the following example. Because an application can
+        iterate through a forward-only result set just once, the same query needs to be executed twice. In the iteration
+        through the first rs, the number of rows is counted; in the iteration through the second rs, the data is
+        retrieved.</p>
+      <textarea class="resultset" rows="11" cols="140" readonly>
+                     ResultSet rs = stmt.executeQuery("SELECT LAST_NAME, FIRST_NAME FROM EMPLOYEES");
+                     int count = 0;
+                     while (rs.next()) {
+                   count++;
+                     }
+                     System.out.println("Company XYZ has " + count " employees.");
+                     rs = stmt.executeQuery("SELECT LAST_NAME, FIRST_NAME FROM EMPLOYEES");
+                     while (rs.next()) {
+                   . . . // retrieve first and last names of each employee
+                      }
+                 </textarea>
+      <h5>Retrieving Column Values</h5>
+      <p>The ResultSet.getXXX methods provide the means for retrieving column values from the current row. For maximum
+        portability with forward only result sets, values should be retrieved from left to right, and column values
+        should be read only once. With scrollable result sets, however, there are no such restrictions.</p>
+      <p>Either the column name or the column number can be used to designate the column from which to retrieve data.
+        For example, if the second column of a ResultSet object rs is named TITLE, and it stores values as strings,
+        either of the following will retrieve the value stored in that column:</p>
+      <textarea class="resultset" rows="3" cols="120" readonly>
+                     String s = rs.getString(2);
+                     String s = rs.getString("TITLE");
+                 </textarea>
+      <p>Note that columns are numbered from left to right starting with column 1. Also, column names used as input to
+        getXXX methods are case insensitive.</p>
+      <P>The option of using the column name was provided so that a user who specifies column names in a query can use
+        those same names as the arguments to getXXX methods. If, on the other hand, the SELECT statement does not
+        specify column names (as in "SELECT * FROM TABLE1" or in cases where a column is derived), column numbers should
+        be used. In such situations, there is no way for the user to know for sure what the column names are.</P>
+      <P>In some cases, it is possible for an SQL query to return a result set that has more than one column with the
+        same name. If a column name is used as the parameter to a getXXX method, getXXX will return the value of the
+        first matching column name. Thus, if there are multiple columns with the same name, one needs to use a column
+        index to be sure that the correct column value is retrieved. It may also be slightly more efficient to use
+        column numbers.</P>
+      <P>If the name of a column is known but not its index, the method findColumn can be used to find the column
+        number.</P>
+      <P>Information about the columns in a ResultSet is available by calling the method ResultSet.getMetaData. The
+        ResultSetMetaData object returned gives the number, types, and properties of its ResultSet object's columns</P>
+      <h5>Types of Result Sets</h5>
+      <p>Results sets may have different levels of functionality. For example, they may be scrollable or nonscrollable.
+        A scrollable result set has a cursor that moves both forward and backward and can be moved to a particular row.
+        Also, result sets may be sensitive or insensitive to changes made while they are open; that is, they may or may
+        not reflect changes to column values that are modified in the database. A developer should always keep in mind
+        the fact that adding capabilities to a ResultSet object incurs additional overhead, so it should be done only as
+        necessary.</p>
+      <p>Based on the capabilities of scrollability and sensitivity to changes, there are three types of result sets
+        available with the JDBC 2.0 core API. The following constants, defined in the ResultSet interface, are used to
+        specify these three types of result sets:</p>
+      <ol>
+        <li>
+          TYPE_FORWARD_ONLY
+          <ul>
+            <li>The result set is nonscrollable; its cursor moves forward only, from top to bottom.</li>
+            <li>The view of the data in the result set depends on whether the DBMS materializes results incrementally.
+            </li>
+          </ul>
+        </li>
+        <li>
+          TYPE_SCROLL_INSENSITIVE
+          <ul>
+            <li>The result set is scrollable: Its cursor can move forward or backward and can be moved to a particular
+              row or to a row whose position is relative to its current position.</li>
+            <li>The result set generally does not show changes to the underlying database that are made while it is
+              open. The membership, order, and column values of rows are typically fixed when the result set is created
+            </li>
+          </ul>
+        </li>
+        <li>
+          TYPE_SCROLL_SENSITIVE
+          <ul>
+            <li>The result set is scrollable; its cursor can move forward or backward and can be moved to a particular
+              row or to a row whose position is relative to its current position.</li>
+            <li>The result set is sensitive to changes made while it is open. If the underlying column values are
+              modified, the new values are visible, thus providing a dynamic view of the underlying data. The membership
+              and ordering of rows in the result set may be fixed or not, depending on the implementation.</li>
+          </ul>
+        </li>
+      </ol>
+      <textarea class="resultset" rows="45" cols="120" readonly>
+                     import java.sql.Connection;
+                     import java.sql.DriverManager;
+                     import java.sql.ResultSet;
+                     import java.sql.SQLException;
+                     import java.sql.Statement;
+                 public class StatementExample {
+                    private static final String URL = "jdbc:mysql://localhost:3306/integra?useSSL=false";
+                    private static final String USERNAME = "root";
+                    private static final String PASSWORD = "root";
+                    private static final String SELECT_SQL = "select * from student";
+               public static void main(String[] args) {
+                  Connection connection = null;
+                  Statement statement = null;
+                  try {
+                Object object = Class.forName("com.mysql.cj.jdbc.Driver");
+                System.out.println(object);
+                connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                System.out.println(connection);
+                statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(SELECT_SQL);
+                if (resultSet != null) {
+                while (resultSet.next()) {
+               System.out.println(resultSet.getInt(1) + " " + resultSet.getString("sname") + " "
+                   + resultSet.getString("address") + " " + resultSet.getString("phone_number"));
+             }
+           }
+                   }catch (Exception e) {
+                 e.printStackTrace();
+                 } finally {
+                 if (statement != null)
+             try {
+               statement.close();
+             } catch (SQLException e) {
+               e.printStackTrace();
+             }
+                 if (connection != null)
+             try {
+               connection.close();
+             } catch (SQLException e) {
+               e.printStackTrace();
+             }
+         }
+       }
+     }
+                 </textarea>
+      <h5> Closing a ResultSet Object</h5>
+      <p>Normally, nothing needs to be done to close a ResultSet object; it is automatically closed by the Statement
+        object that generated it when that Statement object is closed, is re-executed, or is used to retrieve the next
+        result from a sequence of multiple results. The method close is provided so that a ResultSet object can be
+        closed explicitly, thereby immediately releasing the resources held by the ResultSet object. This could be
+        necessary when several statements are being used and the automatic close does not occur soon enough to prevent
+        database resource conflicts.</p>
+    </div>
+
+    <div class="jdbcpreparestatement" *ngIf="jdbcpreparestatement">
+      <h1 class="mt-4">Jdbc PrepareStatement</h1>
+      <div>
+        <p>Sometimes it is more convenient to use a <b>PreparedStatement</b> object for sending SQL statements
+          to the database. This special type of statement is derived from the more general class,
+          <b>Statement</b>, that you already know .</p>
+        <p>If you want to execute a <b>Statement</b> object many times, it usually reduces execution time to use
+          a <b>PreparedStatement</b> object instead.</p>D:\GIT HUB\guruji\src\app\css
+        <p>The main feature of a <b>PreparedStatement</b> object is that, unlike a <b>Statement</b> object, it
+          is given a SQL statement when it is created. The advantage to this is that in most cases, this SQL
+          statement is sent to the DBMS right away, where it is compiled. As a result, the
+          <b>PreparedStatement</b> object contains not just a SQL statement, but a SQL statement that has been
+          precompiled. This means that when the <b>PreparedStatement</b> is executed, the DBMS can just run
+          the <b>PreparedStatement</b> SQL statement without having to compile it first.</p>
+        <p>Although <b>PreparedStatement</b> objects can be used for SQL statements with no parameters, you
+          probably use them most often for SQL statements that take parameters. The advantage of using SQL
+          statements that take parameters is that you can use the same statement and supply it with different
+          values each time you execute it. Examples of this are in the following sections.</p>
+        <p><b>Table Syntax:</b></p>
+        <textarea class="preparestatement" rows="6" cols="120" readonly>
+          create table employee(eid int primary key,
+                                ename varchar(50),
+                                salary double,
+                                company varchar(50));
+
+        </textarea>
+
+
+        <p><b>PrepareStatement Example:</b></p>
+        <textarea class="preparestatement" rows="41" cols="120" readonly>
+          import java.sql.Connection;
+          import java.sql.DriverManager;
+          import java.sql.PreparedStatement;
+          import java.sql.ResultSet;
+                 
+          public class JDBCPrepareStatementExample {
+          
+            public static void main(String[] args) throws Exception {
+              Class.forName("com.mysql.cj.jdbc.Driver");
+              Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBName?useSSL=false", 
+                                                                  "Your Username","Your Password");          
+              PreparedStatement preparedStatementInsert = connection.prepareStatement("INSERT INTO employee(eid,ename,salary,company)
+                                                                                 VALUES(?,?,?,?)");
+                 preparedStatement.setInt(1, 101);
+                 preparedStatement.setString(2, "RAMA");
+                 preparedStatement.setDouble(3, "15550.50");
+                 preparedStatement.setString(4, "HCL");
+
+                 int count = preparedStatement.executeUpdate();
+                 if (count > 0) {
+                    System.out.println("SUCCESS " + count);
+                 } else {
+                    System.out.println("FAILER " + count);
+                 }
+
+              PreparedStatement preparedStatementSelect = connection.prepareStatement("SELECT eid, ename, salary, company FROM employee");
+              ResultSet resultSet = preparedStatement.executeQuery();
+                  if (resultSet != null) {
+                    while (resultSet.next()) {
+                        System.out.println(resultSet.getInt("eid") + " " + resultSet.getString("ename") + 
+                        " "+ resultSet.getString("company"));
+                }
+              }
+          
+            }
+          }
+          
+        </textarea><br>
+        <h5>Creating a PreparedStatement Object</h5>
+        <p>The following creates a <b>PreparedStatement</b> object that takes four input parameters:</p>
+        <textarea class="preparestatement" rows="5" cols="120" readonly>
+            String INSERT_QUERY = "INSERT INTO employee(id,name,salary,image) VALUES(?,?,?,?)";
+            prepareStatement = con.prepareStatement(INSERT_QUERY);
+        </textarea>
+        <h5>Supplying Values for PreparedStatement Parameters</h5>
+        <p>You must supply values in place of the question mark placeholders (if there are any) before you can
+          execute a <b>PreparedStatement</b> object. Do this by calling one of the setter methods defined in
+          the <b>PreparedStatement</b> class. The following statements supply the four question mark
+          placeholders in the <b>PreparedStatement</b> named <b>preparedStatementInsert</b>:</p>
+        <textarea class="preparestatement" rows="5" cols="120" readonly>
+              preparedStatement.setInt(1, 101);
+              preparedStatement.setString(2, "RAMA");
+              preparedStatement.setDouble(3, "15550.50");
+              preparedStatement.setString(4, "HCL");
+        </textarea>
+        <p>After a parameter has been set with a value, it retains that value until it is reset to another
+          value, or the method <b>clearParameters</b> is called. Using the <b>PreparedStatement</b> object
+          <b>preparedStatementInsert</b>, the following code fragment illustrates reusing a prepared statement after
+          resetting the value of one of its parameters and leaving the other one the same:</p>
+        <textarea class="preparestatement" rows="15" cols="120" readonly>
+            // changes company column of HCL
+            //row to 101
+
+            preparedStatement.setInt(1, 101);
+            preparedStatement.setString(4, "HCL");
+            preparedStatement.executeUpdate();
+
+            // changes company column of TCL row to 101
+            // (the first parameter stayed 101, and the second
+           // parameter was reset to "TCL")
+
+           preparedStatement.setString(2, "TCL");
+           preparedStatement.executeUpdate();
+        </textarea>
+        <h5>Executing PreparedStatement Objects</h5>
+        <p>As with Statement objects, to execute a PreparedStatement object, call an execute statement:
+          executeQuery if the query returns only one ResultSet (such as a SELECT SQL statement), executeUpdate
+          if the query does not return a ResultSet (such as an INSERT SQL statement), or execute if the query
+          might return more than one ResultSet object. PreparedStatement object in
+          employee table contain INSERT SQL statements, so that are executed by calling
+          executeUpdate:</p>
+        <textarea class="preparestatement" rows="5" cols="120" readonly>
+          preparedStatement.setInt(1, 101);
+          preparedStatement.setString(2, "RAMA");
+          preparedStatement.executeUpdate();
+            con.commit();
+        </textarea>
+        <p>No arguments are supplied to executeUpdate when they are used to execute preparedStatementInsert,
+          PreparedStatement objects already contain the SQL statement to be executed.</p>
+        <p><b>Note:</b> At the beginning of CoffeesTable.updateCoffeeSales, the auto-commit mode is set to false:</p>
+        <textarea class="preparestatement" rows="2" cols="120" readonly>
+            con.setAutoCommit(false);
+        </textarea>
+        <p>Consequently, no SQL statements are committed until the method commit is called. For more information about
+          the auto-commit mode, see Transactions.</p>
+        <h5>Return Values for the executeUpdate Method</h5>
+        <p>Whereas executeQuery returns a ResultSet object containing the results of the query sent to the DBMS, the
+          return value for executeUpdate is an int value that indicates how many rows of a table were updated. For
+          instance, the following code shows the return value of executeUpdate being assigned to the variable n:</p>
+        <textarea class="preparestatement" rows="5" cols="120" readonly>
+          preparedStatement.setInt(1, 101);
+          preparedStatement.setString(2, "RAMA");
+          int n= preparedStatement.executeUpdate();
+            // n = 1 because one row had a change in it
+        </textarea>
+        <p>The table employee is inserted; the values inserted successfully.
+          That insert one row in the table, so n is equal to 1.</p>
+        <p>When the method executeUpdate is used to execute a DDL (data definition language) statement, such as in
+          creating a table, it returns the int value of 0. Consequently, in the following code fragment, which executes
+          the DDL statement used to create the table COFFEES, n is assigned a value of 0:</p>
+        <pre>
+            // n = 0
+            int n = executeUpdate( preparedStatementInsert); 
+        </pre>
+        <p>Note that when the return value for executeUpdate is 0, it can mean one of two things:</p>
+        <ul>
+          <li>The statement executed was an insert statement that affected zero rows.</li>
+          <li>The statement executed was a DDL statement.</li>
+        </ul>
+        <h5>Difference Between Statement Vs PreparedStatement In JDBC</h5>
+
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>Statement</th>
+              <th>PreparedStatement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. It's called as static query. every time query will get compile.</td>
+              <td>1. They are pre-compiled (once), so faster for repeated execution of dynamic SQL (where parameters
+                change).</td>
+            </tr>
+            <tr>
+              <td>2. We can not achives SQL Injection. Statement is suitable for DDL.</td>
+              <td>2.They protect against SQL injection, by escaping text for all the parameter values provided.</td>
+            </tr>
+            <tr>
+              <td>3. Optimization not possible.</td>
+              <td>3. Optimization is possible.</td>
+            </tr>
+            <tr>
+              <td>4. Statement is parent Inteface.</td>
+              <td>4. Preparestament is child Inteface.</td>
+            </tr>
+            <tr>
+              <td>5. The statement template is prepared and
+                sent<br> to the database system and database system
+                perform parsing, compiling and optimization on
+                this template and store without executing it.</td>
+              <td>5. They provide stronger separation between the query code and the parameter values.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="jdbccallablestatment" *ngIf="jdbccallablestatment">
+      <h1 class="mt-4">Jdbc CallableStatment</h1>
+      <p><b>CallableStatement Overview</b></p>
+
+      <p>
+        A CallableStatement object provides a way to call stored procedures in a
+        standard way for all RDBMSs. A stored procedure is stored in a database;
+        the call to the stored procedure is what a CallableStatement object
+        contains. This call is written in an escape syntax that may take one of
+        two forms: one form with a result parameter, and the other without one.
+        A result parameter, a kind of OUT parameter, is the return value for the
+        stored procedure. Both forms may have a variable number of parameters
+        used for input (IN parameters), output (OUT parameters), or both (INOUT
+        parameters). A question mark serves as a placeholder for a parameter.
+      </p>
+      <p>
+        The syntax for invoking a stored procedure using the JDBC API is shown
+        here. Note that the square brackets indicate that what is between them
+        is optional; they are not themselves part of the syntax.
+      </p>
+      <textarea readonly rows="2" cols="120" id="procedure_name">
+        {call procedure_name[&#40;&#63;&#44; &#63;&#44;&#46;&#46;&#46;&#41;]}
+      </textarea>
+
+      <p>The syntax for a procedure that returns a result parameter is:</p>
+
+      <textarea readonly rows="2" cols="120" id="procedure_name">
+         { ? = call procedure_name[(?, ?,...)] };
+      </textarea>
+      <p>
+        The syntax for a stored procedure with no parameters would look like
+        this:
+      </p>
+      <p>&nbsp;&nbsp;&nbsp;&#123;call procedure_name&#125;</p>
+      <p>
+        Normally, anyone creating a CallableStatement object would already know
+        that the DBMS being used supports stored procedures and what those
+        procedures are. If one needed to check, however, various
+        DatabaseMetaData methods will supply such information. For instance, the
+        method supportsStoredProcedures will return true if the DBMS supports
+        stored procedure calls, and the method getProcedures will return a
+        description of the stored procedures available.
+      </p>
+      <p>
+        CallableStatement inherits Statement methods, which deal with SQL
+        statements in general, and it also inherits PreparedStatement methods,
+        which deal with IN parameters. All of the methods defined in
+        CallableStatement deal with OUT parameters or the output aspect of INOUT
+        parameters: registering the JDBC types of the OUT parameters, retrieving
+        values from them, or checking whether a returned value was JDBC NULL.
+        Whereas the getXXX methods defined in ResultSet retrieve values from a
+        result set, the getXXX methods in CallableStatement retrieve values from
+        the OUT parameters and/or return value of a stored procedure.
+      </p>
+      <h5><b>Creating a CallableStatement Object</b></h5>
+      <p>
+        CallableStatement objects are created with the Connection method
+        prepareCall. The following example, in which con is an active JDBC
+        Connection object, creates an instance of CallableStatement.
+      </p>
+      <textarea id="callstmt" rows="2" cols="120" readonly>
+        CallableStatement cstmt = ccon.prepareCall("{call getTestData(?, ?)}");
+      </textarea>
+      <p>
+        The variable cstmt contains a call to the stored procedure getTestData,
+        which has two input parameters and no result parameter. Whether the ?
+        placeholders are IN, OUT, or INOUT parameters depends on the stored
+        procedure getTestData. This instance of a CallableStatement object was
+        created using JDBC 1.0 API; consequently, any query in the stored
+        procedure called by cstmt will produce a default ResultSet object (one
+        that is non-scrollable and non-updatable).
+      </p>
+      <p>
+        The JDBC 2.0 API provides the means to create CallableStatement objects
+        that can produce ResultSet objects that are scrollable and updatable, as
+        the following code fragment demonstrates.
+      </p>
+      <textarea id="callstmt" rows="4" cols="120" readonly>
+        String sql = "{call getTestData(?, ?)}";
+          CallableStatement cstmt2 = con.prepareCall(sql,
+	          ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+      </textarea>
+      <p>
+        The variable cstmt2 contains the same call to the stored procedure
+        TestData that cstmt does, but with cstmt2, any resultSet objects that
+        TestData produces can be updated and are scrollable (though they will
+        not be sensitive to updates made while they are open). Explanations for
+        the constants used to indicate scrollability and updatability are given
+        in the chapter "ResultSet."
+      </p>
+      <h5><b>IN Parameters</b></h5>
+      <p>
+        Passing in any IN parameter values to a CallableStatement object is done
+        using the setXXX methods inherited from PreparedStatement. The type of
+        the value being passed in determines which setXXX method to use
+        (setFloat to pass in a float value, setBoolean to pass in a boolean, and
+        so on). Of the programs that use parameters, the vast majority use only
+        IN parameters.
+      </p>
+      <h5><b>Making Batch Updates</b></h5>
+      <p>
+        The ability to make batch updates is the same for CallableStatement
+        objects as it is for PreparedStatement objects. In fact, a
+        CallableStatement object is restricted to the same functionality that a
+        PreparedStatement object has. More precisely, when using the batch
+        update facility, a CallableStatement object can call only stored
+        procedures that take input parameters or no parameters at all. Further,
+        the stored procedure must return an update count. The
+        CallableStatement.executeBatch method (inherited from PreparedStatement)
+        will throw a BatchUpdateException if the stored procedure returns
+        anything other than an update count or takes OUT or INOUT parameters.
+      </p>
+      <p>
+        The following code fragment illustrates using the batch update facility
+        to associate two sets of parameters with a CallableStatement object.
+      </p>
+      <textarea id="callstmt" rows="11" cols="120" readonly>
+        CallableStatement cstmt = con.prepareCall("{call updatePrices(?, ?)}");
+          cstmt.setString(1, "Colombian");
+          cstmt.setFloat(2, 8.49f);
+          cstmt.addBatch();
+    
+          cstmt.setString(1, "Colombian_Decaf");
+          cstmt.setFloat(2, 9.49f);
+          cstmt.addBatch();
+    
+          int [] updateCounts = cstmt.executeBatch();
+      </textarea>
+      <p>
+        The variable cstmt contains a call to the stored procedure updatePrices
+        with two sets of parameters associated with it. When cstmt is executed,
+        two update statements will be executed together as a batch: one with the
+        parameters Colombian and 8.49f, and a second one with the parameters
+        Colombian_Decaf and 9.49f. An f after a number, as in 8.49f, tells the
+        Java compiler that the value is a float; otherwise, the compiler assumes
+        that a number with decimal digits is a double and will not allow it to
+        be used as a float.
+      </p>
+      <h5><b>OUT Parameters</b></h5>
+      <p>
+        If the stored procedure returns OUT parameters, the JDBC type of each
+        OUT parameter must be registered before the CallableStatement object can
+        be executed. This is necessary because some DBMSs require the SQL type
+        (which the JDBC type represents), not because JDBC requires it. JDBC
+        types, a set of generic SQL type identifiers that represent the most
+        commonly used SQL types, are explained fully in the chapter "Mapping SQL
+        and Java Types" on page 85.
+      </p>
+      <p>
+        Registering the JDBC type is done with the method registerOutParameter.
+        Then after the statement has been executed, CallableStatement's getXXX
+        methods can be used to retrieve OUT parameter values. The correct
+        CallableStatement.getXXX method to use is the type in the Java
+        programming language that corresponds to the JDBC type registered for
+        that parameter. (The standard mapping from JDBC types to Java types is
+        shown in Table 8.1 on page 105.) In other words, registerOutParameter
+        uses a JDBC type (so that it matches the data type that the database
+        will return), and getXXX casts this to a Java type.
+      </p>
+      <p>
+        To illustrate, the following code registers the OUT parameters, executes
+        the stored procedure called by cstmt, and then retrieves the values
+        returned in the OUT parameters. The method getByte retrieves a Java byte
+        from the first OUT parameter, and getBigDecimal retrieves a
+        java.math.BigDecimal object (with three digits after the decimal point)
+        from the second OUT parameter. The method executeQuery is used to
+        execute cstmt because the stored procedure that it calls returns a
+        result set.
+      </p>
+      <textarea id="callstmt" rows="11" cols="120" readonly>
+
+        CallableStatement cstmt = con.prepareCall(
+          "{call getTestData(?, ?)}");
+        cstmt.registerOutParameter(1, java.sql.Types.TINYINT);
+        cstmt.registerOutParameter(2, java.sql.Types.DECIMAL, 3);
+        ResultSet rs = cstmt.executeQuery();
+        // . . . retrieve result set values with rs.getXXX methods
+        byte x = cstmt.getByte(1);
+        java.math.BigDecimal n = cstmt.getBigDecimal(2);
+      </textarea>
+      <p>
+        Unlike ResultSet, CallableStatement does not provide a special mechanism
+        for retrieving large OUT values incrementally. More specifically, it
+        does not have getXXX methods for streams of data, such as getAsciiStream
+        or getBinary-Stream. However, the JDBC 2.0 API provides
+        CallableStatement methods for retrieving SQL3 datatypes as OUT or INOUT
+        parameters, which includes the methods getBlob and getClob for
+        retrieving binary large objects and character large objects.
+      </p>
+      <h5><b>Numbering of Parameters</b></h5>
+      <p>
+        When a method takes an int specifying which parameter to act upon
+        (setXXX, getXXX, and registerOutParameter), that int refers to ?
+        placeholder parameters only, with numbering starting at one. The
+        parameter number does not refer to literal parameters that might be
+        supplied to a stored procedure call. For example, the following code
+        fragment illustrates a stored procedure call with one literal parameter
+        and one ? parameter:
+      </p>
+      <textarea id="callstmt" rows="4" cols="120" readonly>
+        CallableStatement cstmt = con.prepareCall(
+          "{call getTestData(25, ?)}");
+      cstmt.registerOutParameter(1, java.sql.Types.TINYINT);
+     </textarea>
+      <p>
+        In this code, the first argument to registerOutParameter, the int 1,
+        refers to the first ? parameter (and in this case, the only ?
+        parameter). It does not refer to the literal 25, which is the first
+        parameter to the stored procedure.
+      </p>
+      <h5><b>INOUT Parameters</b></h5>
+      <p>
+        A parameter that supplies input as well as accepts output (an INOUT
+        parameter) requires a call to the appropriate setXXX method (inherited
+        from PreparedStatement) in addition to a call to the method
+        registerOutParameter. The setXXX method sets a parameter's value as an
+        input parameter, and the method registerOutParameter registers its JDBC
+        type as an output parameter. The setXXX method provides a Java value
+        that the driver converts to a JDBC value before sending it to the
+        database. The JDBC type of this IN value and the JDBC type supplied to
+        the method registerOutParameter should be the same. Then, to retrieve
+        the output value, a corresponding getXXX method is used. For example, a
+        parameter whose Java type is byte should use the method setByte to
+        assign the input value, should supply a TINYINT as the JDBC type to
+        registerOutParameter, and should use getByte to retrieve the output
+        value. ("Mapping SQL and Java Types" on page 85 contains tables of type
+        mappings.)
+      </p>
+      <p>
+        The following example assumes that there is a stored procedure
+        reviseTotal whose only parameter is an INOUT parameter. The method
+        setByte sets the parameter to 25, which the driver will send to the
+        database as a JDBC TINYINT. Next registerOutParameter registers the
+        parameter as a JDBC TINYINT. After the stored procedure is executed, a
+        new JDBC TINYINT value is returned, and the method getByte will retrieve
+        this new value as a Java byte. Since the stored procedure called in this
+        example returns an update count, the method executeUpdate is used.
+      </p>
+      <textarea id="callstmt" rows="7" cols="120" readonly>
+        CallableStatement cstmt = con.prepareCall("{call reviseTotal(?)}");
+        cstmt.setByte(1, (byte)25);
+        cstmt.registerOutParameter(1, java.sql.Types.TINYINT);
+        cstmt.executeUpdate();
+        byte x = cstmt.getByte(1);
+      </textarea>
+      <h5><b>Retrieve OUT Parameters after Results</b></h5>
+      <p>
+        Because of limitations imposed by some DBMSs, it is recommended that for
+        maximum portability, all of the results in a ResultSet object generated
+        by the execution of a CallableStatement object should be retrieved
+        before OUT parameters are retrieved. When all values have been retrieved
+        from a result set, the method ResultSet.next will return false.
+      </p>
+      <p>
+        If a CallableStatement object returns multiple ResultSet objects (which
+        is possible only if it is executed with a call to the method execute),
+        all of the results should be retrieved before OUT parameters are
+        retrieved. In this case, to be sure that all results have been accessed,
+        the Statement methods getResultSet, getUpdateCount, and getMoreResults
+        need to be called until there are no more results. When all results have
+        been exhausted, the method getMoreResults returns false, and the method
+        getUpdateCount returns -1.
+      </p>
+      <p>
+        After all values have been retrieved from ResultSet objects (using
+        ResultSet.getXXX methods), and after it has been determined that there
+        are no more update counts, values from OUT parameters can be retrieved
+        (using CallableStatement.getXXX methods).
+      </p>
+      <h5><b>Retrieving NULL Values as OUT Parameters</b></h5>
+      <p>
+        The value returned to an OUT parameter may be JDBC NULL. When this
+        happens, the JDBC NULL value will be converted so that the value
+        returned by a getXXX method will be null, 0, or false, depending on the
+        getXXX method type. As with ResultSet objects, the only way to know if a
+        value of 0 or false was originally JDBC NULL is to test it with the
+        method wasNull, which returns true if the last value read by a getXXX
+        method was JDBC NULL, and false otherwise.
+      </p>
+      <p><b>following Example about Procedure</b><br /> First Need to create Procedure in database. This Procedure might
+        be varries according to database. Here we are implement Store Procedure based on mysql database.</p>
+
+      <p><b>Query Syntax for Mysql Store Procedure :- </b></p>
+
+      <textarea id="callstmt" rows="10" cols="120" readonly>
+        delimiter //
+        create  procedure getEmp()
+        begin
+        select * from emp;
+        end//
+        delimiter ;
+    
+       To Call Procedure --- > call getEmp();
+      </textarea>
+      <p><b>JDBC Store Procedure Program :- </b></p>
+      <textarea id="callstmt" rows="50" cols="120" readonly>
+        package com.integra.jdbc;
+
+        import java.sql.CallableStatement;
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.ResultSet;
+        import java.sql.SQLException;
+        
+        
+        public class CallableStatementProcedureExample {
+          private static Connection connection = null;
+          private static CallableStatement callableStatement = null;
+          private static ResultSet resultSet = null;
+        
+          public static void main(String[] args) {
+            try {
+              Class.forName(QueryConstant.DRIVER);
+              connection = DriverManager.getConnection("YOUR URL", YOUR USERNAME, YOUR.PASSWORD);
+              callableStatement = connection.prepareCall("{ call getEmp() }");
+              resultSet = callableStatement.executeQuery();
+              if (resultSet != null) {
+                while (resultSet.next()) {
+                  System.out.println("EMP ID = " + resultSet.getInt(1) + " | EMP NAME = " + resultSet.getString(2));
+                }
+              }
+            } catch (ClassNotFoundException | SQLException e) {
+              e.printStackTrace();
+            } finally {
+              if (callableStatement != null) {
+                try {
+                  callableStatement.close();
+                } catch (SQLException e) {
+                  e.printStackTrace();
+                }
+              }
+              if (connection != null) {
+                try {
+                  connection.close();
+                } catch (SQLException e) {
+                  e.printStackTrace();
+                }
+              }
+            }
+        
+          }
+        
+        }
+  
+       </textarea>
+
+      <p><b>Query Syntax for Mysql Funtion :- </b></p>
+
+      <textarea id="callstmt" rows="14" cols="120" readonly>
+        DELIMITER //
+         CREATE FUNCTION SUM_FUNCTION(n1 INT,n2 INT)
+         RETURNS INT
+         DETERMINISTIC
+         BEGIN
+          DECLARE RESULT INT;
+              SET RESULT = n1+n2;
+          RETURN (RESULT);
+         END//
+        DELIMITER ;
+  
+       To Call Procedure --- > SELECT SUM_FUNCTION(10,20);
+      </textarea>
+      <p><b>JDBC Function Program :- </b></p>
+      <textarea id="callstmt" rows="50" cols="120" readonly>
+        package com.integra.jdbc;
+
+        import java.sql.CallableStatement;
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.SQLException;
+        import java.sql.Types;
+        
+        
+        public class CallableStatementFunctionExample {
+          private static Connection connection = null;
+          private static CallableStatement callableStatement = null;
+        
+          public static void main(String[] args) {
+            try {
+              Class.forName(QueryConstant.DRIVER);
+              connection = DriverManager.getConnection("YOUR URL", "YOUR USERNAME", "YOUR PASSWORD");
+              callableStatement = connection.prepareCall("{?=call SUM_FUNCTION(?,?)}");
+              callableStatement.setInt(2, 10);
+              callableStatement.setInt(3, 20);
+              callableStatement.registerOutParameter(1, Types.INTEGER);
+              callableStatement.execute();
+              System.out.println(callableStatement.getInt(1));
+            } catch (ClassNotFoundException | SQLException e) {
+              e.printStackTrace();
+            } finally {
+              if (callableStatement != null) {
+                try {
+                  callableStatement.close();
+                } catch (SQLException e) {
+                  e.printStackTrace();
+                }
+              }
+              if (connection != null) {
+                try {
+                  connection.close();
+                } catch (SQLException e) {
+                  e.printStackTrace();
+                }
+              }
+            }
+        
+          }
+        
+        }
+        
+       </textarea>
+    </div>
+
+    <div class="jdbcscrollable" *ngIf="jdbcscrollable">
+      <h1 class="mt-4">Jdbc Scrollable & Updatable</h1>
+      <p>A ResultSet is scrollable if you have the ability to move its cursor backward as well as forward. The
+        JDBC 2.0 API introduced the scrollable ResultSet concept. The ResultSet object has methods that
+        let you move the cursor to a particular row and check the position of the cursor. Scrollable ResultSet
+        objects make it possible to create a GUI tool for browsing ResultSet objects; this is probably one of
+        the main uses of this feature. Another use is moving to a particular row in order to update it.</p>
+      <p>Derby only supports scrollable insensitive result sets. To create a scrollable insensitive result set which is
+        updatable, the statement has to be created with concurrency mode ResultSet.CONCUR_UPDATABLE and type
+        ResultSet.TYPE_SCROLL_INSENSITIVE.</p>
+      <p>Before you can use a scrollable ResultSet, you have to create one. The following snippet shows
+        one way to create a scrollable ResultSet object:</p>
+      <pre>          //assume getConnection() returns a Connection object
+         Connection conn = getConnection();
+         Statement stmt = conn.createStatement(
+                     ResultSet.TYPE_SCROLL_SENSITIVE,
+                     ResultSet.CONCUR_READ_ONLY);
+         String query = "SELECT id, name FROM employees";
+         ResultSet rs = stmt.executeQuery(query);
+        </pre>
+      <p>When creating a Statement object, you need to specify two arguments to the method
+        createStatement(). The first argument indicates the type of a ResultSet object and can be one of
+        three constants:</p>
+      <ul>
+        <li>ResultSet.TYPE_FORWARD_ONLY: A constant indicating the type for a ResultSet object whose
+          cursor may move only forward (creates a nonscrollable ResultSet object)</li>
+        <li> ResultSet.TYPE_SCROLL_INSENSITIVE: A constant indicating the type for a ResultSet object
+          that is scrollable but generally not sensitive to changes made by others</li>
+        <li>ResultSet.TYPE_SCROLL_SENSITIVE: A constant indicating the type for a ResultSet object that
+          is scrollable and generally sensitive to changes made by others</li>
+      </ul>
+      <p>&nbsp;&nbsp;&nbsp;The second argument is one of two ResultSet constants for specifying whether a result set is
+        read-only or writable/updatable:</p>
+      <ul>
+        <li>ResultSet.CONCUR_READ_ONLY: A constant indicating the concurrency mode for a ResultSet
+          object that may not be updated</li>
+        <li> ResultSet.CONCUR_UPDATABLE: A constant indicating the concurrency mode for a ResultSet
+          object that may be updated</li>
+      </ul>
+      <p>&nbsp;&nbsp;&nbsp;The important point to remember is that if you specify a ResultSet type, you must also
+        specify
+        whether it is read-only or writable/updatable. The following example shows a scrollable ResultSet
+        using a sample program, DemoScrollableResultSet.</p>
+      <h5>Solution</h5>
+      <p>This solution uses the following ResultSet methods:</p>
+      <ul>
+        <li>&nbsp;&nbsp;next(): Moves the cursor down one row from its current position</li>
+        <li>&nbsp;&nbsp;afterLast(): Moves the cursor to the end of this ResultSet object, just after the last row</li>
+        <li>&nbsp;&nbsp;previous(): Moves the cursor to the previous row in this ResultSet object</li>
+      </ul>
+      <textarea class="scrollable" rows="48" cols="120" readonly>
+
+     import java.sql.ResultSet;
+     import java.sql.Statement;
+     import java.sql.Connection;
+     import java.sql.DriverManager;
+     import java.sql.SQLException;
+     import jcb.util.DatabaseUtil;
+     import jcb.db.VeryBasicConnectionManager;
+       
+        public class MyScrollableResultSetDemo 
+        {
+           static final String DRIVER="com.mysql.cj.jdbc.Driver";
+           static final String URL="jdbc:mysql://localhost:3306/ulnc";
+           static final String USER_NAME="username";
+           static final String PASSWORD="password";
+           private static Connection connection = null;
+           private static Statement statement = null;
+           private static ResultSet resultSet = null;
+           String dbVendor = args[0]; // vendor = {"mysql", "oracle" }
+       
+        public static void main(String[] args) {
+        try {
+        Class.forName(vendor);
+        connection = DriverManager.getConnection(dbVendor);
+        System.out.println("--MYScrollableResultSet begin--");
+        System.out.println("connection ="+connection );
+        System.out.println("-------");
+       
+        // prepare query
+        String query = "select id, name from employees";
+       
+        // create a statement
+        statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
+        ResultSet.CONCUR_READ_ONLY);
+        // execute query and return result as a ResultSet
+       resultSet = statement.executeQuery(query);
+       if(resultSet != null){
+       while(resultSet.next()){
+       System.out.println(resultSet.getInt(1) + " " + resultSet.getString("sname"));
+            }
+          }
+        }
+       }catch (ClassNotFoundException | SQLException | IOException e) {
+        e.printStackTrace();
+         }
+       } 
+    }
+    </textarea>
+    </div>
+
+    <!-- <div class="jdbcscrollable" *ngIf="jdbcscrollable">
+      <h1 class="mt-4">Jdbc Scrollable & Updatable</h1>
+
+    </div> -->
+
+    <div class="jdbcbatchupdate" *ngIf="jdbcbatchupdate">
+      <h1 class="mt-4">Jdbc Batch Updates</h1>
+      <h2>Introduction</h2>
+      <hr>
+      <p>Java Database Connectivity (JDBC) is a Java API used for interacting with databases. Batch processing groups
+        multiple queries into one unit and passes it in a single network trip to a database.
+
+        In this article, we'll discover how JDBC can be used for batch processing of SQL queries.
+
+        For more on JDBC, you can check out our introduction article here.
+
+      </p>
+      <br>
+      <h2>Why Batch Processing?</h2>
+      <hr>
+      <h4> Improved Performance. </h4><br>
+      <p>Performance and data consistency are the primary motives to do batch processing.<br />
+        Some use cases require a large amount of data to be inserted into a database table. While using JDBC, one of the
+        ways to achieve this without batch processing, is to execute multiple queries sequentially.</p>
+      <p>Let's see an example of sequential queries sent to database:</p>
+      <textarea id="batchstatement" cols="120" rows="4">
+
+           statement.execute("INSERT INTO STUDENT(ID, NAME, DESIGNATION) "+ "VALUES ('1','StudentName1','Branch')"); 
+           statement.execute("INSERT INTO STUDENT(ID, NAME, DESIGNATION) "+ "VALUES ('2','studentName2','Branch')");
+          </textarea>
+      <br>
+      <h5>These sequential calls will increase the number of network trips to database resulting in poor performance.
+      </h5>
+      <p>By using batch processing, these queries can be sent to the database in one call, thus improving performance.
+
+      </p><br><br><br>
+      <h4> Data Consistency</h4><br>
+      <p>In certain circumstances, data needs to be pushed into multiple tables. This leads to an interrelated
+        transaction where the sequence of queries being pushed is important.<br>
+        Any errors occurring during execution should result in a rollback of the data pushed by previous queries if
+        any. </p>
+      <p>Let's see an example of adding data to multiple tables:</p>
+      <textarea id="batchstatement" cols="120" rows="4">
+
+              statement.execute("INSERT INTO STUDENT(ID, NAME, BRANCH) " + "VALUES ('1','CHINNA','CSE')"); 
+              statement.execute("INSERT INTO STUDENT_ADDRESS(ID, ADDRESS) "+ "VALUES ('10','HYDERABAD')");
+          </textarea><br>
+      <p>A typical problem in the above approach arises when the first statement succeeds and the second statement </p>
+      <h6>In this situation there is no rollback of the data inserted by the first statement, leading to data
+        inconsistency.</h6>
+      <p>We can achieve data consistency by spanning a transaction across multiple insert/updates and then committing
+        the transaction at the end or performing a rollback in case of exceptions, but in this case, we're still hitting
+        the database repeatedly for each statement. </p>
+      <br><br>
+      <h2>How To Do Batch Processing.</h2>
+      <hr>
+      <p>JDBC provides two classes, Statement and PreparedStatement to execute queries on the database. Both classes
+        have their own implementation of the addBatch() and executeBatch() methods which provide us with the batch
+        processing functionality.</p>
+      <br>
+      <br>
+      <h4>Batch Processing Using Statement</h4>
+      <br>
+      <p>With JDBC, the simplest way to execute queries on a database is via the Statement objec.<br>
+        First, using addBatch() we can add all SQL queries to a batch and then execute those SQL queries using
+        executeBatch().<br>
+        The return type of executeBatch() is an int array indicating how many records were affected by the execution of
+        each SQL statement.</p>
+      <p>Let's see an example of creating and executing a batch using Statement: </p>
+      <textarea id="batchstatement" cols="120" rows="6">
+              Statement statement = connection.createStatement();
+              statement.addBatch("INSERT INTO STUDENT(ID, NAME, BRANCH) " + "VALUES ('1','NANI','CSE')");
+              statement.addBatch("INSERT INTO STU_ADDRESS(ID, ADDRESS) "+ "VALUES ('10','HYD')");
+              statement.executeBatch();
+          </textarea>
+      <br>
+      <p>In the above example, we are trying to insert records into the STUDENT and STU_ADDRESS tables using Statement.
+        We can see how SQL queries are being added in the batch to be executed.</p>
+      <br>
+      <h4>Batch Processing Using PreparedStatement</h4>
+      <br>
+      <p>PreparedStatement is another class used to execute SQL queries. It enables reuse of SQL statements and requires
+        us to set new parameters for each update/insert.</p>
+      <p>Let's see an example using PreparedStatement. First, we set up the statement using an SQL query encoded as a
+        String:</p>
+      <br>
+      <textarea id="batchstatement" cols="120;" rows="67">
+              package com.integra.jdbc;
+  
+              import java.sql.Connection;
+              import java.sql.DriverManager;
+              import java.sql.PreparedStatement;
+              import java.sql.SQLException;
+  
+              public class BatchOperation {
+              private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
+              private static final String URL = "jdbc:mysql://localhost:3306/integra?useSSL=false";
+              private static final String USERNAME = "root";
+              private static final String PASSWORD = "root";
+              private static final String INSERT_QUERY = "insert into student values (?,?,?,?)";
+  
+              public static void main(String[] args) {
+                  Connection connection = null;
+                  PreparedStatement preparedStatement = null;
+                  try {
+                      Class.forName(DRIVER_NAME);
+                      connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                      connection.setAutoCommit(false);
+                      preparedStatement = connection.prepareStatement(INSERT_QUERY);
+                      preparedStatement.setInt(1, 107);
+                      preparedStatement.setString(2, "Pappu");
+                      preparedStatement.setString(3, "Hyd");
+                      preparedStatement.setString(4, "75757575");
+                      // Add it to the batch
+                      preparedStatement.addBatch();
+  
+                      preparedStatement.setInt(1, 401);
+                      preparedStatement.setString(2, "Pawan");
+                      preparedStatement.setString(3, "Hyd");
+                      preparedStatement.setString(4, "665656565");
+                      // Add it to the batch
+                      preparedStatement.addBatch();
+  
+                      int[] result = preparedStatement.executeBatch();
+                      System.out.println(result);
+                      connection.commit();
+                  } catch (Exception e) {
+                      try {
+                          connection.rollback();
+                      } catch (SQLException e1) {
+                          e1.printStackTrace();
+                      }
+                      e.printStackTrace();
+                  } finally {
+                      if (preparedStatement != null) {
+                          try {
+                              preparedStatement.close();
+                          } catch (SQLException e) {
+                              e.printStackTrace();
+                          }
+                      }
+                      if (connection != null) {
+                          try {
+                              connection.close();
+                          } catch (SQLException e) {
+                              e.printStackTrace();
+                          }
+                      }
+                  }
+  
+              }
+          }
+  
+          </textarea><br>
+
+
+    </div>
+
+    <div class="jdbcresultsetmetadata" *ngIf="jdbcresultsetmetadata">
+      <h1 class="mt-4">Jdbc ResultSetMetaData</h1>
+      <div>
+        <h5>Interface ResultSetMetaData</h5>
+        <pre>
+        public interface ResultSetMetaData
+            extends Wrapper
+    </pre>
+        <p>An object that can be used to get information about the types and properties of the columns in a ResultSet
+          object. The following code fragment creates the ResultSet object rs, creates the ResultSetMetaData object
+          rsmd, and uses rsmd to find out how many columns rs has and whether the first column in rs can be used in a
+          WHERE clause.</p>
+        <textarea class="resultsetMD" rows="5" cols="120" readonly>
+        ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM TABLE2");
+        ResultSetMetaData rsmd = rs.getMetaData();
+        int numberOfColumns = rsmd.getColumnCount();
+        boolean b = rsmd.isSearchable(1);
+    </textarea><br><br>
+        <h5>Commonly used methods of ResultSetMetaData interface</h5>
+        <table class="table table-hover table-active table-bordered">
+          <thead>
+            <tr>
+              <td class="bg-light"><b>Method</b></td>
+              <td class="bg-light"><b>Description</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>public ResultSetMetaData getMetaData()throws SQLException</td>
+              <td>returns the object of ResultSetMetaData.</td>
+            </tr>
+            <tr>
+              <td>public int getColumnCount()throws SQLException</td>
+              <td>Returns the number of columns in this ResultSet object.</td>
+            </tr>
+            <tr>
+              <td>public String getColumnName(int index)throws SQLException</td>
+              <td>Get the designated column's name.</td>
+            </tr>
+            <tr>
+              <td>public String getColumnTypeName(int index)throws SQLException</td>
+              <td>Retrieves the designated column's database-specific type name.</td>
+            </tr>
+            <tr>
+              <td>public String getTableName(int index)throws SQLException</td>
+              <td>Gets the designated column's table name.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><b>ResultSetMetaData Example:</b></p>
+        <textarea class="resultsetMD" rows="29" cols="120" readonly>
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.ResultSet;
+        import java.sql.ResultSetMetaData;
+        import java.sql.SQLException; 
+
+        class ResultSetMedataExample{  
+            public static void main(String args[]){  
+                 try{  
+                   Class.forName("com.mysql.cj.jdbc.Driver");   
+                   Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/DBname","Your Username","Your Password");  
+
+                   PreparedStatement ps=con.prepareStatement("select * from student");  
+                   ResultSet rs=ps.executeQuery();  
+                   ResultSetMetaData rsmd=rs.getMetaData();  
+
+                   System.out.println("Total columns: "+rsmd.getColumnCount());  
+                   System.out.println("Column Name of 1st column: "+rsmd.getColumnName(1));  
+                   System.out.println("Column Type Name of 1st column: "+rsmd.getColumnTypeName(1));  
+
+                   con.close();  
+                }catch(Exception e){ 
+                    System.out.println(e);
+                }  
+            }  
+        }  
+    </textarea>
+      </div>
+    </div>
+
+ <div class="jdbctransaction" *ngIf="jdbctransaction">
+      <h1 class="mt-4">Jdbc Transaction Management</h1><br>
+    <p><b>What Is a Transaction?</b></p>
+    <p>To emulate a business transaction, a program may need to perform several steps. A financial program, for example, might transfer funds from a checking account to a savings account using the steps listed in the following pseudocode:</p>
+      <textarea  class="transaction" rows="8" cols="120" readonly>
+        begin transaction
+        debit checking account
+        credit savings account
+        update history log
+        commit transaction
+
+      </textarea><br><br>
+      <p>Either all three of these steps must complete, or none of them at all. Otherwise, data integrity is lost. Because the steps within a transaction are a unified whole, a transaction is often defined as an indivisible unit of work.<br><br>
+
+        A transaction can end in two ways: with a commit or with a rollback. When a transaction commits, the data modifications made by its statements are saved. If a statement within a transaction fails, the transaction rolls back, undoing the effects of all statements in the transaction. In the pseudocode, for example, if a disk drive were to crash during the credit step, the transaction would roll back and undo the data modifications made by the debit statement. Although the transaction fails, data integrity would be intact because the accounts still balance.
+        
+        In the preceding pseudocode, the begin and commit statements mark the boundaries of the transaction. When designing an enterprise bean, you determine how the boundaries are set by specifying either container-managed or bean-managed transactions.</p>
+        <p><b>TransactionManagement</b></p>
+        <img src="assets/images/transactionmanagement.png" /><br>
+
+
+<p><b>ACID</b></p>
+<hr>
+<p>In computer science, ACID (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, etc. In the context of databases, a sequence of database operations that satisfies the ACID properties (and these can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.</p>
+<b>Atomicity</b>
+<p>Transactions are often composed of multiple statements. 
+
+  Atomicity guarantees that each transaction is treated as 
+  
+  a single "unit", which either succeeds completely, or 
+  
+  fails completely: if any of the statements constituting 
+  
+  a transaction fails to complete, the entire transaction 
+  
+  fails and the database is left unchanged. An atomic 
+  
+  system must guarantee atomicity in each and every 
+  
+  situation, including power failures, errors and 
+  
+  crashes.[4] A guarantee of atomicity prevents updates to 
+  
+  the database occurring only partially, which can cause 
+  
+  greater problems than rejecting the whole series 
+  
+  outright. As a consequence, the transaction cannot be 
+  
+  observed to be in progress by another database client. 
+  
+  At one moment in time, it has not yet happened, and at 
+  
+  the next it has already occurred in whole (or nothing 
+  
+  happened if the transaction was cancelled in progress).<br><br>
+  
+  An example of an atomic transaction is a monetary 
+  
+  transfer from bank account A to account B. It consists 
+  
+  of two operations, withdrawing the money from account A 
+  
+  and saving it to account B. Performing these operations 
+  
+  in an atomic transaction ensures that the database 
+  
+  remains in a consistent state, that is, money is neither 
+  
+  lost nor created if either of those two operations fail.
+  
+  </p>
+  <b>Consistency</b>
+<p>Consistency ensures that a transaction can only bring 
+
+  the database from one valid state to another, 
+  
+  maintaining database invariants: any data written to the 
+  
+  database must be valid according to all defined rules, 
+  
+  including constraints, cascades, triggers, and any 
+  
+  combination thereof. This prevents database corruption 
+  
+  by an illegal transaction, but does not guarantee that a 
+  
+  transaction is correct. Referential integrity guarantees 
+  
+  the primary key – foreign key relationship.
+  </p>
+  <b>Isolation</b>
+<p>Transactions are often executed concurrently (e.g., 
+
+  multiple transactions reading and writing to a table at 
+  
+  the same time). Isolation ensures that concurrent 
+  
+  execution of transactions leaves the database in the 
+  
+  same state that would have been obtained if the 
+  
+  transactions were executed sequentially. Isolation is 
+  
+  the main goal of concurrency control; depending on the 
+  
+  method used, the effects of an incomplete transaction 
+  
+  might not even be visible to other transactions.
+  </p>
+  <b>Durability</b>
+  <p>Durability guarantees that once a transaction has been 
+
+    committed, it will remain committed even in the case of 
+    
+    a system failure (e.g., power outage or crash). This 
+    
+    usually means that completed transactions (or their 
+    
+    effects) are recorded in non-volatile memory.[citation 
+    
+    needed]</p>
+    <img src="assets/images/acidproperties.png" /><br><br>
+    <p><b>Table Syntax</b></p>
+    <textarea class="transaction" rows="8" cols="120" readonly>
+      create table emp (
+        id int primary key,
+        ename varchar (20),
+        phone_number varchar(20),
+        did varchar (20)
+      )
+
+    </textarea><br>
+    <p><b>TranctionManagement Example</b></p>
+    <textarea class="transaction" rows="70" cols="140" readonly>
+      
+       import java.sql.Connection;
+       import java.sql.DriverManager;
+       import java.sql.PreparedStatement;
+       import java.sql.SQLException;
+
+        public class TransactionExample {
+          	private static Connection connection = null;
+	          private static PreparedStatement preparedStatement = null;
+	          private static final String INSERT_QUERY = "INSERT INTO emp (id,ename,phone_number,did) VALUES (?,?,?,?)";
+
+	          public static void main(String[] args) {
+	            	try {
+		             	Class.forName("com.mysql.cj.jdbc.Driver");
+		            	connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBName?useSSL=false", "Your UserName", "Your Password");
+			            connection.setAutoCommit(false);
+			            preparedStatement = connection.prepareStatement(INSERT_QUERY);
+
+			            preparedStatement.setInt(1, 101);
+			            preparedStatement.setString(2, "ARJUN");
+			            preparedStatement.setString(3, "297237423");
+			            preparedStatement.setInt(4, 101);
+			            preparedStatement.addBatch();
+
+			            preparedStatement.setInt(1, 102);
+			            preparedStatement.setString(2, "MALLI");
+			            preparedStatement.setString(3, "775757575");
+			            preparedStatement.setInt(4, 102);
+			            preparedStatement.addBatch();
+
+                                    preparedStatement.setInt(1, 103);
+                                    preparedStatement.setString(2, "NAGESH");  
+			            preparedStatement.setString(3, "75757575");
+			            preparedStatement.setInt(4, 103);
+			            preparedStatement.addBatch();
+
+			            int[] count = preparedStatement.executeBatch();
+			            for (Integer i : count) {
+			               	System.out.println(i);
+			            }
+		            	connection.commit();
+	          	} catch (ClassNotFoundException | SQLException e) {
+		             	try {
+		             		connection.rollback();
+		            	} catch (SQLException e1) {
+		               		e1.printStackTrace();
+		             	}
+		              	e.printStackTrace();
+	            	} finally {
+		              	if (preparedStatement != null) {
+			             	try {
+				              	preparedStatement.close();
+			            	} catch (SQLException e) {
+				              	e.printStackTrace();
+				            }
+		          	}
+		           	if (connection != null) {
+			             	try {
+				            	connection.close();
+			             	} catch (SQLException e) {
+				             	e.printStackTrace();
+			         	}
+		        	}
+	       	}
+      	}
+       }
+    </textarea>
+    </div>
+
+    <div class="jdbcfileupload" *ngIf="jdbcfileupload">
+      <h1 class="mt-4">Jdbc Fileupload & Download</h1>
+      <p>The fileupload example illustrates how to implement and use the file upload and download feature.
+        <br>
+        The syntax of setBinaryStream &#40;&#41; method is given below:<br></p>
+        <textarea class="Filesyntax" id="" cols="140" rows="6" readonly>
+            1) public void setBinaryStream(int paramIndex,InputStream stream)  
+                throws SQLException.
+  
+            2) public void setBinaryStream(int paramIndex,InputStream stream,long length)  
+                throws SQLException  
+        </textarea>
+        <h5>Table Syntax :</h5>
+        <textarea class="Filesyntax" id="" cols="140" rows="6" readonly>
+          create table images (
+          id int primary key,
+          image blob
+          )
+          table syntax;
+        </textarea>
+        <h5>Example for File uploading :</h5> 
+        <textarea class="Filesyntax" id="" cols="140" rows="57" readonly>
+          package com.jdbc;
+  
+        import java.io.File;
+        import java.io.FileInputStream;
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+        import java.sql.Blob;
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.PreparedStatement;
+        import java.sql.ResultSet;
+        import java.sql.SQLException;
+  
+        import com.integra.consts.QueryConstant;
+  
+        public class JdbcImageRetriveExample {
+          private static Connection connection = null;
+          private static PreparedStatement preparedStatement = null;
+          private static FileInputStream fileInputStream = null;
+          private static final String INSERT_QUERY = "insert into images (id,image) values (?,?)";
+  
+          public static void main(String[] args) {
+            insertImage();		
+          }
+  
+          public static void insertImage() {
+            try {
+              Class.forName(QueryConstant.DRIVER);
+              connection = DriverManager.getConnection(QueryConstant.URL, QueryConstant.USERNAME, QueryConstant.PASSWORD);
+              fileInputStream = new FileInputStream(new File("D:\\down.png"));
+              preparedStatement = connection.prepareStatement(INSERT_QUERY);
+              preparedStatement.setInt(1, 101);
+              preparedStatement.setBinaryStream(2, fileInputStream, fileInputStream.available());
+              int count = preparedStatement.executeUpdate();
+              System.out.println(count);
+            } catch (ClassNotFoundException | SQLException | IOException e) {
+              e.printStackTrace();
+            } finally {
+              if (preparedStatement != null) {
+                try {
+                  preparedStatement.close();
+                } catch (SQLException e) {
+                  e.printStackTrace();
+                }
+              }
+              if (connection != null) {
+                try {
+                  connection.close();
+                } catch (SQLException e) {
+                  e.printStackTrace();
+                }
+              }
+            }
+          }
+        }
+        </textarea>
+        <h5>Example for File Downloading :</h5> 
+        <textarea class="Filesyntax" id="" cols="140" rows="67" readonly>
+          package com.jdbc;
+  
+          import java.io.File;
+          import java.io.FileOutputStream;
+          import java.io.IOException;
+          import java.sql.Blob;
+          import java.sql.Connection;
+          import java.sql.DriverManager;
+          import java.sql.PreparedStatement;
+          import java.sql.ResultSet;
+          import java.sql.SQLException;
+  
+          import com.integra.consts.QueryConstant;
+  
+          public class JdbcImageRetriveExample {
+            private static Connection connection = null;
+            private static PreparedStatement preparedStatement = null;
+            private static FileOutputStream fileOutputStream = null;
+            private static final String SELECT_QUERY = "select * from images";
+  
+            public static void main(String[] args) {
+                          retriveImage();
+              
+            }
+            public static void retriveImage() {
+              try {
+                Class.forName(QueryConstant.DRIVER);
+                connection = DriverManager.getConnection(QueryConstant.URL, QueryConstant.USERNAME, QueryConstant.PASSWORD);
+                preparedStatement = connection.prepareStatement(SELECT_QUERY);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet != null) {
+                  while (resultSet.next()) {
+                    int id = resultSet.getInt(1);
+                    Blob blob = resultSet.getBlob(2);
+                    byte[] bytes = blob.getBytes(1, (int) blob.length());
+                    fileOutputStream = new FileOutputStream(new File("D:\\integra\\11PM\\abc.png"));
+                    fileOutputStream.write(bytes);
+                    fileOutputStream.flush();
+                    fileOutputStream.close();
+                    System.out.println(id + " " + blob);
+                  }
+                }
+  
+              } catch (ClassNotFoundException | SQLException | IOException e) {
+                e.printStackTrace();
+              } finally {
+                if (preparedStatement != null) {
+                  try {
+                    preparedStatement.close();
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                  }
+                }
+                if (connection != null) {
+                  try {
+                    connection.close();
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                  }
+                }
+              }
+  
+            }
+  
+          }
+  
+        </textarea>
+  
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>
